@@ -1,19 +1,39 @@
-on: push
-name: 🚀 Deploy website on push
+name: CI
+
+# Controls when the workflow will run
+on: [push]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  # This workflow contains a single job called "build"
+  build-and-deploy-web:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    environment: "FTP deploy"
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v3
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.91.2"
+          extended: true
+
+      - name: Build
+        working-directory: web
+        run: hugo
 
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: timthelion/FTP-Deploy-Action@ce17b23353bf8dc1f4ea25546a41877c1e4e362c
         with:
           server: 103.104.99.100
           username: frontend@sites.sidoarjokab.go.id
           password: ${{ secrets.ftp_password }}
           port: 21
           server-dir: public_html/test/
-          timeout: 600
+          log-level: verbose
