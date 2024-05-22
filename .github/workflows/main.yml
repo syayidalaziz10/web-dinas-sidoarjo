@@ -34,7 +34,7 @@ jobs:
           server: 103.104.99.100
           username: frontend@sites.sidoarjokab.go.id
           password: ${{ secrets.ftp_password }}
-          protocol: ftps
+          protocol: ftp
           sync-posix-modes: true
           server-dir: /
           state-name: ../.ftp-deploy-sync-state.json
