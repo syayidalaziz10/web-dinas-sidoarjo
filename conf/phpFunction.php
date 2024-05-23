@@ -594,22 +594,24 @@ $carouselCount = 0;
 
 				// GET DATA NEWS
 
-				$id 		= $row[0];
-				$title 	= $row[1];
-				$desk 	= $row[2];
-				$date 	= $row[3];
-				$count 	= $row[4];
+				$id 			= $row[0];
+				$title 		= $row[1];
+				$desk 		= $row[2];
+				$date 		= $row[3];
+				$count 		= $row[4];
+				$dir_image =  $_dirPost . $row[3];
+
 
 
 				// VARIABEL NEED OPERATION
-
-
-				if(!empty($row[5])){
-					$image = $_dirPost . $row[5];
-				} else {
-				    $image = $_dirPost . 'default.png';
-				}
 				$deskToStr = strip_tags($desk);
+
+				if (!empty($row[3]) && file_exists($dir_image)) {
+					$image = $dir_image;
+				} else {
+						$image = $_dirPost . 'default-template-2.png';
+				}
+
 				
 				$view 	= 
 				
