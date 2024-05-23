@@ -1,18 +1,26 @@
-<?php 
-
-
-
-
-
-//$current_page = $_SERVER['REQUEST_URI'];
-
-//$url_root = empty($current_page) ? '' : '../';
-?>
-
-
-
-
-
+<section class="py-3 d-none d-sm-block">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col d-flex justify-content-start align-items-center gap-3">
+            <img src="images/profile/<?= $profileData[0]['prof_lg']?>" class="logo-nav" width="90px">
+         </div>
+         <div class="col-auto d-none d-lg-block">
+         <div class="col-auto">         
+         <div class="runtext-container rounded-pill border border-secondary px-3">
+            <div><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="main-runtext">
+               <marquee direction="" onmouseover="this.stop();" onmouseout="this.start();">
+                  <div class="holder">
+                     <?= requestRecTemplate4('post_id, post_judul', 'pub_post', 'ca_id=003 AND _active=1', 'post_publish DESC', 1, 15) ?>
+                  </div>
+               </marquee>
+            </div>
+         </div>
+      </div>
+         </div>
+      </div>
+   </div>
+</section>
 
 
 <header id="header" class="fixed-top d-flex align-items-center">
@@ -124,13 +132,13 @@
 
 
                   else{
-                     //$couURI = strlen($_SERVER['REQUEST_URI']);
-                     if(strlen($_SERVER['REQUEST_URI']) > 12){
-                        $rLink = '../';
-                     } else {
-                        $rLink = '';
-                     }
-					
+					//$couURI = strlen($_SERVER['REQUEST_URI']);
+					if(strlen($_SERVER['REQUEST_URI']) > 12){
+						$rLink = '../';
+					} else {
+						$rLink = '';
+					}
+					  
                      echo '<li><a class="nav-link scrollto active" target="'.$menu['mn_tar'].'" href="'.$rLink.$menu['mn_url'].'">'.$menu['mn_txt'].'</a></li>';
 
                   }
@@ -152,3 +160,11 @@
    </div>
 
 </header>
+
+
+
+
+
+
+
+
