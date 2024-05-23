@@ -4588,9 +4588,9 @@ Header Style
   max-height: 40px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   #header {
-    padding: 0 100px;
+    padding: 0 200px;
   }
 }
 
