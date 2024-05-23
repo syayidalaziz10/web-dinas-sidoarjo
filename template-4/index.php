@@ -117,7 +117,7 @@
                 <?= $profileData[0]['prof_lnm']?>
               </span>&nbsp;<br>Kab. Sidoarjo
             </h1>
-            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi <?= $profileData[0]['prof_lg']?> Kabupaten Sidoarjo</ul>
+            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi <?= $profileData[0]['prof_lnm']?> Kabupaten Sidoarjo</ul>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@
   <section class="skrollable u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-image u-parallax u-section-2" id="carousel_6077" data-image-width="1497" data-image-height="1000">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h1 class="u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0" style="font-size: 1.5rem;">
-        <span style="font-weight: 700;">Layanan</span> Diskominfo apa aja ya?
+        <span style="font-weight: 700;">Layanan</span> <?= $profileData[0]['prof_snm']?> apa aja ya?
       </h1>
       <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-14 u-layout-wrap u-layout-wrap-1">
         <div class="u-gutter-0 u-layout">
@@ -211,7 +211,7 @@
   <!-- START BIDANG -->
   <section class="u-align-center u-clearfix u-section-4" id="carousel_486e">
     <div class="u-clearfix u-sheet u-sheet-1"">
-      <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>BIDANG <span style="font-weight: 400;">DISKOMINFO</span></i></b>
+      <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>BIDANG <span style="font-weight: 400;"> <?= $profileData[0]['prof_lnm']?> </span></i></b>
       </h2>
       <p class="u-align-center u-text u-text-default u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="font-size : 1rem; text-align: center;">Keseluruhan Bidang yang ada pada Dinas Komunikasi dan Informatika Kab. Sidoarjo </p>
       <div class="u-expanded-width u-list u-list-1">
@@ -249,7 +249,7 @@
       </div>
       <div class="u-align-left u-container-align-left u-container-style u-group u-radius-20 u-shape-round u-white u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="box-shadow: 0px 13px 40px 6px rgba(128,128,128,0.8);">
         <div class="u-container-layout u-valign-middle u-container-layout-1">
-          <h3 style="font-size: 1rem;" class="u-align-left u-text u-text-1"> Keluarga Besar Diskominfo<br>
+          <h3 style="font-size: 1rem;" class="u-align-left u-text u-text-1"> Keluarga Besar <?= $profileData[0]['prof_lnm']?><br>
             <span style="font-weight: 400;">Kab. Sidoarjo</span>
           </h3>
           <p class="u-align-left u-text u-text-default u-text-2"> Dinas Komunikasi dan Informatika Kabupaten Sidoarjo awal dibangun pada tahun 2017 sampai saat ini dengan solidaritas yang sangat kuat antar sesama pegawai baik ASN maupun NON ASN yang akan membuat Sidoarjo lebih&nbsp;<b><i>Hebat dan Milenial.</i></b>
@@ -265,10 +265,10 @@
     <div class="u-clearfix u-sheet u-sheet-1">
       <a href="?page=agenda&p=1">
         <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> 
-          <span style="font-weight: 700; font-size: 1.5rem">Agenda</span> Diskominfo
+          <span style="font-weight: 700; font-size: 1.5rem">Agenda</span> <?= $profileData[0]['prof_snm']?>
         </h2>
       </a>
-      <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem;">Agenda kegiatan dalam dinas komunikasi dan informatika Kabupaten Sidoarjo</p>
+      <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem;">Agenda kegiatan dalam <?= $profileData[0]['prof_lnm']?></p>
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1">
           <?= requestRecTemplate4('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1', 'post_publish DESC', 4, 9) ?>
