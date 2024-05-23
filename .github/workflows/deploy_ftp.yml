@@ -1,16 +1,21 @@
-name: 🚀 Deploy FTP Server
-on: push
+on:
+  push:
+    branches:
+      - main
+name: 🚀 Deploy website on push
+
 jobs:
-  deploy:
-    name: Deploy
+  web-deploy:
+    name: 🎉 Deploy website
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # Checkout the repository
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+      # sync files via FTP
+      - name: 📂 Sync files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          fetch-depth: 0
-      - name: git-ftp push
-        uses: sebastianpopp/git-ftp-action@releases/v3
-        with:
-          url: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
