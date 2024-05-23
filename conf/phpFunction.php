@@ -1314,6 +1314,8 @@ function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limi
 function requestRecTemplate4($loadField, $loadTbl, $loadWhere, $loadOrder, $limit, $typeView){
 $carouselCount = 0;
 
+	require('config.php');
+
 	$sql = "SELECT $loadField FROM $loadTbl";
 	if(!empty($loadWhere)) { $sql.=" WHERE $loadWhere"; }
 	if(!empty($loadOrder)){ $sql.=" ORDER BY $loadOrder"; }
