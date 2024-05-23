@@ -8,7 +8,7 @@ $url_root = ($current_page === '') ? '' : '../';
 
 
 
-<header id="header" class="fixed-top d-flex align-items-center">
+<header id="header" class="fixed-top d-flex align-items-center shadow">
    <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
