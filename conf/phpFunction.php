@@ -599,14 +599,14 @@ $carouselCount = 0;
 				$desk 		= $row[2];
 				$date 		= $row[3];
 				$count 		= $row[4];
-				$dir_image =  $_dirPost . $row[3];
+				$dir_image =  $_dirPost . $row[5];
 
 
 
 				// VARIABEL NEED OPERATION
 				$deskToStr = strip_tags($desk);
 
-				if (!empty($row[3]) && file_exists($dir_image)) {
+				if (!empty($row[5]) && file_exists($dir_image)) {
 					$image = $dir_image;
 				} else {
 						$image = $_dirPost . 'default-template-2.png';
@@ -1450,16 +1450,18 @@ $carouselCount = 0;
 				$date 	= $row[3];
 				$count 	= $row[4];
 
-				$dir_image = '../images/post/'.$row[5];
+				$dir_image =  $_dirPost . $row[5];
+
+
 
 				// VARIABEL NEED OPERATION
 
-
-				if (!empty($row['post_img'] && file_exists($dir_image) )) {
-					$src = '../images/post/'.$row[5];
+				if (!empty($row[5]) && file_exists($dir_image)) {
+					$image = $dir_image;
 				} else {
-					$src = '../images/post/default.png';
+					$image = $_dirPost . 'default-template-2.png';
 				}
+
 
 				
 				$title = strip_tags($title);
@@ -1476,7 +1478,7 @@ $carouselCount = 0;
 
 				<div class="col-6 w-100 mb-5" style="z-index: 999;">
 					<div class="card text-white">
-						<img class="card-img" src="'.$src.'" alt="..." />
+						<img class="card-img" src="'.$image.'" alt="..." />
 						<div class="card-img-overlay d-flex flex-column justify-content-center px-5 px-md-3 px-lg-5 bg-dark-gradient">
 							<div class="" style="margin-top: 30%;">
 								<p class="text-white">
