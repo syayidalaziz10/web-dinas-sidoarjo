@@ -23,48 +23,21 @@
 </section>
 
 
-<header id="header" class="fixed-top d-flex align-items-center">
-
-   <div class="container d-flex align-items-center">
 
 
 
-      <div class="logo me-auto">
-
-         <div class="d-flex justify-content-start align-items-center gap-3">
-
-            <img src="images/profile/<?= $profileData[0]['prof_lg']?>" class="logo">
-			<?=$rLink?>
-            <small class="title-short text-uppercase">
-
-                        <?= $profileData[0]['prof_snm']?>
-
-                     </small>
-
-                     <small class="title-long text-uppercase">
-
-                        <?= $profileData[0]['prof_lnm']?>
-
-                        <br>
-
-                        Kabupaten Sidoarjo
-
-            </small>
-
+<nav class="navbar navbar-expand-lg sticky-top d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+   <div class="container">
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+         <div class="hamburger-toggle">
+            <div class="hamburger">
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
          </div>
-
-         <!-- Uncomment below if you prefer to use an image logo -->
-
-         <!-- <a href="index.html"><img src="images/profile/sidoarjo.png" alt="" class="img-fluid"></a> -->
-
-      </div>
-
-
-
-
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-content">
          <ul>
 
             <li><a class="nav-link scrollto" href="/">Beranda</a></li>
@@ -132,13 +105,13 @@
 
 
                   else{
-					//$couURI = strlen($_SERVER['REQUEST_URI']);
-					if(strlen($_SERVER['REQUEST_URI']) > 12){
-						$rLink = '../';
-					} else {
-						$rLink = '';
-					}
-					  
+               //$couURI = strlen($_SERVER['REQUEST_URI']);
+               if(strlen($_SERVER['REQUEST_URI']) > 12){
+                  $rLink = '../';
+               } else {
+                  $rLink = '';
+               }
+               
                      echo '<li><a class="nav-link scrollto active" target="'.$menu['mn_tar'].'" href="'.$rLink.$menu['mn_url'].'">'.$menu['mn_txt'].'</a></li>';
 
                   }
@@ -148,19 +121,9 @@
             ?>
 
          </ul>
-
-         <i class="fa-solid fa-bars mobile-nav-toggle"></i>
-
-      </nav><!-- .navbar -->  
-
-
-
-
-
+      </div>
    </div>
-
-</header>
-
+</nav> 
 
 
 
