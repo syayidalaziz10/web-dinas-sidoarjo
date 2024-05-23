@@ -1357,7 +1357,7 @@ $carouselCount = 0;
 				$desk			= $row[1];
 				$lhkpn		= $row[2];
 				$jabatan 	= $row[3];
-				$image		= 'images/employees/'.$row[4];
+				$image		= '../images/employees/'.$row[4];
 				
 				
 
@@ -1448,15 +1448,15 @@ $carouselCount = 0;
 				$date 	= $row[3];
 				$count 	= $row[4];
 
-				$dir_image = 'images/post/'.$row[5];
+				$dir_image = '../images/post/'.$row[5];
 
 				// VARIABEL NEED OPERATION
 
 
 				if (!empty($row['post_img'] && file_exists($dir_image) )) {
-					$src = 'images/post/'.$row[5];
+					$src = '../images/post/'.$row[5];
 				} else {
-					$src = 'images/post/default.png';
+					$src = '../images/post/default.png';
 				}
 
 				
@@ -1556,7 +1556,7 @@ $carouselCount = 0;
 				// GET DATA GALERY
 
 				$id 	= $row[0];
-				$image = 'images/banners/'.$row[1];
+				$image = '../images/banners/'.$row[1];
 
 				$view = 
 				
@@ -1573,15 +1573,15 @@ $carouselCount = 0;
 				// GET DATA ANNOUNCEMENT
 
 				$id			= $row[0];
-				$dir_image = 'images/post/'.$row[1];
+				$dir_image = '../images/post/'.$row[1];
 
 				// VARIABEL NEED OPERATION
 
 
 				if (!empty($row[1] && file_exists($dir_image) )) {
-					$src = 'images/post/'.$row[1];
+					$src = '../images/post/'.$row[1];
 				} else {
-					$src = 'images/post/default.png';
+					$src = '../images/post/default.png';
 				}
 
 				$view = 
@@ -1590,7 +1590,7 @@ $carouselCount = 0;
 
 				<div class="announcement-item w-100">				
 					<a href="003/'.$id.'">
-						<img src="images/post/default.png" class="img-fluid w-100 rounded-2">
+						<img src="'.$src.'" class="img-fluid w-100 rounded-2">
 					</a>
 				</div>
 				
@@ -1607,16 +1607,6 @@ $carouselCount = 0;
 				$desk 		= $row[2];
 				$startDate 	= $row[3];
 				$endDate 	= $row[4];
-				$image 		= 'images/post/'.$row[5];
-
-
-				$dir_image = 'images/post/'.$row[5];
-
-				if (!empty($row['post_img'] && file_exists($dir_image) )) {
-					$src = 'images/post/'.$row[5];
-				} else {
-					$src = 'images/post/default.png';
-				}
 
 				$deskToStr = strip_tags($desk);
 
@@ -1683,9 +1673,9 @@ $carouselCount = 0;
 					$url 		= $row[1];
 
 					if (!empty($row[2])) {
-						$src = './images/socials/'.$row[2];
+						$src = '../images/socials/'.$row[2];
 					} else {
-						$src = './images/tautan/default.png'; // Ganti dengan path gambar default Anda
+						$src = '../images/tautan/default.png'; // Ganti dengan path gambar default Anda
 					}
 	
 					$view = 
@@ -1766,25 +1756,6 @@ $carouselCount = 0;
 							</div>
 						</div>
 		
-						';
-
-						break;
-
-					case 15:
-
-						// GET DATA ANNOUNCEMENT NAV
-		
-						$id			= $row[0];
-						$title 		= $row[1];
-	
-		
-						$view = 
-						
-						'
-						<span>ðŸ‘‰</span>
-						<div class="text-container">
-							<a href="003/'.$id.'" title="'.$title.'">'.$title.'</a>
-						</div>
 						';
 
 						break;
