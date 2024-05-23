@@ -104,7 +104,7 @@
   <section class="skrollable u-align-center u-clearfix u-shading u-video u-video-cover u-section-1" id="carousel_d7ac">
     <?=requestRecTemplate4('ban_title, ban_img', 'pub_banner', 'ban_stat=003 AND _active=1', '_cre_date DESC', 1, 1)?>
     <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
-      <div class="u-gutter-0 u-layout">
+      <div class="u-gutter-0 u-layout mt-lg-5 mt-0">
         <div class="u-layout-row">
           <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-32 u-layout-cell-1">
             <div class="u-container-layout u-container-layout-1">
