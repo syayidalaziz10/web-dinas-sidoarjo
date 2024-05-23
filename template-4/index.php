@@ -114,10 +114,10 @@
           <div class="u-container-style u-layout-cell u-size-28 u-layout-cell-2 text-content-banner mt-lg-5 mt-0">
             <div class="u-container-layout u-container-layout-2">
               <h1 class="u-align-left u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"><span style="font-weight: 700; font-style: italic;">
-                <?= $profileData['prof_lnm']?>
+                <?= $profileData[0]['prof_lnm']?>
               </span>&nbsp;<br>Kab. Sidoarjo
             </h1>
-            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi <?= $profileData['prof_lg']?> Kabupaten Sidoarjo</ul>
+            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi <?= $profileData[0]['prof_lg']?> Kabupaten Sidoarjo</ul>
             </div>
           </div>
         </div>
@@ -200,7 +200,7 @@
       </div>
       <em></em> <a href="001/" class="btn-style-1">Lainnya</a>
       <div class="row owl-carousel owl-news">
-        <?=requestRecTemplate4('post_id, post_judul, post_desk, post_publish, post_see, post_img', 'pub_post', 'ca_id=001 AND _active=1', 'post_publish DESC',6, 4)?>
+        <?=requestRecTemplate4('post_id, post_judul, post_desk, post_publish, post_see, post_img', 'pub_post', 'ca_id=001 AND _active=1', 'post_publish DESC',4, 4)?>
       </div>
     </div>
   </section>
