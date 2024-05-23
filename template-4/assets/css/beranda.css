@@ -211,7 +211,7 @@
     background-size, background-position;
 }
 .u-section-2 {
-  background-image: url("../../images/background.jpg");
+  background-image: url("../../../images/background.jpg");
 }
 
 .u-section-2 .u-sheet-1 {
@@ -289,7 +289,7 @@
 
 .u-section-2 .u-image-1 {
   min-height: 377px;
-  background-image: url("../../images/2672333.png");
+  background-image: url("../../../images/2672333.png");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -304,7 +304,7 @@
 
 .u-section-2 .u-image-2 {
   min-height: 377px;
-  background-image: url("../../images/152100-OUD8CB-783.png");
+  background-image: url("../../../images/152100-OUD8CB-783.png");
   background-position: 50% 50%;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -691,7 +691,7 @@
       rgba(71, 138, 201, 0.8),
       rgba(71, 138, 201, 0.8)
     ),
-    url("../../images/dftg.jpg");
+    url("../../../images/dftg.jpg");
 }
 
 .u-section-4 .u-container-layout-1 {
@@ -732,7 +732,7 @@
       rgba(71, 138, 201, 0.8),
       rgba(71, 138, 201, 0.8)
     ),
-    url("../../images/cropped-view-professional-serious-finance-manager-holding-calculator-hands-checking-company-month-s-profits_176420-7931.jpg");
+    url("../../../images/cropped-view-professional-serious-finance-manager-holding-calculator-hands-checking-company-month-s-profits_176420-7931.jpg");
 }
 
 .u-section-4 .u-container-layout-2 {
@@ -774,7 +774,7 @@
       rgba(71, 138, 201, 0.8),
       rgba(71, 138, 201, 0.8)
     ),
-    url("../../images/derr-min.jpg");
+    url("../../../images/derr-min.jpg");
   background-position: 100% 50%;
 }
 
@@ -817,7 +817,7 @@
       rgba(71, 138, 201, 0.8),
       rgba(71, 138, 201, 0.8)
     ),
-    url("../../images/handshake-close-up-executives_1098-1384.jpg");
+    url("../../../images/handshake-close-up-executives_1098-1384.jpg");
 }
 
 .u-section-4 .u-container-layout-4 {
@@ -858,7 +858,7 @@
       rgba(71, 138, 201, 0.8),
       rgba(71, 138, 201, 0.8)
     ),
-    url("../../images/handshake-close-up-executives_1098-1384.jpg");
+    url("../../../images/handshake-close-up-executives_1098-1384.jpg");
 }
 
 .u-section-4 .u-container-layout-5 {
