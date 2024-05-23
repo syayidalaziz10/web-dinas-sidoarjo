@@ -4664,6 +4664,7 @@ Header Style
   font-size: 14px;
   font-weight: 400;
   color: #21262a;
+  text-decoration: none;
 }
 
 .navbar .dropdown ul a i {
