@@ -901,6 +901,414 @@ $carouselCount = 0;
 	return $rowLoad;
 }
 
+
+// template 3
+
+function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limit, $typeView){
+	$carouselCount = 0;
+	$videoCount = 1;
+	
+		$sql = "SELECT $loadField FROM $loadTbl";
+		if(!empty($loadWhere)) { $sql.=" WHERE $loadWhere"; }
+		if(!empty($loadOrder)){ $sql.=" ORDER BY $loadOrder"; }
+		if(!empty($limit)){ $sql.=" LIMIT $limit"; }
+	
+		$rowLoad = '';
+		$result = $GLOBALS['mysqli']->query($sql);
+		$rowNum = $result->num_rows;
+		
+		while ($row = $result->fetch_array()) {
+			$_val = $row[0];
+			$_disp = $row[1];
+			
+			switch($typeView){
+				
+				case 1:
+					// GET DATA BANNER
+					$image = 'images/banners/'.$row[1];
+	
+	
+					if (strlen($row[0])>3) {
+						$title = $row[0];
+						$line = '<span></span>';
+					} else {
+						$title = '';
+						$line = '';
+					}
+					
+					$view = 
+	
+					'
+					<div class="swiper-slide" style="">
+						<img src="'.$image.'.jpg" alt="Banner '.$title.'"  style="width: 100vw; height: 100vh; object-fit: cover; position: absolute; margin-top: -55vh; filter: brightness(60%);">
+					</div>
+					
+					';
+	
+					break;
+				
+	
+				case 2:
+	
+					// GET DATA LEAD
+	
+					$nama			= strtolower($row[0]);
+					$desk			= $row[1];
+					$lhkpn		= $row[2];
+					$jabatan 	= $row[3];
+					$image		= 'images/employees/'.$row[4];
+					
+					
+	
+					$_convertNama	= ucwords($nama, " ");
+					
+					$view =
+					
+					'
+					
+					<div class="swiper-slide">
+								<div class="testimonial-item">
+									<img src="'.$image.'" class="testimonial-img" alt="">
+									<h2>'.$_convertNama.'</h2>
+									<p>
+									<i class="bi bi-quote quote-icon-left"></i>
+									<span>"'.$desk.'"</span>
+									<i class="bi bi-quote quote-icon-right"></i>
+								  </p>
+									<a
+							class="mt-2 mb-3 btn btn-info text-white shadow" style="width:200px ; height:40px ; border-radius: 30px;"
+							href="files/'.$lhkpn.'" target="_blank"
+							data-aos="fade-up"
+							data-aos-delay="100" 
+						  >
+							<span class="text" style="padding:20px ;">LHKPN</span>
+						  </a>
+								</div>
+							</div>
+	
+					
+					';
+			
+					break;
+	
+				case 3:
+	
+					// GET DATA SERVICES
+	
+					$id 		= $row[0];
+					$nama 	= $row[1];
+					$desk 	= strip_tags($row[2]);
+					$dir_image = 'images/post/'.$row[3];
+	
+					// VARIABEL NEED OPERATION
+	
+	
+					if (!empty($row['post_img'] && file_exists($dir_image) )) {
+						$src = 'images/post/'.$row[3];
+					} else {
+						$src = 'images/post/default-services.png';
+					}
+	
+	
+					$deskToFirst = ucfirst($desk);
+	
+	
+					// if(!empty($row[3])){
+					// 	$image = 'images/services/'.$row[3];
+	
+					// } else {
+					// 	$image = 'images/sidoarjo.png';
+					// }
+					
+					$view = 
+					'
+					<div class="col-xl-3 col-md-6 d-flex " data-aos="fade-up" data-aos-delay="100"  >
+							<div class="service-item position-relative rounded">
+								<div class="icon"><img src="'.$src.'" style="width:80px ; height:80px ;"></img></div>
+								<h4><a href="005/'.$id.'" class="stretched-link">'.$nama.'</a></h4>
+								<p>'.substr($deskToFirst, 0, 100).'</p>
+							</div>
+						</div>
+					';
+				
+					break;
+	
+				case 4:
+	
+					// GET DATA NEWS
+	
+					$id 		= $row[0];
+					$title 	= $row[1];
+					$desk 	= $row[2];
+					$date 	= $row[3];
+					$count 	= $row[4];
+	
+					$dir_image = 'images/post/'.$row[5];
+	
+					// VARIABEL NEED OPERATION
+	
+	
+					if (!empty($row['post_img'] && file_exists($dir_image) )) {
+						$src = 'images/post/'.$row[5];
+					} else {
+						$src = 'images/post/default.png';
+					}
+	
+					$dateString 	= DateTime::createFromFormat('Y-m-d', $date);
+					$dayEng	= $dateString->format('l');
+	
+	
+					$listDayIn = array(
+						'Sunday' => 'Minggu',
+						'Monday' => 'Senin',
+						'Tuesday' => 'Selasa',
+						'Wednesday' => 'Rabu',
+						'Thursday' => 'Kamis',
+						'Friday' => 'Jumat',
+						'Saturday' => 'Sabtu'
+					);
+					
+	
+					$dayIn = $listDayIn[$dayEng];
+					$_convertDate = $dayIn . ', ' . $dateString->format('d F Y');
+	
+					$deskToStr = strip_tags($desk);
+					
+					$view 	= 
+					
+					'
+					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+							<div class="team-member d-flex align-items-start">
+								<div class="pic"><img src="'.$src.'" class="img-fluid" alt=""></div>
+								<div class="member-info">
+									<h4><a href="001/'.$id.'">'.$title.'</a></h4>
+									<p>'.substrwords($deskToStr, 100).'</p>
+								</div>
+							</div>
+						</div>
+						
+					
+					'
+					;
+					
+					
+					break;
+	
+	
+				case 5:
+	
+	
+					$_val2	= $row[2];
+					$_val3	= $row[3];
+					$_val4	= $row[4];
+					$_val5	= $row[5];
+					$_max = '100';
+					$_href	= '#view-'.$loadTbl.'-'.$_val.'-'.$_disp;
+					
+					$view = '<div class="col-md-4">
+								<div class="card card-blog">
+									<div class="card-image">
+										<a href="#"> <img class="img" src="/upload/'.$_val.$_val4.'"> </a>
+										<div class="ripple-cont"></div>
+									</div>
+									<div class="table">
+										<h4 class="card-caption">
+											<a href="'.$_href.'">'.$_disp.'</a>
+										</h4>
+										<p class="card-description">'.substrwords($_val2, $_max).'...</p>
+										<div class="ftr">
+											<div class="author">
+												<i class="fa fa-calendar" aria-hidden="true"></i> '.$_val3.'
+											</div>
+											<div class="stats"> 
+												<i class="fa fa-eye"></i> '.$_val5.'
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>';
+					break;
+	
+				case 6:
+	
+					// GET DATA VIDEO
+	
+					$id = $row[0];
+					$url = $row[1];
+					$queryString = parse_url($url, PHP_URL_QUERY);
+					parse_str($queryString, $params);
+					$videoId = $params['v'];
+	
+					
+					$view = 
+					
+					'
+					<div id="video-'.$videoCount++.'" data-video-id="'.$videoId.'" class="carousel-item swiper-slide">
+						<iframe class="embed-responsive-item rounded" src="https://www.youtube.com/embed/'.$videoId.'" frameborder="0" rel="0" allowfullscreen style="width: 100%; height: 100%;"></iframe>
+					</div>
+					
+					
+					';
+					
+					break;
+	
+				case 7:
+	
+					// GET DATA GALERY
+	
+					$title = $row[0];
+					$desk = $row[1];
+					$image = 'images/banners/'.$row[2];
+	
+					$view = 
+					
+					'
+					<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+								<img src="'.$image.'" class="img-fluid" alt="">
+								<div class="portfolio-info">
+									<h4>'.$title.'</h4>
+									<p>'.$desk.'</p>
+									<a href="'.$image.'" title="'.$title.'"
+										data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+											class="bi bi-zoom-in"></i></a>
+								</div>
+							</div>
+	
+					';
+					
+					break;
+	
+				case 8:
+	
+					// GET DATA ANNOUNCEMENT
+	
+					$id			= $row[0];
+					$title 		= strtolower($row[1]);
+					$desk 		= $row[2];
+	
+					$_convert 	= ucwords($title, " ");
+	
+					$view = 
+					
+					'
+	
+					<div class="announcement-item">
+						<div class="announcement-contents">
+							<a href="003/'.$id.'"><h3>'.$_convert.'</h3></a>
+							<p>'.$desk.'</p>
+						</div>
+					</div>
+	
+					';
+					
+					break;
+	
+				case 9:
+	
+					// GET DATA EVENT
+	
+					$id 			= $row[0];
+					$title 		= $row[1];
+					$desk 		= $row[2];
+					$startDate 	= $row[3];
+					$endDate 	= $row[4];
+					$image 		= 'images/post/'.$row[5];
+	
+	
+					$dir_image = 'images/post/'.$row[5];
+	
+					if (!empty($row['post_img'] && file_exists($dir_image) )) {
+						$src = 'images/post/'.$row[5];
+					} else {
+						$src = 'images/post/default.png';
+					}
+	
+					$deskToStr = strip_tags($desk);
+	
+					if (strlen($deskToStr) > 200) {
+						$deskTruncate = substrwords($deskToStr, 200);
+					} else {
+						$deskTruncate = $deskToStr;
+					}
+					
+					$view 	= 
+					
+					'
+	
+					<div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
+					<i class="faq-icon bi bi-question-circle"></i>
+					<h3>'.$title.'</h3>
+					<div class="faq-content">
+						</span>'.dateToDMY($startDate).' -</span>
+						</span>'.dateToDMY($endDate).'</span>
+						<p>'.$deskTruncate.'</p>
+					</div>
+					<i class="faq-toggle bi bi-chevron-right"></i>
+				</div>
+				
+					
+					'
+					;
+					
+					
+					break;
+	
+					case 10:
+	
+						// GET DATA SOCIAL
+		
+						$title 	= strtolower($row[0]);
+						$url 	= $row[1];
+		
+						$view = 
+						
+						'
+						<li class="d-block mb-2"><a href="'.$url.'" target="_blank"><i class="bi bi-'.$title.'"></i></a></li>
+						
+						';
+						
+						break;
+	
+					case 11:
+	
+						// GET DATA LINK TERKAIT
+		
+						$title 	= strtolower($row[0]);
+						$url 		= $row[1];
+	
+						if (!empty($row[2])) {
+							$src = './images/socials/'.$row[2];
+						} else {
+							$src = './images/tautan/default.png'; // Ganti dengan path gambar default Anda
+						}
+		
+						$view = 
+						
+						'
+						
+						<div class="swiper-slide"><img width="100px" src="'.$src.'" class="img-fluid" alt="Gambar '.$title.'">
+						</div>
+						
+		
+		
+						';
+						
+						break;
+					
+	
+			
+				}
+			
+			$rowLoad .= $view;
+		}
+		
+		return $rowLoad;
+	}
+	
+	
+
+// end template 3
+
 function requestRecTemplate4($loadField, $loadTbl, $loadWhere, $loadOrder, $limit, $typeView){
 $carouselCount = 0;
 
