@@ -104,20 +104,20 @@
   <section class="skrollable u-align-center u-clearfix u-shading u-video u-video-cover u-section-1" id="carousel_d7ac">
     <?=requestRecTemplate4('ban_title, ban_img', 'pub_banner', 'ban_stat=003 AND _active=1', '_cre_date DESC', 1, 1)?>
     <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
-      <div class="u-gutter-0 u-layout mt-lg-5 mt-0">
-        <div class="u-layout-row">
-          <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-32 u-layout-cell-1">
+      <div class="u-gutter-0 u-layout">
+        <div class="u-layout-row py-lg-5 py-0">
+          <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-32 u-layout-cell-1 mt-lg-5 mt-0">
             <div class="u-container-layout u-container-layout-1">
               <img class="u-align-center u-image u-image-default u-image-1" src="images/logodiskominfoout.png" alt="" data-image-width="581" data-image-height="508" data-animation-name="customAnimationIn" data-animation-duration="1000">
             </div>
           </div>
-          <div class="u-container-style u-layout-cell u-size-28 u-layout-cell-2 text-content-banner">
+          <div class="u-container-style u-layout-cell u-size-28 u-layout-cell-2 text-content-banner mt-lg-5 mt-0">
             <div class="u-container-layout u-container-layout-2">
-              <h1 class="u-align-left u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">Dinas&nbsp;<span style="font-weight: 700; font-style: italic;">
-                <br>Komunikasi &amp; Informatika
+              <h1 class="u-align-left u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"><span style="font-weight: 700; font-style: italic;">
+                <?= $profileData['prof_lnm']?>
               </span>&nbsp;<br>Kab. Sidoarjo
             </h1>
-            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi Diskominfo Kabupaten Sidoarjo</ul>
+            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi <?= $profileData['prof_lg']?> Kabupaten Sidoarjo</ul>
             </div>
           </div>
         </div>
