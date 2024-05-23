@@ -4709,7 +4709,7 @@ Header Style
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #fff;
+  color: #000;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -4718,7 +4718,7 @@ Header Style
 }
 
 .mobile-nav-toggle.bi-x {
-  color: #fff;
+  color: #000;
 }
 
 @media (max-width: 991px) {
