@@ -69,7 +69,7 @@
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
   <script language="JavaScript">
-    var txt="<?=$option[1]->value?> Kabupaten Sidoarjo - <?=$option[2]->value?> ";
+    var txt="<?=$profileData[0]['prof_lnm']?> Kabupaten Sidoarjo ";
     var kecepatan=100;
     var segarkan=null;
 
@@ -132,7 +132,7 @@
   <section class="skrollable u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-image u-parallax u-section-2" id="carousel_6077" data-image-width="1497" data-image-height="1000">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h1 class="u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0" style="font-size: 1.5rem;">
-        <span style="font-weight: 700;">Layanan</span> <?= $profileData[0]['prof_snm']?> apa aja ya?
+        <span style="font-weight: 700;">Layanan</span> <?= $profileData[0]['prof_lnm']?> apa aja ya?
       </h1>
       <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-14 u-layout-wrap u-layout-wrap-1">
         <div class="u-gutter-0 u-layout">
@@ -265,7 +265,7 @@
     <div class="u-clearfix u-sheet u-sheet-1">
       <a href="?page=agenda&p=1">
         <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> 
-          <span style="font-weight: 700; font-size: 1.5rem">Agenda</span> <?= $profileData[0]['prof_snm']?>
+          <span style="font-weight: 700; font-size: 1.5rem">Agenda</span> <?= $profileData[0]['prof_lnm']?>
         </h2>
       </a>
       <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem;">Agenda kegiatan dalam <?= $profileData[0]['prof_lnm']?></p>
