@@ -23,14 +23,12 @@ $url_root = ($current_page === '') ? '' : '../';
                         Kabupaten Sidoarjo
             </small>
          </div>
-         <!-- Uncomment below if you prefer to use an image logo -->
-         <!-- <a href="index.html"><img src="images/profile/sidoarjo.png" alt="" class="img-fluid"></a> -->
       </div>
 
 
       <nav id="navbar" class="navbar order-last order-lg-0">
          <ul>
-            <li><a class="nav-link scrollto" href="/">Beranda</a></li>
+            <li><a class="nav-link" href="/">Beranda</a></li>
             <?php
                $result = $mysqli->query('SELECT * from set_menu WHERE _active=1');
                $rows = $result->fetch_all(MYSQLI_ASSOC);
@@ -63,13 +61,14 @@ $url_root = ($current_page === '') ? '' : '../';
                   }
 
                   else{
-                     echo '<li><a class="nav-link scrollto active" target="'.$menu['mn_tar'].'" href="'.$menu['mn_url'].'">'.$menu['mn_txt'].'</a></li>';
+                     echo '<li><a class="nav-link" target="'.$menu['mn_tar'].'" href="'.$menu['mn_url'].'">'.$menu['mn_txt'].'</a></li>';
                   }
                }
             ?>
          </ul>
          <i class="fa-solid fa-bars mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
+      <!-- .navbar -->
 
 
    </div>
