@@ -1562,7 +1562,16 @@ $carouselCount = 0;
 				// GET DATA GALERY
 
 				$id 	= $row[0];
-				$image = '../images/banners/'.$row[1];
+				$dir_image	= $_dirGalery . $row[1];
+
+
+				// VARIBEL NEED A OPERATION
+
+				if (!empty($row[1]) && file_exists($dir_image)) {
+					$image = $dir_image;
+				} else {
+					$image = $_dirPost . 'default-template-2.png';
+				}
 
 				$view = 
 				
@@ -1579,16 +1588,17 @@ $carouselCount = 0;
 				// GET DATA ANNOUNCEMENT
 
 				$id			= $row[0];
-				$dir_image = '../images/post/'.$row[1];
-
-				// VARIABEL NEED OPERATION
+				$dir_image	= $_dirPost . $row[1];
 
 
-				if (!empty($row[1] && file_exists($dir_image) )) {
-					$src = '../images/post/'.$row[1];
+				// VARIBEL NEED A OPERATION
+
+				if (!empty($row[1]) && file_exists($dir_image)) {
+					$image = $dir_image;
 				} else {
-					$src = '../images/post/default.png';
+					$image = $_dirPost . 'default-template-2.png';
 				}
+
 
 				$view = 
 				
@@ -1596,7 +1606,7 @@ $carouselCount = 0;
 
 				<div class="announcement-item w-100">				
 					<a href="003/'.$id.'">
-						<img src="'.$src.'" class="img-fluid w-100 rounded-2">
+						<img src="'.$image.'" class="img-fluid w-100 rounded-2">
 					</a>
 				</div>
 				
