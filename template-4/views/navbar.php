@@ -9,8 +9,7 @@ $url_root = ($current_page === '') ? '' : '../';
 
 
 <header id="header" class="fixed-top d-flex align-items-center shadow">
-   <div class="container-fluid d-flex align-items-center px-lg-5">
-
+   <div class="container-fluid d-flex align-items-center">
       <div class="logo me-auto">
          <div class="d-flex justify-content-start align-items-center gap-3">
             <img src="images/profile/<?= $profileData[0]['prof_lg']?>" class="logo">
@@ -24,7 +23,6 @@ $url_root = ($current_page === '') ? '' : '../';
             </small>
          </div>
       </div>
-
 
       <nav id="navbar" class="navbar order-last order-lg-0">
          <ul>
@@ -69,7 +67,5 @@ $url_root = ($current_page === '') ? '' : '../';
          <i class="fa-solid fa-bars mobile-nav-toggle"></i>
       </nav>
       <!-- .navbar -->
-
-
    </div>
 </header>
