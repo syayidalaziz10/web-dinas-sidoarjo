@@ -1023,7 +1023,7 @@ function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limi
 					$view = 
 					'
 					<div class="col-xl-3 col-md-6 d-flex " data-aos="fade-up" data-aos-delay="100"  >
-							<div class="service-item position-relative rounded">
+							<div class="service-item position-relative rounded" style="width:400px ; height:400px ;">
 								<div class="icon"><img src="'.$src.'" style="width:80px ; height:80px ;"></img></div>
 								<h4><a href="005/'.$id.'" class="stretched-link">'.$nama.'</a></h4>
 								<p>'.substr($deskToFirst, 0, 100).'</p>
