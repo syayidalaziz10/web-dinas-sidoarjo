@@ -1487,7 +1487,7 @@ $carouselCount = 0;
 								<i class="fa-regular fa-calendar"></i> <span style="margin: 0 10px;">'.dateToDMY($date).'</span>
 								<i class="fa-solid fa-eye"></i> <span style="margin-left: 10px;">25</span>
 								</p>
-								<a href="001/'.$id.'" class="text-decoration-none"><h6 class="fw-bold text-white fs-3 fs-md-4 fs-lg-3 lh-sm">'.$title.'</h6></a>
+								<a href="001/'.$id.'" class="text-decoration-none"><h6 class="fw-bold text-white fs-3 fs-md-5 fs-lg-3 lh-sm">'.$title.'</h6></a>
 							</div>
 						</div>
 					</div>
@@ -1604,9 +1604,9 @@ $carouselCount = 0;
 				
 				'
 
-				<div class="announcement-item w-100">				
+				<div class="announcement-item">				
 					<a href="003/'.$id.'">
-						<img src="'.$image.'" class="img-fluid w-100 rounded-2">
+						<img src="'.$image.'" class="img-fluid rounded-2">
 					</a>
 				</div>
 				
