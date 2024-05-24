@@ -10,7 +10,6 @@ $siteUrl = ($current_page === '') ? '' : '../';
 <footer class="site-footer">
    <div class="container-fluid footer-content">
       <div class="row">
-         
          <div class="col-lg-4">
             <div class="widget">
                <h3><?= $profileData[0]['prof_lnm']?><span class="text-primary">.</span> </h3>
@@ -74,6 +73,5 @@ $siteUrl = ($current_page === '') ? '' : '../';
             <p class="text-white copyright">Copyright &copy;2024. All Rights Reserved. &mdash; Dikelola oleh <a class="text-white" href="https://diskominfo.sidoarjokab.go.id/">Dinas Komunikasi dan Informatika Kabupaten Sidoarjo</a>
          </div>
       </div>
-
    </div>
 </footer>

@@ -4838,12 +4838,12 @@ Footer Style
 */
 
 .site-footer {
-  background-image: url(../../../images/wave-footer.svg);
+  background-image: url(../../../images/wave-footer.png);
   object-fit: cover;
   background-repeat: no-repeat;
   background-position: bottom;
   padding: 70px 0;
-  color: #000;
+  color: #fff;
   margin-top: 200px;
 }
 
@@ -4865,7 +4865,7 @@ Footer Style
 }
 
 .site-footer a:hover {
-  color: #000;
+  color: #fff;
 }
 
 .site-footer .widget {
@@ -4880,55 +4880,15 @@ Footer Style
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #000;
-}
-
-.site-footer .widget .links {
-  width: 150px;
-}
-
-.site-footer .widget .links li {
-  margin-bottom: 10px;
-}
-
-.site-footer .social li {
-  display: inline-block;
-}
-
-.site-footer .social li a {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  background: #fff;
-  border-radius: 4px;
-  color: #131f40;
-}
-
-.site-footer .social li a:before {
-  display: none;
-}
-
-.site-footer .social li a > span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.site-footer .social li a:hover {
-  background: #fff;
-  color: #131f40;
+  color: #fff;
 }
 
 .site-footer .widget .contact p {
   font-size: 16px;
-  color: #000;
+  color: #fff;
   font-family: "Poppins", "Roboto", Arial, sans-serif;
 }
 
 .site-footer .widget .contact p i {
-  color: #000;
+  color: #fff;
 }
