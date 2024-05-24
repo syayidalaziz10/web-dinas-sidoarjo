@@ -4588,8 +4588,12 @@ Header Style
   max-height: 40px;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 991px) {
   #header {
+    padding: 0 200px;
+  }
+
+  footer {
     padding: 0 200px;
   }
 }
