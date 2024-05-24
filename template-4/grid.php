@@ -1,8 +1,8 @@
 <?php 
 
 
-require('conf/config.php');
-require('conf/phpFunction.php');
+require('../conf/config.php');
+require('../conf/phpFunction.php');
 
 $queryProfile    = $mysqli->query('SELECT * FROM pub_profile');
 $profileData     = $queryProfile->fetch_all(MYSQLI_ASSOC);
@@ -124,19 +124,13 @@ $category     = $getCategory->fetch_assoc();
                   $date 	    = $row['post_publish'];
                   $count 	    = $row['post_see'];
 
-                  $dir_image  = 'images/post/'.$row['post_img'];
-
-
-                  // VARIABEL NEED OPERATION
-
-
-
-                  // DEFAULT IMAGE
-
-                  if (!empty($row['post_img'] && file_exists($dir_image) )) {
-                     $src = '../images/post/'.$row['post_img'];
+                  $dir_image   = '../'.$_dirPost.$row['post_img'];
+				
+				
+                  if ((!empty($row['post_img'])) && file_exists($dir_image)){
+                     $image = $dir_image;
                   } else {
-                     $src = '../images/post/default.png';
+                     $image = '../'.$_dirPost . 'default-template-2.png';
                   }
 
                   // CUT DESCRIPTION WHERE MAX LEGHT > 100
@@ -152,7 +146,7 @@ $category     = $getCategory->fetch_assoc();
                   <div class="col-lg-4 col-md-6 mb-5">
                      <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                           <img class="img-fluid w-100" src="<?= $src?>" alt="">
+                           <img class="img-fluid w-100" src="<?= $image?>" alt="">
                         </div>
                         <div class="p-4" style="background-color: #f6f4f9;">
                         <div class="d-flex justify-content-start align-items-start gap-3">

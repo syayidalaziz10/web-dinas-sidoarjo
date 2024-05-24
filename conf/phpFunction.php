@@ -188,7 +188,7 @@ $carouselCount = 0;
 				if ((!empty($row[5])) && file_exists($dir_image)){
 					$image = $_dirPost . $row[5];
 				} else {
-				    $image = $_dirPost . 'default.png';
+				   $image = $_dirPost . 'default.png';
 				}
 
 				$dateString 	= DateTime::createFromFormat('Y-m-d', $date);
@@ -594,22 +594,24 @@ $carouselCount = 0;
 
 				// GET DATA NEWS
 
-				$id 		= $row[0];
-				$title 	= $row[1];
-				$desk 	= $row[2];
-				$date 	= $row[3];
-				$count 	= $row[4];
+				$id 			= $row[0];
+				$title 		= $row[1];
+				$desk 		= $row[2];
+				$date 		= $row[3];
+				$count 		= $row[4];
+				$dir_image =  $_dirPost . $row[5];
+
 
 
 				// VARIABEL NEED OPERATION
-
-
-				if(!empty($row[5])){
-					$image = $_dirPost . $row[5];
-				} else {
-				    $image = $_dirPost . 'default.png';
-				}
 				$deskToStr = strip_tags($desk);
+
+				if (!empty($row[5]) && file_exists($dir_image)) {
+					$image = $dir_image;
+				} else {
+						$image = $_dirPost . 'default-template-2.png';
+				}
+
 				
 				$view 	= 
 				
@@ -1312,6 +1314,8 @@ function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limi
 function requestRecTemplate4($loadField, $loadTbl, $loadWhere, $loadOrder, $limit, $typeView){
 $carouselCount = 0;
 
+	require('config.php');
+
 	$sql = "SELECT $loadField FROM $loadTbl";
 	if(!empty($loadWhere)) { $sql.=" WHERE $loadWhere"; }
 	if(!empty($loadOrder)){ $sql.=" ORDER BY $loadOrder"; }
@@ -1340,7 +1344,7 @@ $carouselCount = 0;
 
 				<div class="u-background-video u-expanded" style="filter: brightness(0.45);">
 					<div class="embed-responsive embed-responsive-1">
-						<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" class="embed-responsive-item" src="'.$image.'&amp;loop=1&amp;mute=1&amp;showinfo=0&amp;controls=0&amp;start=0&amp;autoplay=1" data-autoplay="0" frameborder="0" allowfullscreen=""></iframe>
+						<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" class="embed-responsive-item" src="'.$image.'&amp;loop=1&amp;mute=1&amp;showinfo=0&amp;controls=0&amp;start=0&amp;autoplay=0" data-autoplay="0" frameborder="0" allowfullscreen=""></iframe>
 					</div>
 					<div class="u-video-shading"></div>
 				</div>
@@ -1357,7 +1361,7 @@ $carouselCount = 0;
 				$desk			= $row[1];
 				$lhkpn		= $row[2];
 				$jabatan 	= $row[3];
-				$image		= 'images/employees/'.$row[4];
+				$image		= '../images/employees/'.$row[4];
 				
 				
 
@@ -1448,16 +1452,18 @@ $carouselCount = 0;
 				$date 	= $row[3];
 				$count 	= $row[4];
 
-				$dir_image = 'images/post/'.$row[5];
+				$dir_image =  $_dirPost . $row[5];
+
+
 
 				// VARIABEL NEED OPERATION
 
-
-				if (!empty($row['post_img'] && file_exists($dir_image) )) {
-					$src = 'images/post/'.$row[5];
+				if (!empty($row[5]) && file_exists($dir_image)) {
+					$image = $dir_image;
 				} else {
-					$src = 'images/post/default.png';
+					$image = $_dirPost . 'default-template-2.png';
 				}
+
 
 				
 				$title = strip_tags($title);
@@ -1474,14 +1480,14 @@ $carouselCount = 0;
 
 				<div class="col-6 w-100 mb-5" style="z-index: 999;">
 					<div class="card text-white">
-						<img class="card-img" src="'.$src.'" alt="..." />
+						<img class="card-img" src="'.$image.'" alt="..." />
 						<div class="card-img-overlay d-flex flex-column justify-content-center px-5 px-md-3 px-lg-5 bg-dark-gradient">
 							<div class="" style="margin-top: 30%;">
 								<p class="text-white">
 								<i class="fa-regular fa-calendar"></i> <span style="margin: 0 10px;">'.dateToDMY($date).'</span>
 								<i class="fa-solid fa-eye"></i> <span style="margin-left: 10px;">25</span>
 								</p>
-								<a href="001/'.$id.'" class="text-decoration-none"><h6 class="fw-bold text-white fs-3 fs-md-2 fs-lg-3 lh-sm">'.$title.'</h6></a>
+								<a href="001/'.$id.'" class="text-decoration-none"><h6 class="fw-bold text-white fs-3 fs-md-5 fs-lg-3 lh-sm">'.$title.'</h6></a>
 							</div>
 						</div>
 					</div>
@@ -1556,7 +1562,16 @@ $carouselCount = 0;
 				// GET DATA GALERY
 
 				$id 	= $row[0];
-				$image = 'images/banners/'.$row[1];
+				$dir_image	= $_dirGalery . $row[1];
+
+
+				// VARIBEL NEED A OPERATION
+
+				if (!empty($row[1]) && file_exists($dir_image)) {
+					$image = $dir_image;
+				} else {
+					$image = $_dirPost . 'default-template-2.png';
+				}
 
 				$view = 
 				
@@ -1573,24 +1588,25 @@ $carouselCount = 0;
 				// GET DATA ANNOUNCEMENT
 
 				$id			= $row[0];
-				$dir_image = 'images/post/'.$row[1];
-
-				// VARIABEL NEED OPERATION
+				$dir_image	= $_dirPost . $row[1];
 
 
-				if (!empty($row[1] && file_exists($dir_image) )) {
-					$src = 'images/post/'.$row[1];
+				// VARIBEL NEED A OPERATION
+
+				if (!empty($row[1]) && file_exists($dir_image)) {
+					$image = $dir_image;
 				} else {
-					$src = 'images/post/default.png';
+					$image = $_dirPost . 'default-template-2.png';
 				}
+
 
 				$view = 
 				
 				'
 
-				<div class="announcement-item w-100">				
+				<div class="announcement-item">				
 					<a href="003/'.$id.'">
-						<img src="images/post/default.png" class="img-fluid w-100 rounded-2">
+						<img src="'.$image.'" class="img-fluid rounded-2">
 					</a>
 				</div>
 				
@@ -1607,16 +1623,6 @@ $carouselCount = 0;
 				$desk 		= $row[2];
 				$startDate 	= $row[3];
 				$endDate 	= $row[4];
-				$image 		= 'images/post/'.$row[5];
-
-
-				$dir_image = 'images/post/'.$row[5];
-
-				if (!empty($row['post_img'] && file_exists($dir_image) )) {
-					$src = 'images/post/'.$row[5];
-				} else {
-					$src = 'images/post/default.png';
-				}
 
 				$deskToStr = strip_tags($desk);
 
@@ -1683,9 +1689,9 @@ $carouselCount = 0;
 					$url 		= $row[1];
 
 					if (!empty($row[2])) {
-						$src = './images/socials/'.$row[2];
+						$src = '../images/socials/'.$row[2];
 					} else {
-						$src = './images/tautan/default.png'; // Ganti dengan path gambar default Anda
+						$src = '../images/tautan/default.png'; // Ganti dengan path gambar default Anda
 					}
 	
 					$view = 
@@ -1760,31 +1766,12 @@ $carouselCount = 0;
 							<div class="u-background-effect u-expanded">
 								<div class="u-background-effect-image u-expanded u-image u-shading u-image-2" data-image-width="626" data-image-height="417"></div>
 								</div>
-								<div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-align-center u-file-icon u-icon u-opacity u-opacity-70 u-text-white u-icon-2"><img src="images/9743209-7758dc09.png" alt=""></span>
+								<div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-align-center u-file-icon u-icon u-opacity u-opacity-70 u-text-white u-icon-2"><img src="../images/9743209-7758dc09.png" alt=""></span>
 								<h4 class="u-align-center u-text u-text-5" style="line-height: 1.5rem; color: white;font-size : 1.5rem;">'.$nama.'</h4>
 								<p class="u-align-center u-text u-text-6" style="color: white;font-size : 1rem;"> Bidang Pengelolaan Informasi dan Komunikasi Publik</p>
 							</div>
 						</div>
 		
-						';
-
-						break;
-
-					case 15:
-
-						// GET DATA ANNOUNCEMENT NAV
-		
-						$id			= $row[0];
-						$title 		= $row[1];
-	
-		
-						$view = 
-						
-						'
-						<span>ðŸ‘‰</span>
-						<div class="text-container">
-							<a href="003/'.$id.'" title="'.$title.'">'.$title.'</a>
-						</div>
 						';
 
 						break;

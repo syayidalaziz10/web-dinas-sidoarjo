@@ -1,24 +1,15 @@
 <?php
 
 
-require('conf/config.php');
-require('conf/phpFunction.php');
+require('../conf/config.php');
+require('../conf/phpFunction.php');
 
 $queryProfile    = $mysqli->query('SELECT * FROM pub_profile');
 $profileData     = $queryProfile->fetch_all(MYSQLI_ASSOC);
 
 
-
-$url = $_SERVER['REQUEST_URI'];
-
-$getURL = explode('/', $url);
-$categoryURL = $getURL[count($getURL) - 2];
-
-
+$categoryURL  = $_GET['id'];
 $post_id  = $_GET['post_id'];
-
-
-$url_awal = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 
 
@@ -37,23 +28,20 @@ if (!$result) {
 postSee($post_id);
 
 
-$id 		  = $result['post_id'];
-$title  	= $result['post_judul'];
-$desk 	  = $result['post_desk'];
-$date 	  = $result['post_publish'];
+$id 		   = $result['post_id'];
+$title   	= $result['post_judul'];
+$desk 	   = $result['post_desk'];
+$date 	   = $result['post_publish'];
 $dateEnd 	= $result['post_datex'];
-$count 	  = $result['post_see'];
-$image 	  = $result['post_img'];
+$count 	   = $result['post_see'];
 
-$dir_image  = 'images/post/'.$result['post_img'];
-
-
-// VARIABEL NEED OPERATION
-
-if (!empty($image && file_exists($dir_image) )) {
-   $src = '../images/post/'.$image;
+$dir_image  = $_dirPost.$result['post_img'];
+				
+				
+if ((!empty($result['post_img'])) && file_exists($dir_image)){
+   $image = '../' . $_dirPost . $result['post_img'];
 } else {
-   $src = '../images/post/default.png';
+   $image = '../' . $_dirPost . 'default.png';
 }
 
 

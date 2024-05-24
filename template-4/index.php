@@ -69,7 +69,7 @@
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
   <script language="JavaScript">
-    var txt="<?=$option[1]->value?> Kabupaten Sidoarjo - <?=$option[2]->value?> ";
+    var txt="<?=$profileData[0]['prof_lnm']?>";
     var kecepatan=100;
     var segarkan=null;
 
@@ -105,19 +105,19 @@
     <?=requestRecTemplate4('ban_title, ban_img', 'pub_banner', 'ban_stat=003 AND _active=1', '_cre_date DESC', 1, 1)?>
     <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
       <div class="u-gutter-0 u-layout">
-        <div class="u-layout-row">
-          <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-32 u-layout-cell-1">
+        <div class="u-layout-row py-lg-5 py-0">
+          <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-32 u-layout-cell-1 mt-lg-5 mt-0">
             <div class="u-container-layout u-container-layout-1">
-              <img class="u-align-center u-image u-image-default u-image-1" src="images/logodiskominfoout.png" alt="" data-image-width="581" data-image-height="508" data-animation-name="customAnimationIn" data-animation-duration="1000">
+              <img class="u-align-center u-image u-image-default u-image-1" src="../images/logodiskominfoout.png" alt="" data-image-width="581" data-image-height="508" data-animation-name="customAnimationIn" data-animation-duration="1000">
             </div>
           </div>
-          <div class="u-container-style u-layout-cell u-size-28 u-layout-cell-2 text-content-banner">
+          <div class="u-container-style u-layout-cell u-size-28 u-layout-cell-2 text-content-banner mt-lg-5 mt-0">
             <div class="u-container-layout u-container-layout-2">
-              <h1 class="u-align-left u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">Dinas&nbsp;<span style="font-weight: 700; font-style: italic;">
-                <br>Komunikasi &amp; Informatika
-              </span>&nbsp;<br>Kab. Sidoarjo
+              <h1 class="u-align-left u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"><span style="font-weight: 700; font-style: italic;">
+                <?= $profileData[0]['prof_lnm']?>
+              </span>
             </h1>
-            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi Diskominfo Kabupaten Sidoarjo</ul>
+            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi <?= $profileData[0]['prof_lnm']?></ul>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@
   <section class="skrollable u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-image u-parallax u-section-2" id="carousel_6077" data-image-width="1497" data-image-height="1000">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h1 class="u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0" style="font-size: 1.5rem;">
-        <span style="font-weight: 700;">Layanan</span> Diskominfo apa aja ya?
+        <span style="font-weight: 700;">Layanan</span> <span style="font-weight: 400; color: color: #d33030;"> <?= $profileData[0]['prof_lnm']?> </span> apa aja ya?
       </h1>
       <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-14 u-layout-wrap u-layout-wrap-1">
         <div class="u-gutter-0 u-layout">
@@ -145,7 +145,7 @@
                     </h1>
                     <p class="u-text u-text-body-color u-text-default u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" data-toggle="modal" data-target="#myModal2" style="font-size : 1rem;">Berikut merupakan layanan - layanan dari Dinas Komunikasi dan Informatika Kab. Sidoarjo untuk masyarakat umum.</p>
                     <a href="#myModal2" class="u-active-palette-1-base u-align-left u-border-none u-btn u-btn-round u-button-style  u-hover-black u-palette-1-base u-radius u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="500" data-toggle="modal" data-target="#myModal2">lihat</a>
-                    <span class=" u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="750"><img src="images/33308-67bffd37.png" alt="" data-toggle="modal" data-target="#myModal2"></span>
+                    <span class=" u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="750"><img src="../images/33308-67bffd37.png" alt="" data-toggle="modal" data-target="#myModal2"></span>
                   </div>
                 </div>
                 <div class="u-align-center u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1042" data-image-height="1042" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
@@ -162,7 +162,7 @@
                   <div class="u-container-layout u-container-layout-4">
                     <h1 style="font-size: 1.5rem;" class="u-align-left u-text u-text-4" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">Layanan <span style="font-weight: 700;">Pemerintahan</span>
                     </h1>
-                    <p class="u-align-left u-text u-text-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem; color: black;"> Berikut merupakan layanan - layanan dari Dinas Komunikasi dan Informatika Kab. Sidoarjo untuk sesama instansi pemerintahan.</p><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="750" data-toggle="modal" data-target="#myModal1"><img src="images/2910791-89a00c96.png" alt=""></span>
+                    <p class="u-align-left u-text u-text-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem; color: black;"> Berikut merupakan layanan - layanan dari Dinas Komunikasi dan Informatika Kab. Sidoarjo untuk sesama instansi pemerintahan.</p><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="750" data-toggle="modal" data-target="#myModal1"><img src="../images/2910791-89a00c96.png" alt=""></span>
                     <div data-toggle="modal" data-target="#myModal1" class="u-active-palette-1-base u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-border-none u-btn u-btn-round u-button-style u-hover-black u-palette-1-base u-radius u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="1000">lihat</div>
                   </div>
                 </div>
@@ -179,7 +179,7 @@
   <!-- PPID -->
   <section class="u-align-center u-clearfix u-palette-1-base u-section-3" id="carousel_13aa">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <img class="u-image u-image-contain u-image-default u-image-1" src="images/28788633_02june22_megaphone_icon_02.png" alt="" data-image-width="1300" data-image-height="1454" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:false,&quot;mx&quot;:&quot;154&quot;,&quot;my&quot;:0,&quot;op&quot;:1,&quot;rot&quot;:&quot;0&quot;,&quot;sx&quot;:1.96,&quot;sy&quot;:1.96,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">
+      <img class="u-image u-image-contain u-image-default u-image-1" src="../images/28788633_02june22_megaphone_icon_02.png" alt="" data-image-width="1300" data-image-height="1454" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:false,&quot;mx&quot;:&quot;154&quot;,&quot;my&quot;:0,&quot;op&quot;:1,&quot;rot&quot;:&quot;0&quot;,&quot;sx&quot;:1.96,&quot;sy&quot;:1.96,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">
       <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500">
         <span style="font-weight: 700; font-size: 1.5rem; color: white;">PPID </span> <span style="color: white; font-size: 1.5rem;">Kabupaten Sidoarjo</span>
       </h2>
@@ -200,7 +200,7 @@
       </div>
       <em></em> <a href="001/" class="btn-style-1">Lainnya</a>
       <div class="row owl-carousel owl-news">
-        <?=requestRecTemplate4('post_id, post_judul, post_desk, post_publish, post_see, post_img', 'pub_post', 'ca_id=001 AND _active=1', 'post_publish DESC',6, 4)?>
+        <?=requestRecTemplate4('post_id, post_judul, post_desk, post_publish, post_see, post_img', 'pub_post', 'ca_id=001 AND _active=1', 'post_publish DESC',4, 4)?>
       </div>
     </div>
   </section>
@@ -211,9 +211,9 @@
   <!-- START BIDANG -->
   <section class="u-align-center u-clearfix u-section-4" id="carousel_486e">
     <div class="u-clearfix u-sheet u-sheet-1"">
-      <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>BIDANG <span style="font-weight: 400;">DISKOMINFO</span></i></b>
+      <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>BIDANG <span style="font-weight: 400;"> <?= $profileData[0]['prof_lnm']?> </span></i></b>
       </h2>
-      <p class="u-align-center u-text u-text-default u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="font-size : 1rem; text-align: center;">Keseluruhan Bidang yang ada pada Dinas Komunikasi dan Informatika Kab. Sidoarjo </p>
+      <p class="u-align-center u-text u-text-default u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="font-size : 1rem; text-align: center;">Keseluruhan Bidang yang ada pada <?= $profileData[0]['prof_lnm']?> </p>
       <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1 d-flex justify-content-center align-items-center flex-wrap">
           <?=requestRecTemplate4('jab_nm, stat', 'set_jabdept', 'stat=2 AND _active=1', '', '', 14)?>
@@ -249,10 +249,9 @@
       </div>
       <div class="u-align-left u-container-align-left u-container-style u-group u-radius-20 u-shape-round u-white u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="box-shadow: 0px 13px 40px 6px rgba(128,128,128,0.8);">
         <div class="u-container-layout u-valign-middle u-container-layout-1">
-          <h3 style="font-size: 1rem;" class="u-align-left u-text u-text-1"> Keluarga Besar Diskominfo<br>
-            <span style="font-weight: 400;">Kab. Sidoarjo</span>
+          <h3 style="font-size: 1.5rem;" class="u-align-left u-text u-text-1"> Galeri Kegiatan<br>
           </h3>
-          <p class="u-align-left u-text u-text-default u-text-2"> Dinas Komunikasi dan Informatika Kabupaten Sidoarjo awal dibangun pada tahun 2017 sampai saat ini dengan solidaritas yang sangat kuat antar sesama pegawai baik ASN maupun NON ASN yang akan membuat Sidoarjo lebih&nbsp;<b><i>Hebat dan Milenial.</i></b>
+          <p class="u-align-left u-text u-text-default u-text-2" style="font-size: 1rem;">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
           </p>
         </div>
     </div>
@@ -263,12 +262,8 @@
   <!-- AGENDA -->
   <section class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-container-align-center-sm u-container-align-center-xs u-section-7" id="carousel_1fa5">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <a href="?page=agenda&p=1">
-        <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> 
-          <span style="font-weight: 700; font-size: 1.5rem">Agenda</span> Diskominfo
-        </h2>
-      </a>
-      <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem;">Agenda kegiatan dalam dinas komunikasi dan informatika Kabupaten Sidoarjo</p>
+      <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>BIDANG <span style="font-weight: 400;"> <?= $profileData[0]['prof_lnm']?> </span></i></b></h2>
+      <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem;">Agenda kegiatan dalam <?= $profileData[0]['prof_lnm']?></p>
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1">
           <?= requestRecTemplate4('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1', 'post_publish DESC', 4, 9) ?>
@@ -283,7 +278,7 @@
     <div class="container">
       <div class="row justify-content-start align-items-center gap-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
         <div class="col-lg-5">
-          <img src="images/form-message.svg" alt="..." class="img-fluid" height="20px;"/>
+          <img src="../images/form-message.svg" alt="..." class="img-fluid" height="20px;"/>
           <h5 class="text-danger">KRITIK DAN SARAN</h5>
           <h2 style="font-weight: 700;">Kirim kritik dan saran melalui form ini</h2>
           <p class="text-muted">Senin - Jumat, 08.00 - 16.00 Wib</p>
@@ -303,7 +298,7 @@
               <textarea class="form-control form-quriar-control is-invalid border-400" id="validationTextarea" placeholder="Message" style="height: 150px" required="required"></textarea>
             </div>
             <div class="d-grid">
-              <button class="btn btn-primary p-3" type="submit">Kirim Kritik atau Saran<i class="fas fa-paper-plane ms-2"></i></button>
+              <button class="btn text-white p-3" style="background-color: #478ac9;" type="submit">Kirim Kritik atau Saran<i class="fas fa-paper-plane ms-2"></i></button>
             </div>
           </form>
         </div>
