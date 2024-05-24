@@ -4840,7 +4840,13 @@ Footer Style
   font-size: 14px;
   padding: 70px 0;
   color: white;
-  margin-top: 100px;
+  margin-top: 200px;
+}
+
+@media (min-width: 991px) {
+  .site-footer {
+    padding: 70px 200px;
+  }
 }
 
 .site-footer p {
