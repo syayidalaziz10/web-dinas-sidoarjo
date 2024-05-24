@@ -124,13 +124,13 @@ $category     = $getCategory->fetch_assoc();
                   $date 	    = $row['post_publish'];
                   $count 	    = $row['post_see'];
 
-                  $dir_image  = $_dirPost.$result['post_img'];
+                  $dir_image   = '../'.$_dirPost.$row['post_img'];
 				
 				
-                  if ((!empty($result['post_img'])) && file_exists($dir_image)){
-                     $image = '../' . $_dirPost . $result['post_img'];
+                  if ((!empty($row['post_img'])) && file_exists($dir_image)){
+                     $image = $dir_image;
                   } else {
-                     $image = '../' . $_dirPost . 'default.png';
+                     $image = '../'.$_dirPost . 'default-template-2.png';
                   }
 
                   // CUT DESCRIPTION WHERE MAX LEGHT > 100
