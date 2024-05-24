@@ -188,7 +188,7 @@ $carouselCount = 0;
 				if ((!empty($row[5])) && file_exists($dir_image)){
 					$image = $_dirPost . $row[5];
 				} else {
-				    $image = $_dirPost . 'default.png';
+				   $image = $_dirPost . 'default.png';
 				}
 
 				$dateString 	= DateTime::createFromFormat('Y-m-d', $date);
@@ -1487,7 +1487,7 @@ $carouselCount = 0;
 								<i class="fa-regular fa-calendar"></i> <span style="margin: 0 10px;">'.dateToDMY($date).'</span>
 								<i class="fa-solid fa-eye"></i> <span style="margin-left: 10px;">25</span>
 								</p>
-								<a href="001/'.$id.'" class="text-decoration-none"><h6 class="fw-bold text-white fs-3 fs-md-2 fs-lg-3 lh-sm">'.$title.'</h6></a>
+								<a href="001/'.$id.'" class="text-decoration-none"><h6 class="fw-bold text-white fs-3 fs-md-4 fs-lg-3 lh-sm">'.$title.'</h6></a>
 							</div>
 						</div>
 					</div>
