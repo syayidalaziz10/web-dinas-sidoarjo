@@ -113,7 +113,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 
    <?php 
 
-   include_once "../views/navbar.php";
+   include_once "views/navbar.php";
 
    ?>
 
@@ -146,7 +146,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
             </div>
             <div class="col-lg-4 mt-3">
                <?php 
-               require_once('../views/side.php')
+               require_once('views/side.php')
                ?>
             </div>
          </div>
@@ -158,7 +158,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 
    <?php 
 
-   include_once "../views/footer.php";
+   include_once "views/footer.php";
 
    ?>
 

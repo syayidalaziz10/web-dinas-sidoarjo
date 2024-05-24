@@ -84,7 +84,7 @@ $category     = $getCategory->fetch_assoc();
 
    <?php 
 
-   include_once "../views/navbar.php";
+   include_once "views/navbar.php";
 
    ?>
 
@@ -213,7 +213,7 @@ $category     = $getCategory->fetch_assoc();
 
    <?php 
 
-   include_once "../views/footer.php";
+   include_once "views/footer.php";
 
    ?>
 
