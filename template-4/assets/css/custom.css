@@ -4258,9 +4258,10 @@ em ul li {
 /*     Header Detail     */
 /*********************/
 .detail-header-section {
+  margin-top: 100px;
   width: 100%;
   height: 60vh;
-  background-image: url(../../images/layanan1.jpg);
+  background-image: url(../../../images/layanan1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

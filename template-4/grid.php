@@ -96,7 +96,7 @@ $category     = $getCategory->fetch_assoc();
                <p>Seluruh Layanan Dalam Dinas Kominfo Sidoarjo</p>
             </div>
             <div class="col-4">
-               <img src="../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
+               <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
             </div>
          </div>
       </div>
