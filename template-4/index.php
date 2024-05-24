@@ -249,9 +249,9 @@
       </div>
       <div class="u-align-left u-container-align-left u-container-style u-group u-radius-20 u-shape-round u-white u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="box-shadow: 0px 13px 40px 6px rgba(128,128,128,0.8);">
         <div class="u-container-layout u-valign-middle u-container-layout-1">
-          <h3 style="font-size: 1rem;" class="u-align-left u-text u-text-1"> Galeri Kegiatan<br>
+          <h3 style="font-size: 1.5rem;" class="u-align-left u-text u-text-1"> Galeri Kegiatan<br>
           </h3>
-          <p class="u-align-left u-text u-text-default u-text-2">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
+          <p class="u-align-left u-text u-text-default u-text-2" style="font-size: 1rem;">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
           </p>
         </div>
     </div>
