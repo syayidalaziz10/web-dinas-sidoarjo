@@ -27,8 +27,8 @@ $siteUrl = ($current_page === '') ? '' : '../';
                   <p><?= $profileData[0]['prof_fax']?></p>
                </div>
                <div class="d-flex contact align-items-center justify-content-start gap-3">
-                  <p><i class="fa-solid fa-envolpe"></i></p>
-                  <p><?= $profileData[0]['prof_main']?></p>
+                  <p><i class="fa-solid fa-envelope"></i></p>
+                  <p><?= $profileData[0]['prof_mail']?></p>
                </div>
             </div> 
          </div>
