@@ -4836,7 +4836,7 @@ Footer Style
 */
 
 .site-footer {
-  background: #131f40;
+  background-image: url(../../../images/wave-footer.svg);
   font-size: 14px;
   padding: 70px 0;
   color: white;
