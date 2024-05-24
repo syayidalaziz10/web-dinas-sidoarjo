@@ -12,8 +12,8 @@ $siteUrl = ($current_page === '') ? '' : '../';
       <div class="row">
          <div class="col-lg-4">
             <div class="widget">
-            <h3><?= $profileData[0]['prof_lnm']?><span class="text-primary">.</span> </h3>
-            <p><?= $profileData[0]['prof_desk']?>.</p>
+               <h3><?= $profileData[0]['prof_lnm']?><span class="text-primary">.</span> </h3>
+               <p><?= $profileData[0]['prof_desk']?>.</p>
             </div> 
          </div>
 
