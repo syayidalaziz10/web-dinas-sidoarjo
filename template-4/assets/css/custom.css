@@ -4824,3 +4824,82 @@ Header Style
 .navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
+
+/* 
+---------------------------------------------
+Footer Style
+--------------------------------------------- 
+*/
+
+.site-footer {
+  background: #131f40;
+  font-size: 14px;
+  padding: 70px 0;
+  color: white;
+}
+
+.site-footer p {
+  color: #fff;
+}
+.site-footer a {
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  display: inline-block;
+}
+.site-footer a:hover {
+  color: #fff;
+}
+.site-footer .footer-cta h2,
+.site-footer .footer-cta .h2 {
+  font-size: 30px;
+  color: #fff;
+}
+.site-footer .btn:before {
+  display: none;
+}
+.site-footer .widget {
+  margin-bottom: 40px;
+  display: block;
+}
+.site-footer .widget h3,
+.site-footer .widget .h3 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.site-footer .widget .links {
+  width: 150px;
+}
+.site-footer .widget .links li {
+  margin-bottom: 10px;
+}
+.site-footer .social li {
+  display: inline-block;
+}
+.site-footer .social li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  color: #131f40;
+}
+.site-footer .social li a:before {
+  display: none;
+}
+.site-footer .social li a > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.site-footer .social li a:hover {
+  background: #fff;
+  color: #131f40;
+}
