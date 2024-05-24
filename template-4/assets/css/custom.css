@@ -4836,6 +4836,7 @@ Footer Style
   font-size: 14px;
   padding: 70px 0;
   color: white;
+  margin-top: 100px;
 }
 
 .site-footer p {
@@ -4845,6 +4846,7 @@ Footer Style
   color: rgba(255, 255, 255, 0.5);
   position: relative;
   display: inline-block;
+  text-decoration: none;
 }
 .site-footer a:hover {
   color: #fff;
