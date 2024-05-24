@@ -48,7 +48,7 @@ $siteUrl = ($current_page === '') ? '' : '../';
          </div>
       <div class="row mt-5">
          <div class="col-12 text-center">
-            <p>Copyright &copy;2024. All Rights Reserved. &mdash; Dikelola oleh <a href="https://diskominfo.sidoarjokab.go.id/">Dinas Komunikasi dan Informatika Kabupaten Sidoarjo</a>
+            <p class="text-white">Copyright &copy;2024. All Rights Reserved. &mdash; Dikelola oleh <a class="text-white" href="https://diskominfo.sidoarjokab.go.id/">Dinas Komunikasi dan Informatika Kabupaten Sidoarjo</a>
          </div>
       </div>
    </div>

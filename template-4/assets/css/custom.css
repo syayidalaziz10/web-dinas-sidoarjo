@@ -4513,9 +4513,9 @@ mark {
   height: 20px;
 }
 
-header {
+header,
+footer {
   font-family: "Poppins", "Roboto", Arial, sans-serif;
-  background-color: #fff;
 }
 
 /* 
@@ -4839,8 +4839,7 @@ Footer Style
   background-image: url(../../../images/wave-footer.svg);
   object-fit: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  font-size: 14px;
+  background-position: bottom;
   padding: 70px 0;
   color: #000;
   margin-top: 200px;
@@ -4855,45 +4854,45 @@ Footer Style
 .site-footer p {
   color: #fff;
 }
+
 .site-footer a {
   color: rgba(29, 29, 29, 0.959);
   position: relative;
   display: inline-block;
   text-decoration: none;
 }
+
 .site-footer a:hover {
   color: #000;
 }
-.site-footer .footer-cta h2,
-.site-footer .footer-cta .h2 {
-  font-size: 30px;
-  color: #000;
-}
-.site-footer .btn:before {
-  display: none;
-}
+
 .site-footer .widget {
   margin-bottom: 40px;
   display: block;
 }
+
 .site-footer .widget h3,
 .site-footer .widget .h3 {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin-bottom: 15px;
   color: #000;
 }
+
 .site-footer .widget .links {
   width: 150px;
 }
+
 .site-footer .widget .links li {
   margin-bottom: 10px;
 }
+
 .site-footer .social li {
   display: inline-block;
 }
+
 .site-footer .social li a {
   display: inline-block;
   width: 40px;
@@ -4903,9 +4902,11 @@ Footer Style
   border-radius: 4px;
   color: #131f40;
 }
+
 .site-footer .social li a:before {
   display: none;
 }
+
 .site-footer .social li a > span {
   position: absolute;
   top: 50%;
@@ -4914,6 +4915,7 @@ Footer Style
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
 .site-footer .social li a:hover {
   background: #fff;
   color: #131f40;
