@@ -4593,8 +4593,8 @@ Header Style
     padding: 0 200px;
   }
 
-  footer {
-    padding: 0 200px;
+  .site-footer {
+    padding: 70px 200px;
   }
 }
 
