@@ -14,10 +14,22 @@ $siteUrl = ($current_page === '') ? '' : '../';
             <div class="widget">
                <h3><?= $profileData[0]['prof_lnm']?><span class="text-primary">.</span> </h3>
                <p><?= $profileData[0]['prof_desk']?>.</p>
-               <p class="mb-2 text-black"><i class="fa-solid fa-location-dot me-3"></i><?= $profileData[0]['prof_addr']?></p>
-               <p class="mb-2 text-black"><i class="fa-solid fa-phone me-3"></i><?= $profileData[0]['prof_telp']?></p>
-               <p class="mb-2 text-black"><i class="fa-solid fa-fax me-3"></i><?= $profileData[0]['prof_fax']?></p>
-               <p class="mb-2 text-black"><i class="fa-solid fa-envelope me-3"></i><?= $profileData[0]['prof_mail']?></p>
+               <div class="d-flex contact align-items-center justify-content-start gap-3">
+                  <p><i class="fa-solid fa-location-dot"></i></p>
+                  <p><?= $profileData[0]['prof_addr']?></p>
+               </div>
+               <div class="d-flex contact align-items-center justify-content-start gap-3">
+                  <p><i class="fa-solid fa-phone"></i></p>
+                  <p><?= $profileData[0]['prof_telp']?></p>
+               </div>
+               <div class="d-flex contact align-items-center justify-content-start gap-3">
+                  <p><i class="fa-solid fa-fax"></i></p>
+                  <p><?= $profileData[0]['prof_fax']?></p>
+               </div>
+               <div class="d-flex contact align-items-center justify-content-start gap-3">
+                  <p><i class="fa-solid fa-envolpe"></i></p>
+                  <p><?= $profileData[0]['prof_main']?></p>
+               </div>
             </div> 
          </div>
 

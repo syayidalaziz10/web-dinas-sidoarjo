@@ -4922,3 +4922,8 @@ Footer Style
   background: #fff;
   color: #131f40;
 }
+
+.site-footer contact p {
+  font-size: 14px;
+  font-family: "Poppins", "Roboto", Arial, sans-serif;
+}
