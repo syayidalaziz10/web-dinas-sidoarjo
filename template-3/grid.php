@@ -1,8 +1,8 @@
 <?php 
+session_start();
 
-require('conf/config.php');
-require('conf/phpFunction.php');
-
+require('../conf/config.php');
+require('../conf/phpFunction.php');
 
 
 $profile  =  $mysqli->query('SELECT * from pub_profile WHERE _active=1 ORDER BY _cre DESC');
@@ -16,6 +16,71 @@ $category     = $getCategory->fetch_assoc();
 
 
 
+function truncateWords($text, $limit) {
+    $words = explode(' ', $text, $limit + 1);
+    if (count($words) > $limit) {
+        array_pop($words);
+    }
+    return implode(' ', $words);
+}
+
+// Get the current page number
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$limit = 6; 
+$limit_start = ($page - 1) * $limit;
+$no = $limit_start + 1;
+
+// Handle the search query and date range
+if (isset($_POST['search'])) {
+    $_SESSION['search'] = $_POST['search'];
+    $_SESSION['start_date'] = $_POST['start_date'];
+    $_SESSION['end_date'] = $_POST['end_date'];
+} elseif (isset($_GET['clear_search'])) {
+    unset($_SESSION['search']);
+    unset($_SESSION['start_date']);
+    unset($_SESSION['end_date']);
+}
+
+$search = isset($_SESSION['search']) ? $_SESSION['search'] : '';
+$start_date = isset($_SESSION['start_date']) ? $_SESSION['start_date'] : '';
+$end_date = isset($_SESSION['end_date']) ? $_SESSION['end_date'] : '';
+
+// Construct the SQL query with search filter and date range
+$query = "SELECT * FROM pub_post WHERE ca_id=$kategori";
+if (!empty($search)) {
+    $query .= " AND post_judul LIKE '%$search%'";
+}
+if (!empty($start_date) && !empty($end_date)) {
+    $query .= " AND post_publish BETWEEN '$start_date' AND '$end_date'";
+}
+$query .= " ORDER BY post_publish DESC LIMIT $limit_start, $limit";
+
+// Execute the query
+$video = $mysqli->prepare($query);
+$video->execute();
+$res1 = $video->get_result();
+
+// Save the query results in an array
+$results = [];
+while ($row = $res1->fetch_assoc()) {
+    $results[] = $row;
+}
+
+// Count total records for pagination
+$countVid = "SELECT count(*) AS jumlah FROM pub_post WHERE ca_id=$kategori";
+if (!empty($search)) {
+    $countVid .= " AND post_judul LIKE '%$search%'";
+}
+if (!empty($start_date) && !empty($end_date)) {
+    $countVid .= " AND post_publish BETWEEN '$start_date' AND '$end_date'";
+}
+$videoCount = $mysqli->prepare($countVid);
+$videoCount->execute();
+$resCount = $videoCount->get_result();
+$rowCount = $resCount->fetch_assoc();
+$total_records = $rowCount['jumlah'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +89,7 @@ $category     = $getCategory->fetch_assoc();
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $prof[0]['prof_lnm']?></title>
-    <link rel="shortcut icon" href="../images/profile/<?= $prof[0]['prof_lg']?>">
+    <link rel="shortcut icon" href="images/profile/<?= $prof[0]['prof_lg']?>">
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -93,74 +158,44 @@ $category     = $getCategory->fetch_assoc();
                         <!-- query for search -->
 
                         <!-- end query for search -->
-                        <form class="d-flex mb-3" method="GET" action="">
+                        <form class="d-flex mb-3" method="POST" action="">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                                name="search">
+                                name="search" value="<?= htmlspecialchars($search) ?>">
+                            <input class="form-control me-2" type="date" name="start_date"
+                                value="<?= htmlspecialchars($start_date) ?>">
+                            <input class="form-control me-2" type="date" name="end_date"
+                                value="<?= htmlspecialchars($end_date) ?>">
                             <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+
                         </form>
 
                         <div class="row">
 
                             <?php
+                    if (count($results) > 0) {
+                        foreach ($results as $row) {
+                            $id = $row['post_id'];
+                            $title = $row['post_judul'];
+                            $desk = $row['post_desk'];
+                            $date = $row['post_publish'];
+                            $count = $row['post_see'];
+                            $date_up = $row['_cre_date'];
 
-function truncateWords($text, $limit) {
-    $words = explode(' ', $text, $limit + 1);
-    if (count($words) > $limit) {
-        array_pop($words);
-    }
-    return implode(' ', $words);
-}
-$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
-$limit = 6; 
-$limit_start = ($page - 1) * $limit;
-$no = $limit_start + 1;
+                            $dir_image = 'images/post/'.$row['post_img'];
+                            $date_update = strtotime($date_up);
 
-// Cek apakah ada permintaan pencarian
-$search = isset($_GET['search']) ? $_GET['search'] : '';
+                            // Set the image source
+                            if (!empty($row['post_img']) && file_exists($dir_image)) {
+                                $src = '../images/post/'.$row['post_img'];
+                            } else {
+                                $src = '../images/post/default_3.png';
+                            }
 
-// Sesuaikan kueri SQL untuk memasukkan filter pencarian jika ada permintaan pencarian
-$query = "SELECT * FROM pub_post WHERE ca_id=$kategori";
-if (!empty($search)) {
-    $query .= " AND post_judul LIKE '%$search%'";
-}
-$query .= " ORDER BY post_publish DESC LIMIT $limit_start, $limit";
+                            $deskToStr = strip_tags($desk);
+                            $title_cut = truncateWords($title, 10);
+                            $desk = truncateWords($deskToStr, 10);
+                            ?>
 
-
-// $query = "SELECT * FROM pub_post WHERE ca_id=$kategori ORDER BY post_publish DESC LIMIT $limit_start, $limit";
-$video = $mysqli->prepare($query);
-$video->execute();
-$res1 = $video->get_result();
-
-// Simpan hasil kueri dalam array
-$results = [];
-while ($row = $res1->fetch_assoc()) {
-    $results[] = $row;
-}
-
-// Tampilkan hasil atau pesan jika tidak ada hasil
-if (count($results) > 0) {
-    foreach ($results as $row) {
-        $id = $row['post_id'];
-        $title = $row['post_judul'];
-        $desk = $row['post_desk'];
-        $date = $row['post_publish'];
-        $count = $row['post_see'];
-        $date_up = $row['_cre_date'];
-
-        $dir_image = 'images/post/'.$row['post_img'];
-        $date_update = strtotime($date_up);
-
-        // VARIABEL NEED OPERATION
-        if (!empty($row['post_img']) && file_exists($dir_image)) {
-            $src = '../images/post/'.$row['post_img'];
-        } else {
-            $src = '../images/post/default.png';
-        }
-
-        $deskToStr = strip_tags($desk);
-        $title_cut = truncateWords($title, 10);
-        $desk = truncateWords($deskToStr, 10);
-        ?>
                             <div class="col-lg-6 mb-4" data-order="<?= $no ?>">
                                 <div class="card h-100 shadow">
                                     <!-- Menambahkan kelas shadow untuk efek bayangan -->
@@ -206,7 +241,7 @@ if (count($results) > 0) {
                                 ?>
                             <div class="col-lg-12">
                                 <div class="card h-100 shadow-sm text-center">
-                                    <img src="../images/post/default.png" alt="no results"
+                                    <img src="../images/post/default_3.png" alt="no results"
                                         class="card-img-top card-img">
                                     <div class="card-body">
                                         <h5 class="card-title">Data yang dicari tidak ada</h5>

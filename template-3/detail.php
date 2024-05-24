@@ -1,7 +1,7 @@
 <?php 
 
-  require('conf/config.php');
-  require('conf/phpFunction.php');
+require('../conf/config.php');
+require('../conf/phpFunction.php');
 
   $profile =  $mysqli->query('SELECT * from pub_profile WHERE _active=1 ORDER BY _cre DESC');
   $prof = $profile->fetch_all(MYSQLI_ASSOC);
