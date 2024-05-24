@@ -4856,18 +4856,18 @@ Footer Style
   color: #fff;
 }
 .site-footer a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(29, 29, 29, 0.959);
   position: relative;
   display: inline-block;
   text-decoration: none;
 }
 .site-footer a:hover {
-  color: #fff;
+  color: #000;
 }
 .site-footer .footer-cta h2,
 .site-footer .footer-cta .h2 {
   font-size: 30px;
-  color: #fff;
+  color: #000;
 }
 .site-footer .btn:before {
   display: none;
@@ -4883,7 +4883,7 @@ Footer Style
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #fff;
+  color: #000;
 }
 .site-footer .widget .links {
   width: 150px;

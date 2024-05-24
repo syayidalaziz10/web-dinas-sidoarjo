@@ -8,7 +8,7 @@ $siteUrl = ($current_page === '') ? '' : '../';
 
 
 <footer class="site-footer">
-   <div class="container-fluid">
+   <div class="container-fluid footer-content">
       <div class="row">
          <div class="col-lg-4">
             <div class="widget">
