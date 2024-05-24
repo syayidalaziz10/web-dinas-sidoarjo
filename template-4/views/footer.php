@@ -14,10 +14,10 @@ $siteUrl = ($current_page === '') ? '' : '../';
             <div class="widget">
                <h3><?= $profileData[0]['prof_lnm']?><span class="text-primary">.</span> </h3>
                <p><?= $profileData[0]['prof_desk']?>.</p>
-               <p class="mb-2"><i class="fa fa-location-dot me-3"></i><?= $profileData[0]['prof_addr']?></p>
-               <p class="mb-2"><i class="fa fa-phone me-3"></i><?= $profileData[0]['prof_telp']?></p>
-               <p class="mb-2"><i class="fa fa-fax me-3"></i><?= $profileData[0]['prof_fax']?></p>
-               <p class="mb-2"><i class="fa fa-envelope me-3"></i></p><?= $profileData[0]['prof_mail']?>
+               <p class="mb-2 text-black"><i class="fa-solid fa-location-dot me-3"></i><?= $profileData[0]['prof_addr']?></p>
+               <p class="mb-2 text-black"><i class="fa-solid fa-phone me-3"></i><?= $profileData[0]['prof_telp']?></p>
+               <p class="mb-2 text-black"><i class="fa-solid fa-fax me-3"></i><?= $profileData[0]['prof_fax']?></p>
+               <p class="mb-2 text-black"><i class="fa-solid fa-envelope me-3"></i><?= $profileData[0]['prof_mail']?></p>
             </div> 
          </div>
 
