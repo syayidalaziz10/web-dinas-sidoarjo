@@ -4838,18 +4838,18 @@ Footer Style
 */
 
 .site-footer {
-  background-image: url(../../../images/wave-footer.png);
+  background-image: url(../../../images/wave-footer-1.png);
   object-fit: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  padding: 70px 0;
+  padding: 70px 0 0 0;
   color: #fff;
   margin-top: 200px;
 }
 
 @media (min-width: 991px) {
   .site-footer {
-    padding: 70px 200px;
+    padding: 70px 200px 0 200px;
   }
 }
 
@@ -4858,7 +4858,7 @@ Footer Style
 }
 
 .site-footer a {
-  color: rgba(29, 29, 29, 0.959);
+  color: #ccc;
   position: relative;
   display: inline-block;
   text-decoration: none;
