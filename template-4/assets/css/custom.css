@@ -4837,14 +4837,16 @@ Footer Style
 --------------------------------------------- 
 */
 
-.site-footer {
-  background-image: url(../../../images/wave-footer-1.png);
-  object-fit: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  padding: 70px 0 0 0;
-  color: #fff;
+.site-wave {
   margin-top: 200px;
+  margin-bottom: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.site-footer {
+  padding: 70px 0 0 0;
+  background-color: #0693e3;
 }
 
 @media (min-width: 991px) {

@@ -6,6 +6,7 @@ $siteUrl = ($current_page === '') ? '' : '../';
 
 ?>
 
+<img src="../../images/wave-footer.svg" alt="" class="site-wave">
 
 <footer class="site-footer">
    <div class="container-fluid footer-content">
