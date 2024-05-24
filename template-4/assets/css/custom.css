@@ -4838,20 +4838,19 @@ Footer Style
 */
 
 .site-wave {
-  margin-top: 200px;
+  margin-top: 100px;
   margin-bottom: 0;
   padding: 0;
   width: 100vw;
 }
 
 .site-footer {
-  padding: 70px 0 0 0;
   background-color: #0693e3;
 }
 
 @media (min-width: 991px) {
   .site-footer {
-    padding: 70px 200px 0 200px;
+    padding: 0 200px;
   }
 }
 
