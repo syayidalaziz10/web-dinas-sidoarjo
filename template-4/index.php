@@ -69,7 +69,7 @@
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
   <script language="JavaScript">
-    var txt="<?=$profileData[0]['prof_lnm']?> Kabupaten Sidoarjo ";
+    var txt="<?=$profileData[0]['prof_lnm']?>";
     var kecepatan=100;
     var segarkan=null;
 
@@ -115,9 +115,9 @@
             <div class="u-container-layout u-container-layout-2">
               <h1 class="u-align-left u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"><span style="font-weight: 700; font-style: italic;">
                 <?= $profileData[0]['prof_lnm']?>
-              </span>&nbsp;<br>Kab. Sidoarjo
+              </span>
             </h1>
-            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi <?= $profileData[0]['prof_lnm']?> Kabupaten Sidoarjo</ul>
+            <ul class="u-align-left u-custom-list u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">Website Resmi <?= $profileData[0]['prof_lnm']?></ul>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@
   <section class="skrollable u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-image u-parallax u-section-2" id="carousel_6077" data-image-width="1497" data-image-height="1000">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h1 class="u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0" style="font-size: 1.5rem;">
-        <span style="font-weight: 700;">Layanan</span> <?= $profileData[0]['prof_lnm']?> apa aja ya?
+        <span style="font-weight: 700;">Layanan</span> <span style="font-weight: 400; color: color: #d33030;"> <?= $profileData[0]['prof_lnm']?> </span> apa aja ya?
       </h1>
       <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-14 u-layout-wrap u-layout-wrap-1">
         <div class="u-gutter-0 u-layout">
@@ -213,7 +213,7 @@
     <div class="u-clearfix u-sheet u-sheet-1"">
       <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>BIDANG <span style="font-weight: 400;"> <?= $profileData[0]['prof_lnm']?> </span></i></b>
       </h2>
-      <p class="u-align-center u-text u-text-default u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="font-size : 1rem; text-align: center;">Keseluruhan Bidang yang ada pada Dinas Komunikasi dan Informatika Kab. Sidoarjo </p>
+      <p class="u-align-center u-text u-text-default u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="font-size : 1rem; text-align: center;">Keseluruhan Bidang yang ada pada <?= $profileData[0]['prof_lnm']?> </p>
       <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1 d-flex justify-content-center align-items-center flex-wrap">
           <?=requestRecTemplate4('jab_nm, stat', 'set_jabdept', 'stat=2 AND _active=1', '', '', 14)?>
@@ -249,10 +249,9 @@
       </div>
       <div class="u-align-left u-container-align-left u-container-style u-group u-radius-20 u-shape-round u-white u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="box-shadow: 0px 13px 40px 6px rgba(128,128,128,0.8);">
         <div class="u-container-layout u-valign-middle u-container-layout-1">
-          <h3 style="font-size: 1rem;" class="u-align-left u-text u-text-1"> Keluarga Besar <?= $profileData[0]['prof_lnm']?><br>
-            <span style="font-weight: 400;">Kab. Sidoarjo</span>
+          <h3 style="font-size: 1rem;" class="u-align-left u-text u-text-1"> Galeri Kegiatan<br>
           </h3>
-          <p class="u-align-left u-text u-text-default u-text-2"> Dinas Komunikasi dan Informatika Kabupaten Sidoarjo awal dibangun pada tahun 2017 sampai saat ini dengan solidaritas yang sangat kuat antar sesama pegawai baik ASN maupun NON ASN yang akan membuat Sidoarjo lebih&nbsp;<b><i>Hebat dan Milenial.</i></b>
+          <p class="u-align-left u-text u-text-default u-text-2">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
           </p>
         </div>
     </div>
@@ -263,11 +262,7 @@
   <!-- AGENDA -->
   <section class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-container-align-center-sm u-container-align-center-xs u-section-7" id="carousel_1fa5">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <a href="?page=agenda&p=1">
-        <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> 
-          <span style="font-weight: 700; font-size: 1.5rem">Agenda</span> <?= $profileData[0]['prof_lnm']?>
-        </h2>
-      </a>
+      <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>BIDANG <span style="font-weight: 400;"> <?= $profileData[0]['prof_lnm']?> </span></i></b></h2>
       <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem;">Agenda kegiatan dalam <?= $profileData[0]['prof_lnm']?></p>
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1">
@@ -303,7 +298,7 @@
               <textarea class="form-control form-quriar-control is-invalid border-400" id="validationTextarea" placeholder="Message" style="height: 150px" required="required"></textarea>
             </div>
             <div class="d-grid">
-              <button class="btn btn-primary p-3" type="submit">Kirim Kritik atau Saran<i class="fas fa-paper-plane ms-2"></i></button>
+              <button class="btn text-white p-3" style="background-color: #478ac9;" type="submit">Kirim Kritik atau Saran<i class="fas fa-paper-plane ms-2"></i></button>
             </div>
           </form>
         </div>

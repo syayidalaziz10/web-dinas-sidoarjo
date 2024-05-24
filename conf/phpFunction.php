@@ -1766,7 +1766,7 @@ $carouselCount = 0;
 							<div class="u-background-effect u-expanded">
 								<div class="u-background-effect-image u-expanded u-image u-shading u-image-2" data-image-width="626" data-image-height="417"></div>
 								</div>
-								<div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-align-center u-file-icon u-icon u-opacity u-opacity-70 u-text-white u-icon-2"><img src="images/9743209-7758dc09.png" alt=""></span>
+								<div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-align-center u-file-icon u-icon u-opacity u-opacity-70 u-text-white u-icon-2"><img src="../images/9743209-7758dc09.png" alt=""></span>
 								<h4 class="u-align-center u-text u-text-5" style="line-height: 1.5rem; color: white;font-size : 1.5rem;">'.$nama.'</h4>
 								<p class="u-align-center u-text u-text-6" style="color: white;font-size : 1rem;"> Bidang Pengelolaan Informasi dan Komunikasi Publik</p>
 							</div>
