@@ -4923,8 +4923,9 @@ Footer Style
   color: #131f40;
 }
 
-.site-footer .contact p {
-  font-size: 14px;
+.site-footer .widget .contact p,
+.site-footer .widget .contact p i {
+  font-size: 16px;
   color: #000;
   font-family: "Poppins", "Roboto", Arial, sans-serif;
 }
