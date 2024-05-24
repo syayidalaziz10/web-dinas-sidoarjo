@@ -4514,7 +4514,9 @@ mark {
 }
 
 header,
-footer {
+.site-footer,
+.site-footer .copyright,
+.site-footer .widget h3 {
   font-family: "Poppins", "Roboto", Arial, sans-serif;
 }
 

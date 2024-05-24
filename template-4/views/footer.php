@@ -14,6 +14,10 @@ $siteUrl = ($current_page === '') ? '' : '../';
             <div class="widget">
                <h3><?= $profileData[0]['prof_lnm']?><span class="text-primary">.</span> </h3>
                <p><?= $profileData[0]['prof_desk']?>.</p>
+               <p class="mb-2"><i class="fa fa-location-dot me-3"></i><?= $profileData[0]['prof_addr']?></p>
+               <p class="mb-2"><i class="fa fa-phone me-3"></i><?= $profileData[0]['prof_telp']?></p>
+               <p class="mb-2"><i class="fa fa-fax me-3"></i><?= $profileData[0]['prof_fax']?></p>
+               <p class="mb-2"><i class="fa fa-envelope me-3"></i></p><?= $profileData[0]['prof_mail']?>
             </div> 
          </div>
 
@@ -48,7 +52,7 @@ $siteUrl = ($current_page === '') ? '' : '../';
          </div>
       <div class="row mt-5">
          <div class="col-12 text-center">
-            <p class="text-white">Copyright &copy;2024. All Rights Reserved. &mdash; Dikelola oleh <a class="text-white" href="https://diskominfo.sidoarjokab.go.id/">Dinas Komunikasi dan Informatika Kabupaten Sidoarjo</a>
+            <p class="text-white copyright">Copyright &copy;2024. All Rights Reserved. &mdash; Dikelola oleh <a class="text-white" href="https://diskominfo.sidoarjokab.go.id/">Dinas Komunikasi dan Informatika Kabupaten Sidoarjo</a>
          </div>
       </div>
    </div>
