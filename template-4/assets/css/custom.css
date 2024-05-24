@@ -4837,9 +4837,11 @@ Footer Style
 
 .site-footer {
   background-image: url(../../../images/wave-footer.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   font-size: 14px;
   padding: 70px 0;
-  color: white;
+  color: #000;
   margin-top: 200px;
 }
 
