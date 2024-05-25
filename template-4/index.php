@@ -365,13 +365,13 @@
   <!-- START ANNOUNCEMENT MODAL -->
   <div class="modal fade overflow-hidden" id="announcementModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
+      <div class="modal-content rounded">
         <div class="modal-header border-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-0">
           <div id="carouselAnnouncement" class="carousel slide">
-            <div class="carousel-inner">
+            <div class="carousel-inner rounded">
               <?= requestRecTemplate4('post_id, post_img', 'pub_post', 'ca_id=003 AND _active=1', 'post_publish DESC', 3, 8) ?>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselAnnouncement" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
