@@ -372,16 +372,7 @@
         <div class="modal-body p-0">
           <div id="carouselAnnouncement" class="carousel slide">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="">
-                  <img src="../images/post/default-template-2.png" class="image-announcement d-block w-100" alt="...">
-                </a>
-              </div>
-              <div class="carousel-item active">
-                <a href="">
-                  <img src="../images/post/default.png" class="image-announcement d-block w-100" alt="...">
-                </a>
-              </div>
+              <?= requestRecTemplate4('post_id, post_img', 'pub_post', 'ca_id=003 AND _active=1', 'post_publish DESC', 3, 8) ?>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselAnnouncement" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>

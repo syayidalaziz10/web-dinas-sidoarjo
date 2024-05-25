@@ -1596,7 +1596,7 @@ $carouselCount = 0;
 				if (!empty($row[1]) && file_exists($dir_image)) {
 					$image = $dir_image;
 				} else {
-					$image = $_dirPost . 'default-template-2.png';
+					$image = $_dirPost . 'default.png';
 				}
 
 
@@ -1604,10 +1604,8 @@ $carouselCount = 0;
 				
 				'
 
-				<div class="announcement-item">				
-					<a href="003/'.$id.'">
-						<img src="'.$image.'" class="img-fluid rounded-2">
-					</a>
+				<div class="carousel-item active">
+					<a href="003/'.$id.'"><img src="'.$image.'" class="image-announcement d-block w-100" alt="..."></a>
 				</div>
 				
 				';
