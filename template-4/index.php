@@ -414,6 +414,20 @@
   })
 
 
+  // ADD MANUAL SCRIPT CLOSE MODAL PENGUMUMAN
+
+  var closeButtons = document.querySelectorAll('.announcement-close');
+  closeButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var modal = button.closest('.modal');
+      if (modal) {
+        var modalInstance = bootstrap.Modal.getInstance(modal);
+        modalInstance.hide();
+      }
+    });
+  });
+
+
   </script>
 
 
