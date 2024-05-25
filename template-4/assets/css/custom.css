@@ -4508,6 +4508,15 @@ mark {
   height: 20px;
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+  color: #000;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+
 header,
 .site-footer,
 .site-footer .copyright,

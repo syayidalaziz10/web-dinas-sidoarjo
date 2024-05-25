@@ -1596,7 +1596,7 @@ $carouselCount = 0;
 				if (!empty($row[1]) && file_exists($dir_image)) {
 					$image = $dir_image;
 				} else {
-					$image = $_dirPost . 'default.png';
+					$image = $_dirPost . 'default-template-2.png';
 				}
 
 
