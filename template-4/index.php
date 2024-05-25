@@ -356,6 +356,7 @@
 
   <?php 
   include_once "views/visitor.php";
+  include_once "views/social.php";
   include_once "views/footer.php";
   ?>
 

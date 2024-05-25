@@ -5048,3 +5048,44 @@ Footer Style
 .visitor-panel medium {
   font-size: 16px;
 }
+
+.social-fixed-position {
+  position: fixed;
+  top: 40%;
+  right: 20px;
+  z-index: 999;
+}
+
+.social-fixed-position .share-article {
+  width: 100%;
+}
+.social-fixed-position .share-article li {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
+.social-fixed-position .share-article li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  background-color: #131f40;
+  color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.social-fixed-position .share-article li a i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.social-fixed-position .share-article li a:hover {
+  border: 1px solid #efefef;
+  background-color: #0d62b9;
+}
