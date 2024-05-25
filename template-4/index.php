@@ -367,7 +367,7 @@
     <div class="modal-dialog modal modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header border-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close announcement-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-0">
           <div id="carouselAnnouncement" class="carousel slide">
@@ -386,7 +386,6 @@
       </div>
     </div>
   </div>
-
   <!-- END ANNOUNCEMENT MODAL -->
 
 
@@ -413,6 +412,9 @@
       $("#ann").remove();
     }
   })
+
+
+  </script>
 
 
 </body>
