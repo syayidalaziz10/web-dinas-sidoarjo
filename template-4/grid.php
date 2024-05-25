@@ -143,16 +143,16 @@ $category     = $getCategory->fetch_assoc();
 
             ?>
 
-                  <div class="col-lg-4 col-md-6 mb-5" style="height: 450px">
+                  <div class="col-lg-4 col-md-6 mb-5">
                      <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
                            <img class="img-fluid w-100" src="<?= $image?>" alt="" style="height: 45%; object-fit: cover;">
                         </div>
-                        <div class="p-4" style="background-color: #f6f4f9;">
-                        <div class="d-flex justify-content-start align-items-start gap-3">
-                           <p class="fw-medium mb-2"><i class="fa-solid fa-calendar-days"></i>  <?= dateToDMY($date)?></p>
-                           <p><i class="fa-solid fa-eye"></i> <?= $count?></p>
-                        </div>
+                        <div class="p-4" style="background-color: #f6f4f9; height: 200px;">
+                           <div class="d-flex justify-content-start align-items-start gap-3">
+                              <p class="fw-medium mb-2"><i class="fa-solid fa-calendar-days"></i>  <?= dateToDMY($date)?></p>
+                              <p><i class="fa-solid fa-eye"></i> <?= $count?></p>
+                           </div>
                            <a href="<?= $id?>" class="text-decoration-none">
                               <h4 class="lh-base mb-0 fw-bolder"><?= $title?></a>
                            </a>
