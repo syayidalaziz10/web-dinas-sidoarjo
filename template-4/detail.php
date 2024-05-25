@@ -14,7 +14,7 @@ $post_id  = $_GET['post_id'];
 
 
 
-$getCategory  = $mysqli->query("SELECT ca_nm, ca_icon FROM set_category  WHERE ca_id = $categoryURL");
+$getCategory  = $mysqli->query("SELECT ca_nm, ca_desk FROM set_category  WHERE ca_id = $categoryURL");
 $category     = $getCategory->fetch_assoc();
 
 $query    = $mysqli->query("SELECT * from pub_post WHERE ca_id=$categoryURL AND post_id=$post_id");
@@ -121,8 +121,8 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
       <div class="container">
          <div class="row d-flex justify-content-center align-items-center">
             <div class="col-8 detail-header-teks" >
-               <h1>LAYANAN</h1>
-               <p>Seluruh Layanan Dalam Dinas Kominfo Sidoarjo</p>
+               <h1 style="text-transform: uppercase;"><?= $category['ca_nm']?></h1>
+               <p><?= $category['ca_desk']?></p>
             </div>
             <div class="col-4">
                <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
