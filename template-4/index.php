@@ -259,7 +259,7 @@
           </h3>
           <p class="u-align-left u-text u-text-default u-text-2" style="font-size: 1rem;">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
           </p>
-          <a class="btn btn-outline-primary" href="galeri">LIHAT GALERI LAINNYA</a>
+          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1">LIHAT GALERI LAINNYA</a>
         </div>
     </div>
   </section>
