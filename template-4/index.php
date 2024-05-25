@@ -74,6 +74,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" type="text/css" href="assets/css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/embedYoutube.csss">
   <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
   <link rel="stylesheet" media="screen"  href="assets/css/beranda.css">
 
@@ -230,8 +231,9 @@
       <div class="row justify-content-start align-items-center gap-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
         <div class="col-lg-5">
           <img src="../images/form-message.svg" alt="..." class="img-fluid" height="20px;"/>
-          <h5 class="text-danger">MEDIA DIGITAL</h5>
-          <h2 style="font-weight: 700;">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h2>
+          <h2 style="font-weight: 700;">MEDIA DIGITAL</h2>
+          <h5 class="text-danger">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h5>
+          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal;">LAINNYA</a>
         </div>
         <div class="col-lg-6">
           <div class="embed__container">
@@ -296,7 +298,7 @@
           </h3>
           <p class="u-align-left u-text u-text-default u-text-2" style="font-size: 1rem;">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
           </p>
-          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1">LAINNYA</a>
+          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal;">LAINNYA</a>
         </div>
     </div>
   </section>
@@ -385,6 +387,8 @@
   <script src="assets/js/jquery.bxslider.min.js"></script>
   <script src="assets/js/jquery.flexslider.js" defer ></script>
   <script src="assets/js/jquery.accordion.js"></script>
+  <script src="assets/js/embedYoutube.js"></script>
+  
   <script src="assets/js/custom.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
