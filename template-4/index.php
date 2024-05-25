@@ -251,7 +251,7 @@
           <img src="../images/media-section.svg" alt="..." class="img-fluid" height="20px;"/>
           <h2 style="font-weight: 700;" data-animation-name="customAnimationIn" data-animation-duration="1500">MEDIA DIGITAL</h2>
           <h5 class="text-danger" data-animation-name="customAnimationIn" data-animation-duration="1500">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h5>
-          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal;" data-animation-name="customAnimationIn" data-animation-duration="1500">LAINNYA</a>
+          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal; font-size: 14px; font-weight:700;" data-animation-name="customAnimationIn" data-animation-duration="1500">LIHAT MEDIA LAINNYA</a>
         </div>
         <div class="col-lg-6" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
           <div class="embed__container">
@@ -299,7 +299,7 @@
           </h3>
           <p class="u-align-left u-text u-text-default u-text-2" style="font-size: 1rem;">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
           </p>
-          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal;">LAINNYA</a>
+          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal;">GALERI LAINNYA</a>
         </div>
     </div>
   </section>
