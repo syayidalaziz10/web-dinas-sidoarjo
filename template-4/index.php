@@ -370,8 +370,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-0">
-          <div class="owl-carousel owl-announcement owl-theme">
-            <?=requestRecTemplate4('post_id, post_img', 'pub_post', 'ca_id=003 AND _active=1', '', 1, 8)?>
+          <div class="row">
+            <div class="col-12">
+              <div class="owl-carousel owl-announcement owl-theme">
+                <?=requestRecTemplate4('post_id, post_img', 'pub_post', 'ca_id=003 AND _active=1', '', 1, 8)?>
+              </div>
+            </div>
           </div>
         </div>
       </div>
