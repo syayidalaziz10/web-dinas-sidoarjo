@@ -4893,8 +4893,8 @@ Footer Style
 
 .visitor {
   padding: 5px 10px;
-  background-color: #131f40;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   width: auto;
   border-radius: 0.8rem;
   position: fixed;
@@ -4905,6 +4905,7 @@ Footer Style
   justify-content: center;
   align-items: center;
   gap: 5px;
+  font-family: "Poppins", "Roboto", Arial, sans-serif;
 }
 
 .visitor-logo {
@@ -4936,6 +4937,7 @@ Footer Style
   z-index: 999;
   right: 0;
   border: 2px solid #0d62b9;
+  font-family: "Poppins", "Roboto", Arial, sans-serif;
 }
 
 .visitor-panel-container.visible {
