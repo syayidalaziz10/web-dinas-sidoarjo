@@ -8,7 +8,7 @@ $queryProfile    = $mysqli->query('SELECT * FROM pub_profile');
 $profileData     = $queryProfile->fetch_all(MYSQLI_ASSOC);
 
 
-$categoryURL  = $_GET['id'];
+$categoryURL  = $_GET['kategori'];
 $post_id  = $_GET['post_id'];
 
 

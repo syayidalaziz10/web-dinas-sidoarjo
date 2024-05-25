@@ -1,8 +1,27 @@
 <?php 
 
 
-$current_page = $_SERVER['REQUEST_URI'];
-$url_root = ($current_page === '') ? '' : '../';
+
+$categoryURL = isset($_GET['kategori']) ? $_GET['kategori'] : '';
+
+$dirLink = '';
+
+if(empty($categoryURL)) {
+   $dirLink = '';
+} else {
+   $dirLink = '../';
+}
+
+
+$dir_prof  = $_dirPost.$profileData[0]['prof_lg'];
+
+
+if ((!empty($profileData[0]['prof_lg'])) && file_exists($dir_prof)){
+   $image = $_dirPost . $profileData[0]['prof_lg'];
+} else {
+   $image = $_dirPost . 'default.png';
+}
+
 
 ?>
 
@@ -12,7 +31,7 @@ $url_root = ($current_page === '') ? '' : '../';
    <div class="container-fluid d-flex align-items-center">
       <div class="logo me-auto">
          <div class="d-flex justify-content-start align-items-center gap-3">
-            <img src="images/profile/<?= $profileData[0]['prof_lg']?>" class="logo">
+            <img src=" <?=$dirLink.$image?> " class="logo">
             <small class="title-short text-uppercase">
                         <?= $profileData[0]['prof_snm']?>
                      </small>
