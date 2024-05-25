@@ -4888,3 +4888,161 @@ Footer Style
 .site-footer .widget .contact p i {
   color: #fff;
 }
+
+/* Visitor  */
+
+.visitor {
+  padding: 5px 10px;
+  background-color: #131f40;
+  color: #fff;
+  width: auto;
+  border-radius: 0.8rem;
+  position: fixed;
+  bottom: 2rem;
+  z-index: 1000;
+  right: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.visitor-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.cta-primary {
+  padding: 5px 22px;
+  border: 1px solid transparent;
+  color: #ffffff !important;
+  background: #107be9;
+  border-radius: 30px;
+}
+
+.visitor-panel-container {
+  background-color: #fff;
+  position: fixed;
+  bottom: 100px;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  color: #000;
+  z-index: 999;
+  right: 0;
+  border: 2px solid #0d62b9;
+}
+
+.visitor-panel-container.visible {
+  transform: translateX(-10px);
+}
+
+.visitor-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0.6rem 1.1rem;
+  position: relative;
+  max-width: calc(100% - 10px);
+  width: 270px;
+}
+
+.visitor-panel medium {
+  font-weight: 600;
+}
+
+.visitor-panel button.close-btn {
+  border: 0;
+  color: #97a5ce;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.visitor-panel button.close-btn:focus {
+  outline: none;
+}
+
+.visitor-panel small {
+  font-size: 10px;
+}
+
+.visitor-panel medium {
+  font-size: 16px;
+}
+
+.visitor p {
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: normal;
+  color: #fff;
+}
+
+.cta-primary {
+  padding: 5px 22px;
+  border: 1px solid transparent;
+  color: #ffffff !important;
+  background: #107be9;
+  border-radius: 30px;
+}
+
+.visitor-panel-container {
+  background-color: #fff;
+  position: fixed;
+  bottom: 100px;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  color: #000;
+  z-index: 999;
+  right: 0;
+  border: 2px solid #0d62b9;
+}
+
+.visitor-panel-container.visible {
+  transform: translateX(-10px);
+}
+
+.visitor-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0.6rem 1.1rem;
+  position: relative;
+  max-width: calc(100% - 10px);
+  width: 270px;
+}
+
+.visitor-panel medium {
+  font-weight: 600;
+}
+
+.visitor-panel button.close-btn {
+  border: 0;
+  color: #97a5ce;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.visitor-panel button.close-btn:focus {
+  outline: none;
+}
+
+.visitor-panel small {
+  font-size: 10px;
+}
+
+.visitor-panel medium {
+  font-size: 16px;
+}

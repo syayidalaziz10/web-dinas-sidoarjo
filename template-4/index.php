@@ -247,13 +247,13 @@
   <section >
     <div class="container">
       <div class="row justify-content-between align-items-center gap-5">
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-12">
           <img src="../images/media-section.svg" alt="..." class="img-fluid" height="20px;"/>
           <h2 style="font-weight: 700;" data-animation-name="customAnimationIn" data-animation-duration="1500">MEDIA DIGITAL</h2>
           <h5 class="text-danger" data-animation-name="customAnimationIn" data-animation-duration="1500">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h5>
           <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal; font-size: 14px; font-weight:700;" data-animation-name="customAnimationIn" data-animation-duration="1500">LIHAT MEDIA LAINNYA</a>
         </div>
-        <div class="col-lg-6" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
+        <div class="col-lg-6 col-12" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
           <div class="embed__container">
             <div id="player" data-video-id="<?= $videoId?>"></div>
             </div>
@@ -355,6 +355,7 @@
 
 
   <?php 
+  include_once "views/visitor.php";
   include_once "views/footer.php";
   ?>
 
