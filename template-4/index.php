@@ -247,7 +247,7 @@
   <section >
     <div class="container">
       <div class="row justify-content-between align-items-center gap-5">
-        <div class="col-lg-6">
+        <div class="col-lg-5">
           <img src="../images/media-section.svg" alt="..." class="img-fluid" height="20px;"/>
           <h2 style="font-weight: 700;" data-animation-name="customAnimationIn" data-animation-duration="1500">MEDIA DIGITAL</h2>
           <h5 class="text-danger" data-animation-name="customAnimationIn" data-animation-duration="1500">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h5>
