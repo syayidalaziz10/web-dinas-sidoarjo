@@ -125,7 +125,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                <p>Seluruh Layanan Dalam Dinas Kominfo Sidoarjo</p>
             </div>
             <div class="col-4">
-               <img src="../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
+               <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
             </div>
          </div>
       </div>
