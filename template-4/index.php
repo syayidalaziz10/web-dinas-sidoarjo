@@ -15,6 +15,16 @@
   $countEvent = mysqli_fetch_assoc($event);
 
 
+
+  // GET FIRST VIDEO IN MEDIA DIGITAL
+  $video =  $mysqli->query('SELECT sos_url from pub_socials WHERE _active=1 and cat=003 ORDER BY _cre_date DESC LIMIT 1');
+  $get_url = $video->fetch_all(MYSQLI_ASSOC);
+  $url = $get_url[0]['sos_url'];
+  $queryID = parse_url($url, PHP_URL_QUERY);
+  parse_str($queryID, $params);
+  $videoId = $params['v'];
+
+
   // GET PROFILE LOGO
 
   if ((!empty($profileData[0]['prof_lg'])) && file_exists($_dirProf.$profileData[0]['prof_lg'])){
@@ -195,7 +205,9 @@
   </section>
   <!-- END PPID -->
 
-    <!-- BERITA -->
+
+
+  <!-- BERITA -->
 
   <section class="news-section my-5">
     <div class="container">
@@ -211,6 +223,31 @@
     </div>
   </section>
   <!-- END BERITA -->
+
+  <!-- START MEDIA DIGITAL -->
+  <section >
+    <div class="container">
+      <div class="row justify-content-start align-items-center gap-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
+        <div class="col-lg-5">
+          <img src="../images/form-message.svg" alt="..." class="img-fluid" height="20px;"/>
+          <h5 class="text-danger">MEDIA DIGITAL</h5>
+          <h2 style="font-weight: 700;">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h2>
+        </div>
+        <div class="col-lg-6">
+          <div class="embed__container">
+            <div id="player" data-video-id="<?= $videoId?>"></div>
+            </div>
+            <div class="carousel__wrap mt-3">
+              <div class="owl-carousel media-carousel owl-theme">
+                <?=requestRec('sos_id, sos_url', 'pub_socials', '_active=1 AND cat=003', '_cre_date DESC',10, 6)?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END MEDIA DIGITAL -->
 
 
 
