@@ -95,21 +95,19 @@ jQuery(document).ready(function($) {
         }
     });
 
-    if ( $('.owl-announcement').length > 0 ) {
-        $('.owl-announcement').owlCarousel({
-            items: 1,
-            loop: false,
-            margin: 0,
-            center: true,
-            autoplay: false,
-            autoplayTimeout:3000,
-            autoplayHoverPause:false,
-            nav: false,
-            dots: false,
-            navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
-            smartSpeed: 400,
-        });
-    }
+
+    $('.owl-announcement').owlCarousel({
+        items: 1,
+        loop: false,
+        margin: 0,
+        autoplay: false,
+        autoplayTimeout:3000,
+        autoplayHoverPause:false,
+        nav: false,
+        dots: false,
+        navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+        smartSpeed: 400,
+    });
 
 
     // Home Banner
