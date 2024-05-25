@@ -158,6 +158,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 
    <?php 
 
+   include_once "views/social.php";
    include_once "views/footer.php";
 
    ?>

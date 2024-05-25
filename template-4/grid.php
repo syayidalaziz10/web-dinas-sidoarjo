@@ -213,6 +213,7 @@ $category     = $getCategory->fetch_assoc();
 
    <?php 
 
+   include_once "views/social.php";
    include_once "views/footer.php";
 
    ?>
