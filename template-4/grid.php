@@ -11,7 +11,7 @@ $profileData     = $queryProfile->fetch_all(MYSQLI_ASSOC);
 $kategori = $_GET['kategori'];
 
 
-$getCategory  = $mysqli->query("SELECT ca_nm FROM set_category  WHERE ca_id = $kategori");
+$getCategory  = $mysqli->query("SELECT ca_nm, ca_desk FROM set_category  WHERE ca_id = $kategori");
 $category     = $getCategory->fetch_assoc();
 
 
@@ -92,8 +92,8 @@ $category     = $getCategory->fetch_assoc();
       <div class="container">
          <div class="row d-flex justify-content-center align-items-center">
             <div class="col-8 detail-header-teks" >
-               <h1>LAYANAN</h1>
-               <p>Seluruh Layanan Dalam Dinas Kominfo Sidoarjo</p>
+               <h1 style="text-transform: uppercase;"><?= $category['ca_nm']?></h1>
+               <p><?= $category['ca_desk']?></p>
             </div>
             <div class="col-4">
                <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
