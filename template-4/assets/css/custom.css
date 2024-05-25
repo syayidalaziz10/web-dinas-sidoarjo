@@ -4508,13 +4508,18 @@ mark {
   height: 20px;
 }
 
+#announcementModal .modal-content {
+  width: 348px;
+}
+
 #carouselAnnouncement .carousel-inner {
-  height: 570px;
+  height: 348px;
 }
 
 .image-announcement {
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 header,
