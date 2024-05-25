@@ -38,7 +38,7 @@
                      <img src="../images/404-page.png" alt="" class="mb-5" style="width: 25rem;">
                      <h1 class="mt-5">404 ERROR</h1>
                      <p>Maaf, halaman ini tidak tersedia</p>
-                     <a href="../" class="btn btn-primary">Kembali ke beranda</a>
+                     <a href="../" class="btn btn-primary rounded-pill px-4 py-3">Kembali ke beranda</a>
                   </div>
                </div>
             </div>
