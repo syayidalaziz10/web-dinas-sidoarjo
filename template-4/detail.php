@@ -17,7 +17,7 @@ $post_id  = $_GET['post_id'];
 $getCategory  = $mysqli->query("SELECT ca_nm, ca_desk FROM set_category  WHERE ca_id = $categoryURL");
 $category     = $getCategory->fetch_assoc();
 
-$query    = $mysqli->query("SELECT * from pub_post WHERE ca_id=$categoryURL AND post_id=$post_id");
+$query    = $mysqli->query("SELECT * from pub_post WHERE ca_id=$categoryURL AND post_id=$post_id AND _active=1");
 $result   = $query->fetch_assoc();
 
 if (!$result) {
