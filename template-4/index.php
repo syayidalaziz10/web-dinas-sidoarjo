@@ -323,15 +323,15 @@
 
   <section >
     <div class="container">
-      <div class="row justify-content-start align-items-center gap-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
+      <div class="row justify-content-start align-items-center gap-5">
         <div class="col-lg-5">
-          <img src="../images/form-message.svg" alt="..." class="img-fluid" height="20px;"/>
-          <h5 class="text-danger">KRITIK DAN SARAN</h5>
-          <h2 style="font-weight: 700;">Kirim kritik dan saran melalui form ini</h2>
-          <p class="text-muted">Senin - Jumat, 08.00 - 16.00 Wib</p>
+          <img src="../images/form-message.svg" alt="..." data-animation-name="customAnimationIn" data-animation-duration="1500" class="img-fluid" height="20px;"/>
+          <h5 class="text-danger" data-animation-name="customAnimationIn" data-animation-duration="1500">KRITIK DAN SARAN</h5>
+          <h2 style="font-weight: 700;" data-animation-name="customAnimationIn" data-animation-duration="1500">Kirim kritik dan saran melalui form ini</h2>
+          <p class="text-muted" data-animation-name="customAnimationIn" data-animation-duration="1500">Senin - Jumat, 08.00 - 16.00 Wib</p>
         </div>
         <div class="col-lg-6">
-          <form class="row" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
+          <form class="row" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
             <div class="mb-2">
               <label class="form-label visually-hidden" for="inputName">Name</label>
               <input class="form-control form-quriar-control" id="inputName" type="text" placeholder="Name" />
