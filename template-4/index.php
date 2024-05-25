@@ -367,7 +367,7 @@
     <div class="modal-dialog modal modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header border-0">
-          <button type="button" class="btn-close announcement-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-0">
           <div id="carouselAnnouncement" class="carousel slide">
@@ -397,35 +397,22 @@
   <script src="assets/js/jquery.flexslider.js" defer ></script>
   <script src="assets/js/jquery.accordion.js"></script>
   <script src="assets/js/embedYoutube.js"></script>
-  
-  <script src="assets/js/custom.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+  
+  <script src="assets/js/custom.js"></script>
+
 
   <script type="text/javascript">
     
-  $(document).ready(function(){
-    var widthdoc  = $( document ).width();
-    console.log(widthdoc);
-    if(widthdoc > 480){
-      $("#ann").remove();
-    }
-  })
-
-
-  // ADD MANUAL SCRIPT CLOSE MODAL PENGUMUMAN
-
-  var closeButtons = document.querySelectorAll('.announcement-close');
-  closeButtons.forEach(function(button) {
-    button.addEventListener('click', function() {
-      var modal = button.closest('.modal');
-      if (modal) {
-        var modalInstance = bootstrap.Modal.getInstance(modal);
-        modalInstance.hide();
+    $(document).ready(function(){
+      var widthdoc  = $( document ).width();
+      console.log(widthdoc);
+      if(widthdoc > 480){
+        $("#ann").remove();
       }
-    });
-  });
+    })
 
 
   </script>
