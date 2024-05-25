@@ -228,14 +228,14 @@
   <!-- START MEDIA DIGITAL -->
   <section >
     <div class="container">
-      <div class="row justify-content-start align-items-center gap-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-        <div class="col-lg-5">
-          <img src="../images/form-message.svg" alt="..." class="img-fluid" height="20px;"/>
+      <div class="row justify-content-between align-items-center gap-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
+        <div class="col-lg-4">
+          <img src="../images/media-section.svg" alt="..." class="img-fluid" height="20px;"/>
           <h2 style="font-weight: 700;">MEDIA DIGITAL</h2>
           <h5 class="text-danger">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h5>
           <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal;">LAINNYA</a>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-7">
           <div class="embed__container">
             <div id="player" data-video-id="<?= $videoId?>"></div>
             </div>
