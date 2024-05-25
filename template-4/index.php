@@ -259,7 +259,7 @@
           </h3>
           <p class="u-align-left u-text u-text-default u-text-2" style="font-size: 1rem;">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
           </p>
-          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1">LIHAT GALERI LAINNYA</a>
+          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1">LAINNYA</a>
         </div>
     </div>
   </section>
@@ -269,7 +269,7 @@
   <!-- AGENDA -->
   <section class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-container-align-center-sm u-container-align-center-xs u-section-7" id="carousel_1fa5">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>BIDANG <span style="font-weight: 400;"> <?= $profileData[0]['prof_lnm']?> </span></i></b></h2>
+      <h2 style="font-size: 1.5rem;" class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"><b><i>AGENDA <span style="font-weight: 400;"> <?= $profileData[0]['prof_lnm']?> </span></i></b></h2>
       <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem;">Agenda kegiatan dalam <?= $profileData[0]['prof_lnm']?></p>
       <div class="u-list u-list-1">
         <div class="u-repeater u-repeater-1">
