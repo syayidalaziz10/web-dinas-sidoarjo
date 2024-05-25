@@ -146,7 +146,7 @@ $category     = $getCategory->fetch_assoc();
                   <div class="col-lg-4 col-md-6 mb-5">
                      <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                           <img class="img-fluid w-100" src="<?= $image?>" alt="" style="height: 45%; object-fit: cover;">
+                           <img class="img-fluid w-100" src="<?= $image?>" alt="" style="height: 230px; object-fit: cover;">
                         </div>
                         <div class="p-4" style="background-color: #f6f4f9; height: 200px;">
                            <div class="d-flex justify-content-start align-items-start gap-3">
