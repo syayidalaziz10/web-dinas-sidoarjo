@@ -225,31 +225,6 @@
   </section>
   <!-- END BERITA -->
 
-  <!-- START MEDIA DIGITAL -->
-  <section >
-    <div class="container">
-      <div class="row justify-content-between align-items-center gap-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-        <div class="col-lg-6 order-lg-1">
-          <img src="../images/media-section.svg" alt="..." class="img-fluid" height="20px;"/>
-          <h2 style="font-weight: 700;">MEDIA DIGITAL</h2>
-          <h5 class="text-danger">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h5>
-          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal;">LAINNYA</a>
-        </div>
-        <div class="col-lg-6 order-lg-0">
-          <div class="embed__container">
-            <div id="player" data-video-id="<?= $videoId?>"></div>
-            </div>
-            <div class="carousel__wrap mt-3">
-              <div class="owl-carousel media-carousel owl-theme">
-                <?=requestRec('sos_id, sos_url', 'pub_socials', '_active=1 AND cat=003', '_cre_date DESC',10, 6)?>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END MEDIA DIGITAL -->
 
 
 
@@ -267,6 +242,32 @@
     </div>
   </section>
   <!-- END BIDANG -->
+
+  <!-- START MEDIA DIGITAL -->
+  <section >
+    <div class="container">
+      <div class="row justify-content-between align-items-center gap-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
+        <div class="col-lg-6">
+          <img src="../images/media-section.svg" alt="..." class="img-fluid" height="20px;"/>
+          <h2 style="font-weight: 700;">MEDIA DIGITAL</h2>
+          <h5 class="text-danger">Ikuti dokumetasi aktivitas kegiatan lainnya melalui media digital kami</h5>
+          <a href="galeri" class="u-btn u-btn-round u-button-style u-custom u-radius-50 u-btn-1" style="letter-spacing: normal;">LAINNYA</a>
+        </div>
+        <div class="col-lg-6">
+          <div class="embed__container">
+            <div id="player" data-video-id="<?= $videoId?>"></div>
+            </div>
+            <div class="carousel__wrap mt-3">
+              <div class="owl-carousel media-carousel owl-theme">
+                <?=requestRec('sos_id, sos_url', 'pub_socials', '_active=1 AND cat=003', '_cre_date DESC',10, 6)?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END MEDIA DIGITAL -->
 
 
   <!-- PIMPINAN -->
