@@ -13,13 +13,13 @@ if(empty($categoryURL)) {
 }
 
 
-$dir_prof  = $_dirPost.$profileData[0]['prof_lg'];
+$dir_prof  = $_dirProf.$profileData[0]['prof_lg'];
 
 
 if ((!empty($profileData[0]['prof_lg'])) && file_exists($dir_prof)){
-   $image = $_dirPost . $profileData[0]['prof_lg'];
+   $image = $_dirProf . $profileData[0]['prof_lg'];
 } else {
-   $image = $_dirPost . 'default.png';
+   $image = $_dirProf . 'default.png';
 }
 
 
