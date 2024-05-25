@@ -15,6 +15,15 @@
   $countEvent = mysqli_fetch_assoc($event);
 
 
+  // GET PROFILE LOGO
+
+  if ((!empty($profileData[0]['prof_lg'])) && file_exists($_dirProf.$profileData[0]['prof_lg'])){
+    $logo = $_dirProf.$profileData[0]['prof_lg'];
+  } else {
+    $logo = $_dirProf . 'default.png';
+  }
+
+
 
   
   if ($count['pengumuman'] == 0)
@@ -43,7 +52,7 @@
 
   
   
-  <link rel="shortcut icon" type="image/x-icon" href="images/default/logo.png">
+  <link rel="shortcut icon" href="<?= $logo?>">
   
   <link rel="stylesheet" media="screen"  href="assets/css/nicepage.css">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -69,7 +78,7 @@
   <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
   <script language="JavaScript">
-    var txt="<?=$profileData[0]['prof_lnm']?>";
+    var txt="<?=$profileData[0]['prof_lnm']?> ";
     var kecepatan=100;
     var segarkan=null;
 
@@ -83,9 +92,6 @@
   </script>
 
   <meta name="theme-color" content="#478ac9">
-  <meta property="og:title" content="Pengumuman">
-  <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/">
 
 </head>
 
@@ -253,6 +259,7 @@
           </h3>
           <p class="u-align-left u-text u-text-default u-text-2" style="font-size: 1rem;">Dokumentasi kegiatan  <?= $profileData[0]['prof_lnm']?></b>
           </p>
+          <a class="btn btn-outline-primary" href="galeri">LIHAT GALERI LAINNYA</a>
         </div>
     </div>
   </section>
