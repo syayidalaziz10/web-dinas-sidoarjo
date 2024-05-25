@@ -4493,7 +4493,7 @@ mark {
   outline: 0;
 }
 
-#carouselAnnouncement a img {
+#carouselAnnouncement .carousel-item a img {
   height: 530px;
   object-fit: cover;
   position: relative;
