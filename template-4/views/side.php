@@ -24,7 +24,7 @@
          ?>
          <div class="col-12 d-flex justify-content-start align-items-start mb-5 pl-2 gap-3">
             <div class="col-5">
-               <img src="../images/post/<?= $image?>" alt="" class="img-fluid rounded">
+               <img src="<?= $image?>" alt="" class="img-fluid rounded">
             </div>
             <div class="col-7">
                <a href="../001/<?= $id?>"><p class="title-populer-post"><?= $title?></p></a>                                  
@@ -60,7 +60,7 @@
          ?>
          <div class="col-12 d-flex justify-content-start align-items-start mb-5 pl-2 gap-3">
             <div class="col-5">
-               <img src="../images/post/<?=$image?>" alt="" class="img-fluid rounded">
+               <img src="<?=$image?>" alt="" class="img-fluid rounded">
             </div>
             <div class="col-7">
                <a href="../001/<?= $id?>"><p class="title-populer-post"><?= $title?></p></a>                                  
