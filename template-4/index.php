@@ -363,8 +363,8 @@
 
 
   <!-- START ANNOUNCEMENT MODAL -->
-  <div class="modal fade overflow-hidden" id="announcementModal" tabindex="-1" aria-labelledby="pengumumanModal" aria-hidden="true">
-    <div class="modal-dialog modal modal-dialog-centered">
+  <div class="modal fade overflow-hidden" id="announcementModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header border-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
