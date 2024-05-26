@@ -725,8 +725,6 @@ a.btn-style-2:after {
 .news-section .box:hover .text-box .inner h4 a {
   text-decoration: none;
 }
-.news-section .box:hover .btm-row ul li a {
-}
 .news-section .box .btm-row a.btn-1:hover {
   text-decoration: none;
 }
@@ -1937,8 +1935,6 @@ strong.footer-logo {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
 }
-.news-widget ul li:hover .text-area a {
-}
 .links-widget {
   float: left;
   width: 100%;
@@ -2833,8 +2829,6 @@ strong.logo-2 {
   line-height: 20px;
   margin: 0;
 }
-.accordion-open span {
-}
 .accordion-close span {
   display: block;
   float: right;
@@ -3381,10 +3375,6 @@ input.radio:checked + label > span.show {
 }
 input.radio + label > span.show {
   display: inline-block;
-}
-input.radio + label > span.show-hover {
-}
-input.radio + label > span.show:before {
 }
 .form-row {
   float: left;
@@ -4785,11 +4775,6 @@ Header Style
 .navbar-mobile .active,
 .navbar-mobile li:hover > a {
   color: #3498db;
-}
-
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
-  margin: 15px;
 }
 
 .navbar-mobile .dropdown ul {
