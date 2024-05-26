@@ -138,6 +138,52 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                   <h3 class="mt-5"><?= $title?></h3>
                   <?= $desk?>
                </div>
+               <?php
+                  if ($categoryURL == "004") {
+               ?>
+               <div class="download mt-5">
+                  <table class="table">
+                     <thead>
+                        <tr>
+                        <th scope="col">Nama Dokumen</th>
+                        <th scope="col">Download</th>
+                        <th scope="col">Opsi</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <?php
+                        $query = $mysqli->query("SELECT * FROM pub_files WHERE post_id=$post_id ORDER BY files_nm");
+                        $news = $query->fetch_all(MYSQLI_ASSOC);
+                        
+                        foreach ($news as $row) {
+                           $title  = $row['files_nm'];
+                           $count  = $row['files_down'];
+
+
+                           // VARIABEL NEED OPERATION
+
+                           $parts = explode(".", $title);
+
+                           if (count($parts) > 2 && is_numeric($parts[0])) {
+                              $file_name = implode(".", array_slice($parts, 1));
+                           } else {
+                              $file_name = $title;
+                           }
+                           
+                        ?>
+                        <tr>
+                        <td><?= $title?></td>
+                        <td><?= $count?></td>
+                        <td>
+                           <a  href="#" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdfsrc="../../images/files/<?= $title ?>" ><i class="fa-solid fa-eye"></i></a>
+                           <a href="../../images/files/force.php?file=<?= urlencode($title)?>"><i class="fa-solid fa-download"></i></a>
+                        </td>
+                        </tr>
+                        <?php } ?>
+                     </tbody>
+                  </table>
+               </div>
+               <?php }?>
                <div class="share-box">
                   <div id="share" class="d-flex justify-content-start align-items-center">
                      <span style="font-weight: 700; font-size: 1rem;">Bagikan ke: </span>
