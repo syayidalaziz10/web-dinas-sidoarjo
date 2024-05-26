@@ -71,7 +71,6 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/jquery.bxslider.css">
-<link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 
 <script class="u-script" type="text/javascript" src="../assets/js/jquery.js" defer=""></script>
@@ -80,6 +79,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 
 <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
 
 <script language="JavaScript">
    var txt="<?=$option[1]->value?> Kabupaten Sidoarjo - <?=$option[2]->value?> ";
