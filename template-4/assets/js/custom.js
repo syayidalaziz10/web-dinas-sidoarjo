@@ -1,47 +1,28 @@
 jQuery(document).ready(function($) {
     "use strict";
-    // PrettyPhoto Script
-    $('a[data-rel]').each(function() {
-        $(this).attr('rel', $(this).data('rel'));
-        $(".pretty-gallery a[rel^='prettyPhoto']").prettyPhoto();
-    });
 
-    if ($('.gallery').length) {
-        $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({
-            animation_speed: 'normal',
-            theme: 'light_square',
-            slideshow: 3000,
-            autoplay_slideshow: true
-        });
-        $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({
-            animation_speed: 'fast',
-            slideshow: 10000,
-            hideflash: true
-        });
-    }
 
-    //Side Bar Menu Js
-    if ($('#cp_side-menu-btn, #cp-close-btn').length) {
-        $('#cp_side-menu-btn, #cp-close-btn').on('click', function(e) {
-            var $navigacia = $('body, #cp_side-menu'),
-                val = $navigacia.css('right') === '410px' ? '0px' : '410px';
-            $navigacia.animate({
-                right: val
-            }, 410)
-        });
-    }
 
-    //SCROLL FOR SIDEBAR NAVIGATION
-    if ($('#content-1').length) {
-        $("#content-1").mCustomScrollbar({
-            horizontalScroll: false
-        });
-        $(".content.inner").mCustomScrollbar({
-            scrollButtons: {
-                enable: true
-            }
-        });
-    }
+    /**
+	 * Mobile nav toggle
+	 */
+	document.querySelector('.mobile-nav-toggle').addEventListener('click', function(e) {
+		document.querySelector('#navbar').classList.toggle('navbar-mobile');
+		this.classList.toggle('fa-bars');
+		this.classList.toggle('fa-xmark');
+	});
+	
+	/**
+	 * Mobile nav dropdowns activate
+	 */
+	document.querySelectorAll('.navbar .dropdown > a').forEach(function(element) {
+		element.addEventListener('click', function(e) {
+		if (document.querySelector('#navbar').classList.contains('navbar-mobile')) {
+			e.preventDefault();
+			this.nextElementSibling.classList.toggle('dropdown-active');
+		}
+		});
+	});
 
 
     $('.owl-gallery').owlCarousel({
