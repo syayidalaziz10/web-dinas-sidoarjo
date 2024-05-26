@@ -132,7 +132,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
    <section class="detail-content">
       <div class="container">
          <div class="row justify-content-start align-items-start gap-5">
-            <div class="col-lg-7 my-5">
+            <div class="col-lg-7">
                <div class="post-content">
                   <img src="<?= $src?>" alt="" class="img-fluid">
                   <h3 class="mt-5"><?= $title?></h3>
@@ -184,7 +184,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                   </table>
                </div>
                <?php }?>
-               <div class="share-box">
+               <div class="share-box mt-5">
                   <div id="share" class="d-flex justify-content-start align-items-center">
                      <span style="font-weight: 700; font-size: 1rem;">Bagikan ke: </span>
                      <a class="facebook"  href="<?= generateShareLink('facebook', $current_url); ?>" target="blank"><i class="fa-brands fa-facebook"></i></a>
