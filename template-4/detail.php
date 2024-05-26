@@ -72,9 +72,6 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/jquery.bxslider.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
-<link rel="stylesheet" media="screen"  href="../assets/css/beranda.css">
-
-<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 
 <script class="u-script" type="text/javascript" src="../assets/js/jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="../assets/js/nicepage.js" defer=""></script>
@@ -172,6 +169,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 <script src="../assets/js/jquery.bxslider.min.js"></script>
 <script src="../assets/js/jquery.flexslider.js" defer ></script>
 <script src="../assets/js/custom.js"></script>
+<script src="../assets/js/header.js"></script>
 <script src="../assets/js/jquery.accordion.js"></script>
 
 <script type="text/javascript">
