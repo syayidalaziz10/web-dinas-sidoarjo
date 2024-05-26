@@ -2,29 +2,6 @@ jQuery(document).ready(function($) {
     "use strict";
 
 
-
-    /**
-	 * Mobile nav toggle
-	 */
-	document.querySelector('.mobile-nav-toggle').addEventListener('click', function(e) {
-		document.querySelector('#navbar').classList.toggle('navbar-mobile');
-		this.classList.toggle('fa-bars');
-		this.classList.toggle('fa-xmark');
-	});
-	
-	/**
-	 * Mobile nav dropdowns activate
-	 */
-	document.querySelectorAll('.navbar .dropdown > a').forEach(function(element) {
-		element.addEventListener('click', function(e) {
-		if (document.querySelector('#navbar').classList.contains('navbar-mobile')) {
-			e.preventDefault();
-			this.nextElementSibling.classList.toggle('dropdown-active');
-		}
-		});
-	});
-
-
     $('.owl-gallery').owlCarousel({
         center: true,
         items:1,
