@@ -6,13 +6,13 @@
 
 
   $queryProfile    = $mysqli->query('SELECT * FROM pub_profile');
-  $profileData     = $queryProfile->fetch_assoc();
+  $profileData     = $queryProfile->fetch_all(MYSQLI_ASSOC);
 
 
   // GET PROFILE LOGO
 
-  if ((!empty($profileData['prof_lg'])) && file_exists('../'.$_dirProf.$profileData['prof_lg'])){
-    $logo = $_dirProf.$profileData['prof_lg'];
+  if ((!empty($profileData[0]['prof_lg'])) && file_exists($_dirProf.$profileData[0]['prof_lg'])){
+    $logo = $_dirProf.$profileData[0]['prof_lg'];
   } else {
     $logo = $_dirProf . 'default.png';
   }
@@ -29,7 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="<?= $logo?>">
 
-  <title><?= $profileData['prof_lnm'];?></title>
+  <title><?= $profileData[0]['prof_lnm'];?></title>
 
 
   <!-- Additional CSS Files -->
@@ -56,11 +56,10 @@
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-8 detail-header-teks" >
-            <h1 style="text-transform: uppercase;">Galeri</h1>
-            Seluruh dokumentasi kegiatan <?= $profileData['prof_snm']?>
+          <h1 style="text-transform: uppercase;">Galeri</h1>
         </div>
         <div class="col-4">
-            <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
+          <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
         </div>
       </div>
     </div>
