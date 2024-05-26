@@ -140,6 +140,12 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                </div>
                <div class="share-box">
                   <strong class="title">Share This :</strong>
+                  <div id="share">
+                     <a class="facebook"  href="" target="blank"><i class="fa-brands fa-facebook"></i></a>
+                     <a class="twitter"   href="" target="blank"><i class="fa-brands fa-twitter"></i></a>
+                     <a class="whatsapp"  href="" target="blank"><i class="fa-brands fa-whatsapp"></i></a>
+                     <a class="instagram" href="" target="blank"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
                </div>
             </div>
             <div class="col-lg-4 mt-3">
