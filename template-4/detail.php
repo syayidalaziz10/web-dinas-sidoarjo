@@ -132,7 +132,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
    <section class="detail-content">
       <div class="container">
          <div class="row justify-content-start align-items-start gap-5">
-            <div class="col-lg-7">
+            <div class="col-lg-7 my-5">
                <div class="post-content">
                   <img src="<?= $src?>" alt="" class="img-fluid">
                   <h3 class="mt-5"><?= $title?></h3>
