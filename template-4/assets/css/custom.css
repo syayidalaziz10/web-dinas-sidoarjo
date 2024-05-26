@@ -5128,3 +5128,40 @@ Footer Style
 .instagram {
   background: #cb2027;
 }
+
+/* media digital */
+
+.video-wrap {
+  position: relative;
+  display: block;
+}
+
+.video-wrap .play-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+.video-wrap .play-wrap > i {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #ffffff;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.video-wrap:hover .play-wrap {
+  width: 60px;
+  height: 60px;
+}
