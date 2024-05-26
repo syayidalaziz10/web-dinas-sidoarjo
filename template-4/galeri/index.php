@@ -43,11 +43,6 @@
 <body>
 
 
-  <?php 
-    include_once('../views/counter.php');
-  ?>
-
-
 
   <!-- ======= Header ======= -->
   <?php 
@@ -61,8 +56,8 @@
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-8 detail-header-teks" >
-            <h1 style="text-transform: uppercase;"><?= $category['ca_nm']?></h1>
-            <p><?= $category['ca_desk']?></p>
+            <h1 style="text-transform: uppercase;">Galeri</h1>
+            Seluruh dokumentasi kegiatan <?= $profileData['prof_snm']?>
         </div>
         <div class="col-4">
             <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
@@ -171,7 +166,8 @@
 
     <?php 
     
-    include_once('../views/footer.php')
+    include_once('../views/footer.php');
+    include_once('../views/visitor.php')
     
     
     ?>
