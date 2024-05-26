@@ -4982,10 +4982,11 @@ Footer Style
 }
 
 .visitor p {
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 700;
+  font-size: 1rem;
   line-height: normal;
-  color: #fff;
+  color: #000;
+  font-family: "Poppins", "Roboto", Arial, sans-serif;
 }
 
 .cta-primary {

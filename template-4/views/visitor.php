@@ -18,7 +18,7 @@ $countVisit = mysqli_fetch_assoc($visitor);
    <div class="visitor-logo">
       <a href="#" onclick="return false;" class="floating-btn"><i class="fa fa-circle-user"></i></a>
    </div>
-   <p class="my-0 text-black" style="font-weight: 700;"><?= $countVisit['total_visitors']?></p>
+   <p class="my-0"><?= $countVisit['total_visitors']?></p>
 </div>
 <!-- END VISITOR -->
 
