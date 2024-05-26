@@ -5084,12 +5084,12 @@ Footer Style
 /* buttons */
 
 #share a {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   margin: 8px;
   border-radius: 50%;
-  font-size: 24px;
+  font-size: 18px;
   color: #fff;
   opacity: 0.75;
   transition: opacity 0.15s linear;
@@ -5102,9 +5102,12 @@ Footer Style
 /* icons */
 
 #share i {
-  position: relative;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /* colors */

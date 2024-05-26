@@ -139,7 +139,6 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                   <?= $desk?>
                </div>
                <div class="share-box">
-                  <strong class="title">Share This :</strong>
                   <div id="share">
                      <a class="facebook"  href="" target="blank"><i class="fa-brands fa-facebook"></i></a>
                      <a class="twitter"   href="" target="blank"><i class="fa-brands fa-twitter"></i></a>
