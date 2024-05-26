@@ -72,6 +72,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/jquery.bxslider.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 
 <script class="u-script" type="text/javascript" src="../assets/js/jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="../assets/js/nicepage.js" defer=""></script>
