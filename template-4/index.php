@@ -236,7 +236,7 @@
       <p class="u-align-center u-text u-text-default u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="font-size : 1rem; text-align: center;">Keseluruhan Bidang yang ada pada <?= $profileData[0]['prof_lnm']?> </p>
       <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1 d-flex justify-content-center align-items-center flex-wrap">
-          <?=requestRecTemplate4('jab_nm, stat', 'set_jabdept', 'stat=2 AND _active=1', '', '', 14)?>
+          <?=requestRecTemplate4('jab_nm, stat', 'set_jabdept', 'stat=1 AND _active=1', '', '', 14)?>
         </div>
       </div>
     </div>
