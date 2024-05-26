@@ -139,8 +139,8 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                   <?= $desk?>
                </div>
                <div class="share-box">
-                  <div id="share">
-                     <span class="font-weight: 700; font-size: 1rem;">Bagikan ke: </span>
+                  <div id="share d-flex justify-content-center align-items-center">
+                     <span style="font-weight: 700; font-size: 1rem;" class="mr-2">Bagikan ke: </span>
                      <a class="facebook"  href="" target="blank"><i class="fa-brands fa-facebook"></i></a>
                      <a class="twitter"   href="" target="blank"><i class="fa-brands fa-twitter"></i></a>
                      <a class="whatsapp"  href="" target="blank"><i class="fa-brands fa-whatsapp"></i></a>
