@@ -5093,6 +5093,7 @@ Footer Style
   color: #fff;
   opacity: 0.75;
   transition: opacity 0.15s linear;
+  position: relative;
 }
 
 #share a:hover {
