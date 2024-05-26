@@ -227,6 +227,7 @@ $category     = $getCategory->fetch_assoc();
 <script src="../assets/js/jquery.bxslider.min.js"></script>
 <script src="../assets/js/jquery.flexslider.js" defer ></script>
 <script src="../assets/js/custom.js"></script>
+<script src="../assets/js/header.js"></script>
 <script src="../assets/js/jquery.accordion.js"></script>
 
 <script type="text/javascript">

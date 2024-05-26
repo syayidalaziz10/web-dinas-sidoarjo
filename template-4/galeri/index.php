@@ -184,6 +184,7 @@
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../assets/js/jquery.fancybox.min.js"></script>
   <script src="../assets/js/custom.js"></script>
+  <script src="../assets/js/header.js"></script>
 
 
 
