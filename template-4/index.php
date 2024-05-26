@@ -125,7 +125,7 @@
         <div class="u-layout-row py-lg-5 py-0">
           <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-32 u-layout-cell-1 mt-lg-5 mt-0">
             <div class="u-container-layout u-container-layout-1">
-              <img class="u-align-center u-image u-image-default u-image-1" src="../images/logodiskominfoout.png" alt="" data-image-width="581" data-image-height="508" data-animation-name="customAnimationIn" data-animation-duration="1000">
+              <img class="u-align-center u-image u-image-default u-image-1" src="<?=$logo?>" alt="" data-image-width="581" data-image-height="508" data-animation-name="customAnimationIn" data-animation-duration="1000">
             </div>
           </div>
           <div class="u-container-style u-layout-cell u-size-28 u-layout-cell-2 text-content-banner mt-lg-5 mt-0">
