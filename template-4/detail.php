@@ -141,10 +141,10 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                <div class="share-box">
                   <div id="share" class="d-flex justify-content-start align-items-center">
                      <span style="font-weight: 700; font-size: 1rem;">Bagikan ke: </span>
-                     <a class="facebook"  href="" target="blank"><i class="fa-brands fa-facebook"></i></a>
-                     <a class="twitter"   href="" target="blank"><i class="fa-brands fa-twitter"></i></a>
-                     <a class="whatsapp"  href="" target="blank"><i class="fa-brands fa-whatsapp"></i></a>
-                     <a class="instagram" href="" target="blank"><i class="fa-brands fa-instagram"></i></a>
+                     <a class="facebook"  href="<?= generateShareLink('facebook', $current_url); ?>" target="blank"><i class="fa-brands fa-facebook"></i></a>
+                     <a class="twitter"   href="<?= generateShareLink('twitter', $current_url); ?>" target="blank"><i class="fa-brands fa-twitter"></i></a>
+                     <a class="whatsapp"  href="<?= generateShareLink('whatsapp', $current_url); ?>" target="blank"><i class="fa-brands fa-whatsapp"></i></a>
+                     <a class="instagram" href="<?= generateShareLink('instagram', $current_url); ?>" target="blank"><i class="fa-brands fa-instagram"></i></a>
                   </div>
                </div>
             </div>
