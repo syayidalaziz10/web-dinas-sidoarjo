@@ -85,7 +85,7 @@
             $videoId = $params['v'];
           ?>
 
-          <div class="col-lg-6 col-12 mb-4">
+          <div class="col-lg-4 col-6">
             <a href=" <?= $url?>" data-fancybox class="video-wrap">
               <span class="play-wrap"><i class="fa-solid fa-play"></i></span>
               <img src="https://img.youtube.com/vi/<?= $videoId?>/hqdefault.jpg" class="video-cover rounded"/>
