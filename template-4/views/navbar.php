@@ -12,6 +12,9 @@ if(empty($categoryURL)) {
    $dirLink = '../';
 }
 
+$current_page = $_SERVER['REQUEST_URI'];
+$siteUrl = ($current_page === '') ? '' : '../';
+
 
 
 $dir_prof  = $_dirProf.$profileData[0]['prof_lg'];
@@ -71,7 +74,7 @@ if ((!empty($profileData[0]['prof_lg'])) && file_exists($dir_prof)){
 
                   if ($count > 0) {
                      echo '<li class="dropdown">
-                           <a href="'.$dirLink.$menu['mn_url'].'">'.$menu['mn_txt'].'<i class="fa fa-angle-right"></i></a>
+                           <a href="'.$siteUrl.$menu['mn_url'].'">'.$menu['mn_txt'].'<i class="fa fa-angle-right"></i></a>
                               <ul>';
                                  menu($data, $menu['mn_id']);
                         echo '</ul>
@@ -79,7 +82,7 @@ if ((!empty($profileData[0]['prof_lg'])) && file_exists($dir_prof)){
                   }
 
                   else{
-                     echo '<li><a class="nav-link" target="'.$menu['mn_tar'].'" href="'.$dirLink.$menu['mn_url'].'">'.$menu['mn_txt'].'</a></li>';
+                     echo '<li><a class="nav-link" target="'.$menu['mn_tar'].'" href="'.$siteUrl.$menu['mn_url'].'">'.$menu['mn_txt'].'</a></li>';
                   }
                }
             ?>
