@@ -4290,34 +4290,6 @@ em ul li {
   text-align: left;
 }
 
-.search-form-wrap {
-  margin-bottom: 4em;
-  display: block;
-}
-
-.search-form-wrap #text-to-search {
-  padding: 12px;
-  font-size: 1rem;
-  border: 2px solid #e6e6e6;
-  width: 80%;
-  margin-right: 10px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  outline: none;
-}
-
-.search-form-wrap #text-to-search:hover {
-  border: 2px solid #131f40;
-}
-
-.search-form-wrap button {
-  padding: 12px 15px;
-  font-size: 1rem;
-  background-color: #131f40;
-  border: 0;
-  color: #fff;
-}
-
 mark {
   background-color: #131f40;
   color: #fff;
@@ -4326,7 +4298,8 @@ mark {
 .title-populer-post {
   width: 100%;
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
+  text-decoration: none;
   font-size: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -4338,7 +4311,7 @@ mark {
 }
 
 .title-populer-post:hover {
-  color: #131f40;
+  color: #0693e3;
 }
 
 .categories {
@@ -4366,6 +4339,8 @@ mark {
 .categories li a {
   display: block;
   font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
   color: #000;
 }
 
