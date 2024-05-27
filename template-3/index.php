@@ -39,14 +39,13 @@
   addVisitToDatabase($ip_address, $os, $browser, $visit_date);
   
 
-  if ((!empty($row['post_img'])) && file_exists($dir_image)) {
-
+  $dir_image = $dirProf.$prof[0]['prof_lg'];
+ 
+  
+  if ((!empty($prof[0]['prof_lg'])) && file_exists($dir_image)) {
     $src = '../images/profile/'.$prof[0]['prof_lg'];
-
   } else {
-
-    $src = '../images/profile/default_3.png';
-
+    $src = '../images/profile/default.png';
   }
 
   ?>
@@ -239,101 +238,6 @@
                 <p>Ikuti dokumentasi aktivitas kegiatan lainnya melalui media digital kami</p>
             </div><!-- End Section Title -->
 
-            <style>
-            .carousel-item {
-                height: 100%;
-            }
-
-            .embed-responsive-item {
-                width: 100%;
-                height: 100%;
-            }
-
-            .slider-container {
-                position: relative;
-                overflow: hidden;
-            }
-
-            .slider-control-prev,
-            .slider-control-next {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: #47b2e4;
-                border: none;
-                border-radius: 50%;
-                color: white;
-                font-size: 2rem;
-                width: 45px;
-                height: 45px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                z-index: 10;
-            }
-
-            .slider-control-prev {
-                left: 10px;
-            }
-
-            .slider-control-next {
-                right: 10px;
-            }
-
-            .slider-control-prev:hover,
-            .slider-control-next:hover {
-                background-color: #47b2e2;
-                transition: 0.3s;
-            }
-
-            .visually-hidden {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                padding: 0;
-                margin: -1px;
-                overflow: hidden;
-                clip: rect(0, 0, 0, 0);
-                border: 0;
-            }
-
-            .swiper-container {
-                width: 100%;
-                height: 100%;
-            }
-
-            .swiper-slide {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            /* Media Queries for Responsive Design */
-            @media (max-width: 768px) {
-                .slider-container {
-                    height: 300px;
-                    /* Adjust the height for mobile */
-                }
-
-                .slider-control-prev,
-                .slider-control-next {
-                    width: 35px;
-                    height: 35px;
-                    font-size: 1.5rem;
-                }
-
-                .btn-info {
-                    width: 100%;
-                    /* Full width on mobile */
-                    height: 50px;
-                    /* Slightly taller button on mobile */
-                    border-radius: 25px;
-                    /* Adjust border radius if necessary */
-                }
-            }
-            </style>
-
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -427,11 +331,14 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="faq-container">
-                            <?= requestRecTemplate3('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1 AND post_datex >= CURDATE()', 'post_publish DESC', '', 9) ?>
+                            <?= requestRecTemplate3('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1 AND post_datex >= CURDATE()', 'post_publish DESC', 4, 9) ?>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-center" data-aos="fade-up">
+                            <a href="002/" class="mt-5 btn btn-info text-white shadow"
+                                style="width:200px ; height:40px ; border-radius: 30px;">Lihat Layanan Lainnya</a>
                         </div>
 
                     </div>
-
                 </div>
 
             </div>
@@ -487,11 +394,6 @@
                                     <p><?=$prof[0]['prof_snm']?></p>
                                 </div>
                             </div>
-
-                            <!-- <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-                                frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen=""
-                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
                         </div>
                     </div>
 
@@ -579,7 +481,7 @@
                     <div class="alert alert-danger" role="alert" style="display: none;">
                         Kode otp yang anda masukkan salah
                     </div>
-                    <img src="images/3.png" alt="" style="width: 100%; border-radius: 8px;" class="mb-3">
+                    <img src="../images/3.png" alt="" style="width: 100%; border-radius: 8px;" class="mb-3">
                     <h5 class="fw-bolder">Verifikasi Email</h5>
                     <p class="fw-light">
                         Kami telah mengirimkan kode otp ke alamat email anda
@@ -608,7 +510,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body p-5">
-                    <img src="images/4.png" alt="" style="width: 100%; border-radius: 8px;" class="mb-4">
+                    <img src="../images/4.png" alt="" style="width: 100%; border-radius: 8px;" class="mb-4">
                     <h4 class="fw-bolder">Verifikasi berhasil!</h4>
                     <p class="fw-bolder mb-0">Yuk isi survei kepuasan masyarakat pada tautan ini
                         <a href="<?=$prof[0]['prof_skm']?>">Survei kepuasan masyarakat Dinas Komunikasi dan
@@ -638,9 +540,7 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="assets/vendor/jquery/jquery.js"></script>
     <script src="./assets/js/iframe_api.js"></script>
-    <!-- <script src="https://www.youtube.com/iframe_api"></script> -->
-    <!-- <script src="assets/js/embedYoutube.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
