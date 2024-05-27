@@ -335,7 +335,7 @@
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-center" data-aos="fade-up">
                             <a href="002/" class="mt-5 btn btn-info text-white shadow"
-                                style="width:200px ; height:40px ; border-radius: 30px;">Lihat Layanan Lainnya</a>
+                                style="width:200px ; height:40px ; border-radius: 30px;">Lihat Kegiatan Lainnya</a>
                         </div>
 
                     </div>
