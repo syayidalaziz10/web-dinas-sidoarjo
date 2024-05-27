@@ -31,12 +31,20 @@
   <title><?= $profileData[0]['prof_lnm'];?></title>
 
   <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" media="screen"  href="../assets/css/nicepage.css">
+  <link rel="stylesheet" href="../assets/css/fontawesome.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
   <link rel="stylesheet" media="screen"  href="../assets/css/beranda.css">
-
   <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/css/jquery.fancybox.min.css">
+
+  <script class="u-script" type="text/javascript" src="../assets/js/jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="../assets/js/nicepage.js" defer=""></script>
+
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+
 
 </head>
 <body>
