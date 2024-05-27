@@ -66,7 +66,7 @@
           <h1 style="text-transform: uppercase;">Media Digital</h1>
         </div>
         <div class="col-4">
-          <img src="../../images/vector detail/informasi.png" class="img-fluid" alt="alt"/>
+          <img src="../../images/vector detail/agenda.png" class="img-fluid" alt="alt"/>
         </div>
       </div>
     </div>
