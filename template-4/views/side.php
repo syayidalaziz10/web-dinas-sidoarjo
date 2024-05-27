@@ -8,16 +8,23 @@
          $news = $query->fetch_all(MYSQLI_ASSOC);
          
          foreach ($news as $row) {
-            $id 		= $row['post_id'];
-            $title 	= $row['post_judul'];
-            $date 	= $row['post_publish'];
-            $image 	= $row['post_img'];
+            $id 		   = $row['post_id'];
+            $title 	   = $row['post_judul'];
+            $date 	   = $row['post_publish'];
+            $dir_image  = '../'.$_dirPost.$row['post_img'];
+				
+                        
+            if ((!empty($row['post_img'])) && file_exists($dir_image)){
+               $image = $dir_image;
+            } else {
+               $image = '../' . $_dirPost . 'default-template-2.png';
+            }
 
          
          ?>
          <div class="col-12 d-flex justify-content-start align-items-start mb-5 pl-2 gap-3">
             <div class="col-5">
-               <img src="../images/post/<?= $image?>" alt="" class="img-fluid rounded">
+               <img src="<?= $image?>" alt="" class="img-fluid rounded">
             </div>
             <div class="col-7">
                <a href="../001/<?= $id?>"><p class="title-populer-post"><?= $title?></p></a>                                  
@@ -36,17 +43,24 @@
          $news = $query->fetch_all(MYSQLI_ASSOC);
          
          foreach ($news as $row) {
-            $id 		= $row['post_id'];
-            $title 	= $row['post_judul'];
-            $date 	= $row['post_publish'];
-            $image 	= $row['post_img'];
+            $id 		   = $row['post_id'];
+            $title 	   = $row['post_judul'];
+            $date 	   = $row['post_publish'];
+            $dir_image  = '../'.$_dirPost.$row['post_img'];
+				
+				
+            if ((!empty($row['post_img'])) && file_exists($dir_image)){
+               $image = $dir_image;
+            } else {
+               $image = '../' . $_dirPost . 'default-template-2.png';
+            }
       
             
          
          ?>
          <div class="col-12 d-flex justify-content-start align-items-start mb-5 pl-2 gap-3">
             <div class="col-5">
-               <img src="../images/post/<?=$image?>" alt="" class="img-fluid rounded">
+               <img src="<?=$image?>" alt="" class="img-fluid rounded">
             </div>
             <div class="col-7">
                <a href="../001/<?= $id?>"><p class="title-populer-post"><?= $title?></p></a>                                  

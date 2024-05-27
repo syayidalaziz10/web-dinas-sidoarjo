@@ -8,16 +8,16 @@ $queryProfile    = $mysqli->query('SELECT * FROM pub_profile');
 $profileData     = $queryProfile->fetch_all(MYSQLI_ASSOC);
 
 
-$categoryURL  = $_GET['id'];
+$categoryURL  = $_GET['kategori'];
 $post_id  = $_GET['post_id'];
 
 
 
 
-$getCategory  = $mysqli->query("SELECT ca_nm, ca_icon FROM set_category  WHERE ca_id = $categoryURL");
+$getCategory  = $mysqli->query("SELECT ca_nm, ca_desk FROM set_category  WHERE ca_id = $categoryURL");
 $category     = $getCategory->fetch_assoc();
 
-$query    = $mysqli->query("SELECT * from pub_post WHERE ca_id=$categoryURL AND post_id=$post_id");
+$query    = $mysqli->query("SELECT * from pub_post WHERE ca_id=$categoryURL AND post_id=$post_id AND _active=1");
 $result   = $query->fetch_assoc();
 
 if (!$result) {
@@ -71,9 +71,6 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.css">
 <link rel="stylesheet" type="text/css" href="../assets/css/jquery.bxslider.css">
-<link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
-<link rel="stylesheet" media="screen"  href="../assets/css/beranda.css">
-
 <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 
 <script class="u-script" type="text/javascript" src="../assets/js/jquery.js" defer=""></script>
@@ -82,6 +79,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 
 <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
 
 <script language="JavaScript">
    var txt="<?=$option[1]->value?> Kabupaten Sidoarjo - <?=$option[2]->value?> ";
@@ -121,11 +119,11 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
       <div class="container">
          <div class="row d-flex justify-content-center align-items-center">
             <div class="col-8 detail-header-teks" >
-               <h1>LAYANAN</h1>
-               <p>Seluruh Layanan Dalam Dinas Kominfo Sidoarjo</p>
+               <h1 style="text-transform: uppercase;"><?= $category['ca_nm']?></h1>
+               <p><?= $category['ca_desk']?></p>
             </div>
             <div class="col-4">
-               <img src="../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
+               <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
             </div>
          </div>
       </div>
@@ -140,8 +138,59 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                   <h3 class="mt-5"><?= $title?></h3>
                   <?= $desk?>
                </div>
-               <div class="share-box">
-                  <strong class="title">Share This :</strong>
+               <?php
+                  if ($categoryURL == "004") {
+               ?>
+               <div class="download mt-5">
+                  <table class="table">
+                     <thead>
+                        <tr>
+                        <th scope="col">Nama Dokumen</th>
+                        <th scope="col">Download</th>
+                        <th scope="col">Opsi</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <?php
+                        $query = $mysqli->query("SELECT * FROM pub_files WHERE post_id=$post_id ORDER BY files_nm");
+                        $news = $query->fetch_all(MYSQLI_ASSOC);
+                        
+                        foreach ($news as $row) {
+                           $title  = $row['files_nm'];
+                           $count  = $row['files_down'];
+
+
+                           // VARIABEL NEED OPERATION
+
+                           $parts = explode(".", $title);
+
+                           if (count($parts) > 2 && is_numeric($parts[0])) {
+                              $file_name = implode(".", array_slice($parts, 1));
+                           } else {
+                              $file_name = $title;
+                           }
+                           
+                        ?>
+                        <tr>
+                        <td><?= $title?></td>
+                        <td><?= $count?></td>
+                        <td>
+                           <a  href="#" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdfsrc="../../images/files/<?= $title ?>" ><i class="fa-solid fa-eye"></i></a>
+                           <a href="../../images/files/force.php?file=<?= urlencode($title)?>"><i class="fa-solid fa-download"></i></a>
+                        </td>
+                        </tr>
+                        <?php } ?>
+                     </tbody>
+                  </table>
+               </div>
+               <?php }?>
+               <div class="share-box mt-5">
+                  <div id="share" class="d-flex justify-content-start align-items-center">
+                     <a class="facebook"  href="<?= generateShareLink('facebook', $current_url); ?>" target="blank"><i class="fa-brands fa-facebook"></i></a>
+                     <a class="twitter"   href="<?= generateShareLink('twitter', $current_url); ?>" target="blank"><i class="fa-brands fa-twitter"></i></a>
+                     <a class="whatsapp"  href="<?= generateShareLink('whatsapp', $current_url); ?>" target="blank"><i class="fa-brands fa-whatsapp"></i></a>
+                     <a class="instagram" href="<?= generateShareLink('instagram', $current_url); ?>" target="blank"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
                </div>
             </div>
             <div class="col-lg-4 mt-3">
@@ -158,6 +207,8 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 
    <?php 
 
+   include_once "views/visitor.php";
+   include_once "views/social.php";
    include_once "views/footer.php";
 
    ?>
@@ -171,6 +222,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 <script src="../assets/js/jquery.bxslider.min.js"></script>
 <script src="../assets/js/jquery.flexslider.js" defer ></script>
 <script src="../assets/js/custom.js"></script>
+<script src="../assets/js/header.js"></script>
 <script src="../assets/js/jquery.accordion.js"></script>
 
 <script type="text/javascript">

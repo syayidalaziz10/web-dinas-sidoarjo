@@ -1,47 +1,5 @@
 jQuery(document).ready(function($) {
     "use strict";
-    // PrettyPhoto Script
-    $('a[data-rel]').each(function() {
-        $(this).attr('rel', $(this).data('rel'));
-        $(".pretty-gallery a[rel^='prettyPhoto']").prettyPhoto();
-    });
-
-    if ($('.gallery').length) {
-        $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({
-            animation_speed: 'normal',
-            theme: 'light_square',
-            slideshow: 3000,
-            autoplay_slideshow: true
-        });
-        $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({
-            animation_speed: 'fast',
-            slideshow: 10000,
-            hideflash: true
-        });
-    }
-
-    //Side Bar Menu Js
-    if ($('#cp_side-menu-btn, #cp-close-btn').length) {
-        $('#cp_side-menu-btn, #cp-close-btn').on('click', function(e) {
-            var $navigacia = $('body, #cp_side-menu'),
-                val = $navigacia.css('right') === '410px' ? '0px' : '410px';
-            $navigacia.animate({
-                right: val
-            }, 410)
-        });
-    }
-
-    //SCROLL FOR SIDEBAR NAVIGATION
-    if ($('#content-1').length) {
-        $("#content-1").mCustomScrollbar({
-            horizontalScroll: false
-        });
-        $(".content.inner").mCustomScrollbar({
-            scrollButtons: {
-                enable: true
-            }
-        });
-    }
 
 
     $('.owl-gallery').owlCarousel({
@@ -95,21 +53,19 @@ jQuery(document).ready(function($) {
         }
     });
 
-    if ( $('.owl-announcement').length > 0 ) {
-        $('.owl-announcement').owlCarousel({
-            items: 1,
-            loop: false,
-            margin: 0,
-            center: true,
-            autoplay: false,
-            autoplayTimeout:3000,
-            autoplayHoverPause:false,
-            nav: false,
-            dots: false,
-            navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
-            smartSpeed: 400,
-        });
-    }
+
+    $('.owl-announcement').owlCarousel({
+        items: 1,
+        loop: false,
+        margin: 0,
+        autoplay: false,
+        autoplayTimeout:3000,
+        autoplayHoverPause:false,
+        nav: false,
+        dots: false,
+        navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+        smartSpeed: 400,
+    });
 
 
     // Home Banner

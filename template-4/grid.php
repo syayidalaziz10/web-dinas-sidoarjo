@@ -11,7 +11,7 @@ $profileData     = $queryProfile->fetch_all(MYSQLI_ASSOC);
 $kategori = $_GET['kategori'];
 
 
-$getCategory  = $mysqli->query("SELECT ca_nm FROM set_category  WHERE ca_id = $kategori");
+$getCategory  = $mysqli->query("SELECT ca_nm, ca_desk FROM set_category  WHERE ca_id = $kategori");
 $category     = $getCategory->fetch_assoc();
 
 
@@ -92,11 +92,11 @@ $category     = $getCategory->fetch_assoc();
       <div class="container">
          <div class="row d-flex justify-content-center align-items-center">
             <div class="col-8 detail-header-teks" >
-               <h1>LAYANAN</h1>
-               <p>Seluruh Layanan Dalam Dinas Kominfo Sidoarjo</p>
+               <h1 style="text-transform: uppercase;"><?= $category['ca_nm']?></h1>
+               <p><?= $category['ca_desk']?></p>
             </div>
             <div class="col-4">
-               <img src="../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
+               <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
             </div>
          </div>
       </div>
@@ -146,13 +146,13 @@ $category     = $getCategory->fetch_assoc();
                   <div class="col-lg-4 col-md-6 mb-5">
                      <div class="rounded overflow-hidden">
                         <div class="position-relative overflow-hidden">
-                           <img class="img-fluid w-100" src="<?= $image?>" alt="">
+                           <img class="img-fluid w-100" src="<?= $image?>" alt="" style="height: 230px; object-fit: cover;">
                         </div>
-                        <div class="p-4" style="background-color: #f6f4f9;">
-                        <div class="d-flex justify-content-start align-items-start gap-3">
-                           <p class="fw-medium mb-2"><i class="fa-solid fa-calendar-days"></i>  <?= dateToDMY($date)?></p>
-                           <p><i class="fa-solid fa-eye"></i> <?= $count?></p>
-                        </div>
+                        <div class="p-4" style="background-color: #f6f4f9; height: 200px;">
+                           <div class="d-flex justify-content-start align-items-start gap-3">
+                              <p class="fw-medium mb-2"><i class="fa-solid fa-calendar-days"></i>  <?= dateToDMY($date)?></p>
+                              <p><i class="fa-solid fa-eye"></i> <?= $count?></p>
+                           </div>
                            <a href="<?= $id?>" class="text-decoration-none">
                               <h4 class="lh-base mb-0 fw-bolder"><?= $title?></a>
                            </a>
@@ -213,6 +213,8 @@ $category     = $getCategory->fetch_assoc();
 
    <?php 
 
+   include_once "views/visitor.php";
+   include_once "views/social.php";
    include_once "views/footer.php";
 
    ?>
@@ -226,6 +228,7 @@ $category     = $getCategory->fetch_assoc();
 <script src="../assets/js/jquery.bxslider.min.js"></script>
 <script src="../assets/js/jquery.flexslider.js" defer ></script>
 <script src="../assets/js/custom.js"></script>
+<script src="../assets/js/header.js"></script>
 <script src="../assets/js/jquery.accordion.js"></script>
 
 <script type="text/javascript">
