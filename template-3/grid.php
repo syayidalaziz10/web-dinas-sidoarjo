@@ -81,6 +81,16 @@ $rowCount = $resCount->fetch_assoc();
 $total_records = $rowCount['jumlah'];
 
 
+$dir_image = $dirProf.$prof[0]['prof_lg'];
+ 
+  
+if ((!empty($prof[0]['prof_lg'])) && file_exists($dir_image)) {
+    $src = '../../images/profile/'.$prof[0]['prof_lg'];
+  } else {
+    $src = '../../images/profile/default.png';
+  }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +99,7 @@ $total_records = $rowCount['jumlah'];
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $prof[0]['prof_lnm']?></title>
-    <link rel="shortcut icon" href="images/profile/<?= $prof[0]['prof_lg']?>">
+    <link rel="shortcut icon" href="<?= $src ?>">
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -186,9 +196,9 @@ $total_records = $rowCount['jumlah'];
 
                             // Set the image source
                             if (!empty($row['post_img']) && file_exists($dir_image)) {
-                                $src = '../images/post/'.$row['post_img'];
+                                $src = '../../images/post/'.$row['post_img'];
                             } else {
-                                $src = '../images/post/default_3.png';
+                                $src = '../../images/post/default_3.png';
                             }
 
                             $deskToStr = strip_tags($desk);
