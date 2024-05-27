@@ -2370,3 +2370,104 @@ section,
   border: 1px solid #efefef;
   background-color: #0d62b9;
 }
+
+
+
+
+
+/* ======================================== youtube */
+
+.carousel-item {
+  height: 100%;
+}
+
+.embed-responsive-item {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-control-prev,
+.slider-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #47b2e4;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-control-prev {
+  left: 10px;
+}
+
+.slider-control-next {
+  right: 10px;
+}
+
+.slider-control-prev:hover,
+.slider-control-next:hover {
+  background-color: #47b2e2;
+  transition: 0.3s;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .slider-container {
+      height: 300px;
+      /* Adjust the height for mobile */
+  }
+
+  .slider-control-prev,
+  .slider-control-next {
+      width: 35px;
+      height: 35px;
+      font-size: 1.5rem;
+  }
+
+  .btn-info {
+      width: 100%;
+      /* Full width on mobile */
+      height: 50px;
+      /* Slightly taller button on mobile */
+      border-radius: 25px;
+      /* Adjust border radius if necessary */
+  }
+}
+
+/* end yourub e ============================== */
