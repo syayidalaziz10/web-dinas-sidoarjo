@@ -54,12 +54,20 @@
         $title = $row['post_judul'];
         $date = $row['post_publish'];
         $see 	= $row['post_see'];
-        $image = 'images/post/' . $row['post_img'];
+        $dir_image = '../'.$_dirPost.$row['post_img'];
+				
+				
+        if ((!empty($row[1])) && file_exists($dir_image)){
+            $image = '../'.$_dirPost . $row[1];
+        } else {
+            $image = '../'.$_dirPost . 'default_3.png';
+        }
+         
 
        
     ?>
         <div class="d-flex flex-row post-item">
-            <a href="../001/<?= $id?>"><img src="../<?= $image ?>" class="flex-shrink-0 ml-2 mb-3 rounded"
+            <a href="../001/<?= $id?>"><img src="<?= $image ?>" class="flex-shrink-0 ml-2 mb-3 rounded"
                     style="height: 100px; object-fit: cover; margin-right:10px; " alt="Nama Gambar"></a>
             <div>
                 <a href="../001/<?= $id?>">
@@ -101,12 +109,20 @@
          $title 	= $row['post_judul'];
          $date 	= $row['post_publish'];
          $see 	= $row['post_see'];
-         $image	= 'images/post/'.$row['post_img'];
+         $dir_image = '../'.$_dirPost.$row['post_img'];
+				
+				
+         if ((!empty($row[1])) && file_exists($dir_image)){
+             $image = '../'.$_dirPost . $row[1];
+         } else {
+             $image = '../'.$_dirPost . 'default_3.png';
+         }
+          
          
       
       ?>
         <div class="d-flex flex-row post-item">
-            <a href="../002/<?= $id?>"><img src="../<?= $image ?>" class="flex-shrink-0 ml-2 mb-3 rounded"
+            <a href="../002/<?= $id?>"><img src="<?= $image ?>" class="flex-shrink-0 ml-2 mb-3 rounded"
                     style="height: 100px; object-fit: cover; margin-right:10px;" alt="Nama Gambar"></a>
             <div>
                 <a href="../002/<?= $id?>">

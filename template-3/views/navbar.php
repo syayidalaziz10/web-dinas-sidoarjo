@@ -5,6 +5,17 @@
    $current_page = $_SERVER['REQUEST_URI'];
 $url_root = ($current_page === '') ? '' : '../';
 
+
+if ((!empty($row['post_img'])) && file_exists($dir_image)) {
+
+    $src = $_dirProf . $prof[0]['prof_lg'];
+
+} else {
+
+    $src = $_dirProf . 'default.png';
+
+}
+
 ?>
 
 <header id="header" class="header d-flex align-items-center fixed-top">
@@ -12,9 +23,30 @@ $url_root = ($current_page === '') ? '' : '../';
 
         <a href="index.php" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="images/profile/<?= $_profile[0]['prof_lg']?>" alt="">
-            <h6 class="sitename align-items-center mt-2"><?= $_profile[0]['prof_lnm']?><br>
+            <img src="<?= $src?>" alt="">
+
+            <style>
+            .desktop {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+            }
+
+            @media (min-width: 768px) {
+                .desktop {
+                    display: block;
+                }
+
+                .mobile {
+                    display: none;
+                }
+            }
+            </style>
+            <h6 class="sitename align-items-center mt-2 desktop"><?= $_profile[0]['prof_lnm']?><br>
                 Kabupaten Sidoarjo</h6>
+            <h6 class="sitename align-items-center mt-2 mobile"><?= $_profile[0]['prof_snm']?></h6>
         </a>
 
         <nav id="navmenu" class="navmenu">

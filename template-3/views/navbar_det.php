@@ -5,6 +5,15 @@
    $current_page = $_SERVER['REQUEST_URI'];
 $url_root = ($current_page === '') ? '' : '../';
 
+if ((!empty($row['post_img'])) && file_exists($dir_image)) {
+
+    $src = $_dirProf . $prof[0]['prof_lg'];
+
+} else {
+
+    $src = $_dirProf . 'default.png';
+
+}
 ?>
 
 
@@ -14,7 +23,7 @@ $url_root = ($current_page === '') ? '' : '../';
 
         <a href="../index.php" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="../images/profile/<?= $_profile[0]['prof_lg']?>" alt="">
+            <img src="../<?= $src ?>" alt="">
             <h6 class="sitename align-items-center mt-2"><?= $_profile[0]['prof_lnm']?><br>
                 Kabupaten Sidoarjo</h6>
         </a>

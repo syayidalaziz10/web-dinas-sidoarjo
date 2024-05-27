@@ -8,6 +8,15 @@
    $footer_url = ($current_page === '') ? '' : '../';
 
 
+   if ((!empty($row['post_img'])) && file_exists($dir_image)) {
+
+    $src = $_dirProf . $prof[0]['prof_lg'];
+
+} else {
+
+    $src = $_dirProf . 'default.png';
+
+}
 
 ?>
 
@@ -15,8 +24,8 @@
     <div class="container footer-top">
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6 footer-about">
-                <a href="index.html" class="d-flex align-items-center">
-                    <img src="../images/profile/<?= $_profile[0]['prof_lg']?>" style="width:70px ; height:70px ;" alt="">
+                <a href="../index.php" class="d-flex align-items-center">
+                    <img src="../<?= $src ?>" style="width:70px ; height:70px ;" alt="">
                 </a>
                 <div class="footer-contact pt-3">
 

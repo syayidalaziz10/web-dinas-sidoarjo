@@ -8,6 +8,15 @@
    $footer_url = ($current_page === '') ? '' : '../';
 
 
+   if ((!empty($row['post_img'])) && file_exists($dir_image)) {
+
+    $src = $_dirProf . $prof[0]['prof_lg'];
+
+} else {
+
+    $src = $_dirProf . 'default.png';
+
+}
 
 ?>
 
@@ -15,8 +24,8 @@
     <div class="container footer-top">
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6 footer-about">
-                <a href="index.html" class="d-flex align-items-center">
-                    <img src="images/profile/<?= $_profile[0]['prof_lg']?>" style="width:70px ; height:70px ;" alt="">
+                <a href="index.php" class="d-flex align-items-center">
+                    <img src="<?= $src ?>" style="width:70px ; height:70px ;" alt="">
                 </a>
                 <div class="footer-contact pt-3">
 
@@ -54,37 +63,6 @@
             </div>
             <?php endif ?>
             <?php endforeach; ?>
-
-            <!-- <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Useful Links</h4>
-                <ul>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Our Services</h4>
-                <ul>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-12">
-                <h4>Follow Us</h4>
-                <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-                <div class="social-links d-flex">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-            </div> -->
 
         </div>
     </div>
