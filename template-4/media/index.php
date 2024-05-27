@@ -53,10 +53,10 @@
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col-8 detail-header-teks" >
-          <h1 style="text-transform: uppercase;">Galeri</h1>
+          <h1 style="text-transform: uppercase;">Media Digital</h1>
         </div>
         <div class="col-4">
-          <img src="../../images/vector detail/layanan.png" class="img-fluid" alt="alt"/>
+          <img src="../../images/vector detail/informasi.png" class="img-fluid" alt="alt"/>
         </div>
       </div>
     </div>
