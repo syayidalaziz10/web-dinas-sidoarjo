@@ -1006,9 +1006,9 @@ function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limi
 	
 	
 					if (!empty($row['post_img'] && file_exists($dir_image) )) {
-						$src = 'images/post/'.$row[3];
+						$src = '../images/post/'.$row[3];
 					} else {
-						$src = 'images/post/default-services.png';
+						$src = '../images/post/default-services.png';
 					}
 	
 	
@@ -1051,9 +1051,9 @@ function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limi
 	
 	
 					if (!empty($row['post_img'] && file_exists($dir_image) )) {
-						$src = 'images/post/'.$row[5];
+						$src = '../images/post/'.$row[5];
 					} else {
-						$src = 'images/post/default.png';
+						$src = '../images/post/default_3.png';
 					}
 	
 					$dateString 	= DateTime::createFromFormat('Y-m-d', $date);
@@ -1220,9 +1220,9 @@ function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limi
 					$dir_image = 'images/post/'.$row[5];
 	
 					if (!empty($row['post_img'] && file_exists($dir_image) )) {
-						$src = 'images/post/'.$row[5];
+						$src = '../images/post/'.$row[5];
 					} else {
-						$src = 'images/post/default.png';
+						$src = '../images/post/default_3.png';
 					}
 	
 					$deskToStr = strip_tags($desk);
@@ -1237,16 +1237,21 @@ function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limi
 					
 					'
 	
-					<div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
-					<i class="faq-icon bi bi-question-circle"></i>
+					<div class="faq-item faq-active rounded" data-aos="fade-up" data-aos-delay="200">
+				<div class="faq-header d-flex align-items-center">
+					<div class="icon">
+							<img src="'.$src.'" style="width:80px ; height:80px ;"></img>
+						</div>
 					<h3>'.$title.'</h3>
+				</div>
+					
 					<div class="faq-content">
 						</span>'.dateToDMY($startDate).' -</span>
 						</span>'.dateToDMY($endDate).'</span>
 						<p>'.$deskTruncate.'</p>
 					</div>
 					<i class="faq-toggle bi bi-chevron-right"></i>
-				</div>
+			</div>
 				
 					
 					'
