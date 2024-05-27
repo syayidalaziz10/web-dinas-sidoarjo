@@ -49,6 +49,14 @@ $category     = $getCategory->fetch_assoc();
   $dir_image  = 'images/post/'.$result['post_img'];
 
 
+  $dir_image_2 = $dirProf.$prof[0]['prof_lg'];
+ 
+  
+  if ((!empty($prof[0]['prof_lg'])) && file_exists($dir_image_2)) {
+    $src = '../images/profile/'.$prof[0]['prof_lg'];
+  } else {
+    $src = '../images/profile/default.png';
+  }
 
 ?>
 <!DOCTYPE html>
@@ -58,7 +66,7 @@ $category     = $getCategory->fetch_assoc();
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title><?= $prof[0]['prof_lnm']?></title>
-    <link rel="shortcut icon" href="../images/profile/<?= $prof[0]['prof_lg']?>">
+    <link rel="shortcut icon" href="<?= $src ?>">
     <meta content="" name="description">
     <meta content="" name="keywords">
 
