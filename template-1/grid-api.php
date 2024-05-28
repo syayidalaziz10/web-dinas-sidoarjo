@@ -54,36 +54,45 @@ $apiurl = $getApi->fetch_assoc();
                return response.json();
          })
          .then(data => {
-               // Mengisi data dari API ke dalam konten HTML
-               let apiDataContainer = document.getElementById('apiDataContainer');
-               data.forEach(peng => {
-                  let html = `
-                     <div class="col-lg-4 mb-4">
-                           <div class="news-item bg-white">
-                              <div class="news-contents my-4">
-                                 <a href="${peng.url}"><h3>${peng.judul}</h3></a>
-                                 <p>${peng.deskripsi}</p>
-                                 <span>
-                                       ${new Date(peng.tanggal).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-                                       <span class="icon-eye ml-3 mr-2"></span> ${peng.views}
-                                 </span>
-                              </div>
-                              <p class="mb-0">
-                                 <a href="${peng.url}" class="read-more-arrow">
-                                       <svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                          <!-- SVG path here -->
-                                       </svg>
-                                 </a>
-                              </p>
-                           </div>
-                     </div>
-                  `;
-                  apiDataContainer.innerHTML += html;
-               });
+               console.log('Data fetched from API:', data); // Print the data to console
+               if (Array.isArray(data)) {
+                  populateData(data);
+               } else {
+                  console.error('Data format is not as expected:', data);
+               }
          })
          .catch(error => {
                console.error('Error fetching data from API:', error);
          });
+
+      function populateData(data) {
+         let apiDataContainer = document.getElementById('apiDataContainer');
+         data.forEach(peng => {
+            let html = `
+               <div class="col-lg-4 mb-4">
+                  <div class="news-item bg-white">
+                     <div class="news-contents my-4">
+                        <a href="${peng.url}"><h3>${peng.judul}</h3></a>
+                        <p>${peng.deskripsi}</p>
+                        <span>
+                           ${new Date(peng.tanggal).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                           <span class="icon-eye ml-3 mr-2"></span> ${peng.views}
+                        </span>
+                     </div>
+                     <p class="mb-0">
+                        <a href="${peng.url}" class="read-more-arrow">
+                           <svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <!-- SVG path here -->
+                           </svg>
+                        </a>
+                     </p>
+                  </div>
+               </div>
+            `;
+            apiDataContainer.innerHTML += html;
+         });
+      }
+
    </script>
 </body>
 
