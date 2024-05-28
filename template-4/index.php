@@ -146,7 +146,7 @@
 
 
   <!-- LAYANAN BARU -->
-  <section class="mb-4 skrollable u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-image u-parallax u-section-2" id="carousel_6077" data-image-width="1497" data-image-height="1000" style="background-color: #fff;">
+  <section class="mb-5 skrollable u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-image u-parallax u-section-2" id="carousel_6077" data-image-width="1497" data-image-height="1000" style="background-color: #fff;">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h1 class="u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0" style="font-size: 1.5rem;">
         <span style="font-weight: 700;">Layanan</span> <span style="font-weight: 400; color: color: #d33030;"> <?= $profileData[0]['prof_lnm']?> </span> apa aja ya?
