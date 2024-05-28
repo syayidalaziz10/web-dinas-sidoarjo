@@ -343,7 +343,7 @@
                             style="width: 100%; height: 400px;">
                             <div id="video-container" class="swiper-wrapper media-carousel"
                                 style="height: 100%; width: 100%; border-radius: 10px;">
-                                <?= requestRecTemplate3('vd_id, vd_url', 'pub_videos', '_active=1', 'vd_id DESC', 10, 6) ?>
+                                <?=requestRec('sos_id, sos_url', 'pub_socials', '_active=1 AND cat=003', '_cre_date DESC',10, 6)?>
                             </div>
                             <button class="slider-control-prev" type="button">
                                 <span class="bi bi-arrow-left" aria-hidden="true"></span>
