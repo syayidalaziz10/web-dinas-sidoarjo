@@ -1748,6 +1748,8 @@ $carouselCount = 0;
 		
 						';
 
+						break;
+
 					case 14:
 
 						// GET DATA BIDANG

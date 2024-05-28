@@ -161,7 +161,7 @@
                     <h1 style="font-size: 1.5rem;" class="u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">Layanan <span style="font-weight: 700;">Masyarakat</span>
                     </h1>
                     <p class="u-text u-text-body-color u-text-default u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" data-toggle="modal" data-target="#myModal2" style="font-size : 1rem;"><?= $profileData[0]['prof_lnm']?> siap memberikan pelayanan terbaik bagi Anda</p>
-                    <a href="'.$url.'" class="u-active-palette-1-base u-align-left u-border-none u-btn u-btn-round u-button-style  u-hover-black u-palette-1-base u-radius u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="500">'.$name.'</a>
+                    <?=requestRecTemplate4('mn_url, mn_txt', 'set_menu', 'parent=003 AND _active=1', '_cre_date DESC','', 13)?>
                   </div>
                 </div>
                 <div class="u-align-center u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1042" data-image-height="1042" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
