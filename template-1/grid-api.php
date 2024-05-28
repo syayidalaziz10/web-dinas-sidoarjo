@@ -13,9 +13,35 @@ $apiurl = $getApi->fetch_assoc();
 
 <!doctype html>
 <html lang="en">
+
+
+
 <head>
-   <!-- Your head section here -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="author" content="Untree.co">
+   <link rel="shortcut icon" href="../<?=$src?>">
+
+   <meta name="description" content="" />
+   <meta name="keywords" content="" />
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+   <link rel="stylesheet" href="../fonts/icomoon/style.css">
+   <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+   <link rel="stylesheet" href="../css/aos.css">
+   <link rel="stylesheet" href="../css/style.css">
+
+   <title><?= $prof[0]['prof_lnm']?></title>
+
 </head>
+
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="100" class="bg-light">
 
    <?php 
