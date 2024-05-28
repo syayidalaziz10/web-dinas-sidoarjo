@@ -1342,7 +1342,7 @@ $carouselCount = 0;
 				'
 				
 
-				<div class="u-background-video u-expanded" style="filter: brightness(0.45); height: 90%;">
+				<div class="u-background-video u-expanded" style="filter: brightness(0.45); height: 100%;">
 					<div class="embed-responsive embed-responsive-1">
 						<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" class="embed-responsive-item" src="'.$image.'&amp;loop=1&amp;mute=1&amp;showinfo=0&amp;controls=0&amp;start=0&amp;autoplay=1" data-autoplay="0" frameborder="0" allowfullscreen=""></iframe>
 					</div>
