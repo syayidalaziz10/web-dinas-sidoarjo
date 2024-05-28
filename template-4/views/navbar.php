@@ -41,8 +41,6 @@ if ((!empty($profileData[0]['prof_lg'])) && file_exists($dir_prof)){
                      </small>
                      <small class="title-long text-uppercase">
                         <?= $profileData[0]['prof_lnm']?>
-                        <br>
-                        Kabupaten Sidoarjo
             </small>
          </div>
       </div>
