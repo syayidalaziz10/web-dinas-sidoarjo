@@ -162,7 +162,6 @@
                     </h1>
                     <p class="u-text u-text-body-color u-text-default u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" data-toggle="modal" data-target="#myModal2" style="font-size : 1rem;">Berikut merupakan layanan - layanan dari Dinas Komunikasi dan Informatika Kab. Sidoarjo untuk masyarakat umum.</p>
                     <a href="#myModal2" class="u-active-palette-1-base u-align-left u-border-none u-btn u-btn-round u-button-style  u-hover-black u-palette-1-base u-radius u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="500" data-toggle="modal" data-target="#myModal2">lihat</a>
-                    <span class=" u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="750"><img src="../images/33308-67bffd37.png" alt="" data-toggle="modal" data-target="#myModal2"></span>
                   </div>
                 </div>
                 <div class="u-align-center u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1042" data-image-height="1042" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
