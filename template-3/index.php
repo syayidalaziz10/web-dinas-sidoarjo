@@ -223,8 +223,8 @@
                 <div class="row gy-4">
                     <?= requestRecTemplate3('post_id, post_judul, post_desk, post_img', 'pub_post', 'ca_id=005 AND _active=1', 'post_judul ASC', 4, 3) ?>
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end" data-aos="fade-up">
-                    <a href="005/" class="mt-5 btn btn-info text-white shadow"
+                <div class="d-grid gap-2 d-md-flex justify-content-center" data-aos="fade-up">
+                    <a href="002/" class="mt-5 btn btn-info text-white shadow"
                         style="width:200px ; height:40px ; border-radius: 30px;">Lihat Layanan Lainnya</a>
                 </div>
             </div>
@@ -238,6 +238,104 @@
                 <p>Ikuti dokumentasi aktivitas kegiatan lainnya melalui media digital kami</p>
             </div><!-- End Section Title -->
 
+            <style>
+            /* ======================================== youtube */
+
+            .carousel-item {
+                height: 100%;
+            }
+
+            .embed-responsive-item {
+                width: 100%;
+                height: 100%;
+            }
+
+            .slider-container {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .slider-control-prev,
+            .slider-control-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #47b2e4;
+                border: none;
+                border-radius: 50%;
+                color: white;
+                font-size: 2rem;
+                width: 45px;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                z-index: 10;
+            }
+
+            .slider-control-prev {
+                left: 10px;
+            }
+
+            .slider-control-next {
+                right: 10px;
+            }
+
+            .slider-control-prev:hover,
+            .slider-control-next:hover {
+                background-color: #47b2e2;
+                transition: 0.3s;
+            }
+
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                border: 0;
+            }
+
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* Media Queries for Responsive Design */
+            @media (max-width: 768px) {
+                .slider-container {
+                    height: 300px;
+                    /* Adjust the height for mobile */
+                }
+
+                .slider-control-prev,
+                .slider-control-next {
+                    width: 35px;
+                    height: 35px;
+                    font-size: 1.5rem;
+                }
+
+                .btn-info {
+                    width: 100%;
+                    /* Full width on mobile */
+                    height: 50px;
+                    /* Slightly taller button on mobile */
+                    border-radius: 25px;
+                    /* Adjust border radius if necessary */
+                }
+            }
+
+            /* end yourub e ============================== */
+            </style>
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -258,9 +356,11 @@
                         </div>
                     </div>
                     <!-- End Team Member -->
-                    <a href="media" class="mt-5 btn btn-info text-white shadow"
-                        style="width:200px ; height:40px ; border-radius: 30px;" data-aos="fade-up"
-                        data-aos-delay="100">Lihat Media Lainnya</a>
+                    <div class="d-grid gap-2 d-md-flex justify-content-center" data-aos="fade-up">
+                        <a href="media" class="mt-5 btn btn-info text-white shadow"
+                            style="width:200px ; height:40px ; border-radius: 30px;" data-aos="fade-up"
+                            data-aos-delay="100">Lihat Media Lainnya</a>
+                    </div>
                 </div>
             </div>
         </section><!-- /youtube Section -->
@@ -304,7 +404,7 @@
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
                         <?=requestRecTemplate3('ban_title,ban_desk, ban_img', 'pub_banner', 'ban_stat=002 AND _active=1', '_cre_date DESC',6, 7)?>
                     </div><!-- End Portfolio Container -->
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end" data-aos="fade-up">
+                    <div class="d-grid gap-2 d-md-flex justify-content-center" data-aos="fade-up">
                         <a href="galeri" class="mt-5 btn btn-info text-white shadow"
                             style="width:200px ; height:40px ; border-radius: 30px;">Lihat Galeri Lainnya</a>
                     </div>
@@ -319,7 +419,7 @@
         <?php
         if ($countEvent['event'] > 0) {
             ?>
-        <section id="faq-2" class="faq-2 section">
+        <section id="services" class="services section">
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
@@ -328,25 +428,20 @@
             </div><!-- End Section Title -->
 
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="faq-container">
-                            <?= requestRecTemplate3('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1 AND post_datex >= CURDATE()', 'post_publish DESC', 4, 9) ?>
-                        </div>
-                        <div class="d-grid gap-2 d-md-flex justify-content-center" data-aos="fade-up">
-                            <a href="002/" class="mt-5 btn btn-info text-white shadow"
-                                style="width:200px ; height:40px ; border-radius: 30px;">Lihat Kegiatan Lainnya</a>
-                        </div>
-
-                    </div>
+                <div class="row gy-4">
+                    <?= requestRecTemplate3('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1 AND post_datex >= CURDATE()', 'post_publish DESC', 4, 9) ?>
                 </div>
-
+                <div class="d-grid gap-2 d-md-flex justify-content-center" data-aos="fade-up">
+                    <a href="002/" class="mt-5 btn btn-info text-white shadow"
+                        style="width:200px ; height:40px ; border-radius: 30px;">Lihat Kegiatan Lainnya</a>
+                </div>
             </div>
 
         </section><!-- /agenda kegiatan Section -->
         <?php
         }
         ?>
+
 
         <!-- Contact Section -->
         <section id="contact" class="contact section">
@@ -422,7 +517,7 @@
                                     </div>
 
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" name="submit" class="btn btn-primary"
+                                        <button type="submit" name="submit" class="mt-5 btn btn-info text-white shadow"
                                             id="submit-message">Kirim
                                             pesan</button>
                                     </div>
@@ -456,16 +551,15 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="announcement-slide owl-carousel owl-theme">
-                        <?=requestRecTemplate3('post_id, post_judul, post_desk', 'pub_post', 'ca_id=003 AND _active=1 AND post_datex >= CURDATE()', '','', 8)?>
+                        <?= requestRecTemplate3('post_id, post_judul, post_desk', 'pub_post', 'ca_id=003 AND _active=1 AND post_datex >= CURDATE()', '', '', 8) ?>
                     </div>
                     <div class="modal-footer border-0">
-                        <a href="003/" type="button" class="btn btn-outline-primary">Pengumuman Lainnya</a>
+                        <a href="003/" type="button" class="btn btn-info text-white shadow text-md-center">Pengumuman
+                            Lainnya</a>
                     </div>
                 </div>
             </div>
@@ -495,7 +589,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <button type="submit" name="submit" id="submit-otp"
-                                class="col-11 btn btn-primary">Verifikasi</button>
+                                class="col-11 btn btn-info text-white shadow">Verifikasi</button>
                         </div>
                     </form>
 

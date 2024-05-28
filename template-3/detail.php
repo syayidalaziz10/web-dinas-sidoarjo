@@ -52,10 +52,10 @@ $category     = $getCategory->fetch_assoc();
   $dir_image_2 = $dirProf.$prof[0]['prof_lg'];
  
   
-  if ((!empty($prof[0]['prof_lg'])) && file_exists($dir_image_2)) {
-    $src = '../images/profile/'.$prof[0]['prof_lg'];
+  if ((!empty($prof[0]['prof_lg'])) && file_exists($dir_image)) {
+    $src = '../../images/profile/'.$prof[0]['prof_lg'];
   } else {
-    $src = '../images/profile/default.png';
+    $src = '../../images/profile/default.png';
   }
 
 ?>

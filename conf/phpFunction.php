@@ -1237,21 +1237,16 @@ function requestRecTemplate3($loadField, $loadTbl, $loadWhere, $loadOrder, $limi
 					
 					'
 	
-					<div class="faq-item faq-active rounded" data-aos="fade-up" data-aos-delay="200">
-				<div class="faq-header d-flex align-items-center">
-					<div class="icon">
-							<img src="'.$src.'" style="width:80px ; height:80px ;"></img>
-						</div>
-					<h3>'.$title.'</h3>
-				</div>
-					
-					<div class="faq-content">
-						</span>'.dateToDMY($startDate).' -</span>
-						</span>'.dateToDMY($endDate).'</span>
-						<p>'.$deskTruncate.'</p>
-					</div>
-					<i class="faq-toggle bi bi-chevron-right"></i>
-			</div>
+					<div class="col-xl-3 col-md-6 d-flex " data-aos="fade-up" data-aos-delay="100"  >
+                        <div class="service-item position-relative rounded"  style="width:400px ; height:400px ;">
+                            <div class="icon"><img src="'.$src.'" style="width:120px ; height:80px ;"></img></div>
+                            <h4><a href="005/'.$id.'" class="stretched-link">'.$title.'</a></h4>
+								</span>'.dateToDMY($startDate).' -</span>
+								</span>'.dateToDMY($endDate).'</span>
+								<hr>
+                            <p  style="text-align:justify;">'.$deskTruncate.'</p>
+                        </div>
+                	</div>
 				
 					
 					'
