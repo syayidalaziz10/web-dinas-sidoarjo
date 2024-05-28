@@ -103,7 +103,7 @@ $apiurl = $getApi->fetch_assoc();
    <script>
       let apiurl = <?= json_encode($apiurl['sos_url']) ?>;
       let currentPage = <?= $page ?>;
-      let itemsPerPage = 5;
+      let itemsPerPage = 6;
       let apiData = [];
 
       // Fetch data from API
