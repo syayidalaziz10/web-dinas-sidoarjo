@@ -51,7 +51,20 @@ $apiurl = $getApi->fetch_assoc();
    ?>
    
    <div class="untree_co-hero mb-0" id="home-section">
-      <!-- Hero content here -->
+      <div class="container">
+         <div class="row">
+         <div class="col-12">
+            <div class="row justify-content-center">
+               <div class="col-12 text-center">
+               <h1 class="heading" data-aos="fade-up" data-aos-delay="0">Berita Sidoarjo</h1>
+               <!-- <p style="font-style: italic;" class="my-5"></p> -->
+               </div>
+            </div>
+         </div>
+         <div class="col-12">
+         </div>
+         </div>
+      </div>
    </div>
 
    <div class="container" data-aos="fade-up" data-aos-delay="100">
