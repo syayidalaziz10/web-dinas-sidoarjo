@@ -55,8 +55,9 @@ $apiurl = $getApi->fetch_assoc();
          })
          .then(data => {
                console.log('Data fetched from API:', data); // Print the data to console
-               if (Array.isArray(data)) {
-                  populateData(data);
+               // Check if data is wrapped in an object and has an array
+               if (data && Array.isArray(data.data)) {
+                  populateData(data.data); // Adjust according to actual structure
                } else {
                   console.error('Data format is not as expected:', data);
                }
@@ -71,12 +72,12 @@ $apiurl = $getApi->fetch_assoc();
             let html = `
                <div class="col-lg-4 mb-4">
                   <div class="news-item bg-white">
+                     <img src="${peng.gambar}" alt="${peng.judul}" class="img-fluid">
                      <div class="news-contents my-4">
                         <a href="${peng.url}"><h3>${peng.judul}</h3></a>
-                        <p>${peng.deskripsi}</p>
+                        <p>${peng.deskripsi || ''}</p>
                         <span>
                            ${new Date(peng.tanggal).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-                           <span class="icon-eye ml-3 mr-2"></span> ${peng.views}
                         </span>
                      </div>
                      <p class="mb-0">
@@ -92,6 +93,7 @@ $apiurl = $getApi->fetch_assoc();
             apiDataContainer.innerHTML += html;
          });
       }
+
 
    </script>
 </body>
