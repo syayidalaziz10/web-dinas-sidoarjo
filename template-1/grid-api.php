@@ -13,11 +13,42 @@ $apiurl = $getApi->fetch_assoc();
 <!doctype html>
 <html lang="en">
 
+
+
 <head>
-   <!-- Head section here -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="author" content="Untree.co">
+   <link rel="shortcut icon" href="../<?=$src?>">
+
+   <meta name="description" content="" />
+   <meta name="keywords" content="" />
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+   <link rel="stylesheet" href="../fonts/icomoon/style.css">
+   <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+   <link rel="stylesheet" href="../css/aos.css">
+   <link rel="stylesheet" href="../css/style.css">
+
+   <title><?= $prof[0]['prof_lnm']?></title>
+
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="100" class="bg-light">
+
+
+   <?php 
+      require_once('views/navbar.php');
+      require_once('views/visitor.php');
+      require_once('views/social.php');
+   ?>
    <!-- Navbar, visitor section, social section here -->
 
    <!-- Hero section -->
@@ -37,10 +68,30 @@ $apiurl = $getApi->fetch_assoc();
       <!-- Pagination code here -->
    </nav>
 
-   <!-- Footer section -->
-   <?php require_once('views/footer.php') ?>
+   <?php require_once('views/footer.php')?>
 
-   <!-- Loader script and other JavaScript includes -->
+   
+
+   <div id="overlayer"></div>
+   <div class="loader">
+      <div class="spinner-border" role="status">
+         <span class="sr-only">Loading...</span>
+      </div>
+   </div>
+
+   <script src="../js/jquery-3.4.1.min.js"></script>
+   <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+   <script src="../js/popper.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.easing.1.3.js"></script>
+   <script src="../js/jquery.animateNumber.min.js"></script>
+   <script src="../js/jquery.waypoints.min.js"></script>
+   <script src="../js/jquery.fancybox.min.js"></script>
+   <script src="../js/aos.js"></script>
+
+   <script src="../js/custom.js"></script>
+   
    <script>
       // Mengambil URL API dari PHP
       let apiurl = <?= json_encode($apiurl['sos_url']) ?>;
@@ -93,9 +144,8 @@ $apiurl = $getApi->fetch_assoc();
             apiDataContainer.innerHTML += html;
          });
       }
-
-
    </script>
-</body>
 
+
+</body>
 </html>
