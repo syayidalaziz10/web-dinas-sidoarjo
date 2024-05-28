@@ -5144,3 +5144,10 @@ Footer Style
   width: 60px;
   height: 60px;
 }
+
+/* modal pdf */
+
+#pdfViewer {
+  width: 100%;
+  height: 70vh; /* Adjust height as needed */
+}

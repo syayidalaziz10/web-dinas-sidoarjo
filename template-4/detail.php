@@ -204,6 +204,25 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
    </section>
 
 
+   <!-- Modal View PDF -->
+   <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+         <div class="modal-content">
+         <div class="modal-header border-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </button>
+         </div>
+         <div class="modal-body d-flex justify-content-center align-items-center">
+            <div id="pdfViewer"></div>
+         </div>
+         <div class="modal-footer border-0">
+            <!--<button type="button" class="close-button-modal" data-dismiss="modal">Close</button>-->
+         </div>
+         </div>
+      </div>
+   </div>
+
+
 
    <?php 
 
