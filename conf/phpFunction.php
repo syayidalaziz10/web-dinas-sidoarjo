@@ -1744,7 +1744,7 @@ $carouselCount = 0;
 						
 						'
 
-						<a href="'.$url.'" class="u-active-palette-1-base u-align-left u-border-none u-btn u-btn-round u-button-style  u-hover-black u-palette-1-base u-radius u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="500">'.$name.'</a>
+						<a href="'.$url.'" class="mt-3 u-active-palette-1-base u-align-left u-border-none u-btn u-btn-round u-button-style  u-hover-black u-palette-1-base u-radius u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-1" data-animation-name="fadeIn" data-animation-duration="1000" data-animation-delay="500">'.$name.'</a>
 		
 						';
 
