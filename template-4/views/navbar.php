@@ -32,7 +32,7 @@ if ((!empty($profileData[0]['prof_lg'])) && file_exists($dir_prof)){
 
 
 <header id="header" class="fixed-top d-flex align-items-center shadow">
-   <div class="container-fluid d-flex align-items-center">
+   <div class="container-fluid d-flex align-items-center px-lg-5 px-3">
       <div class="logo me-auto">
          <div class="d-flex justify-content-start align-items-center gap-3">
             <img src=" <?=$dirLink.$image?> " class="logo">

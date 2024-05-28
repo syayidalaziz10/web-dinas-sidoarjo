@@ -4548,16 +4548,6 @@ Header Style
   max-height: 40px;
 }
 
-@media (min-width: 991px) {
-  #header {
-    padding: 0 200px;
-  }
-
-  .site-footer {
-    padding: 70px 200px;
-  }
-}
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
