@@ -5136,48 +5136,54 @@ Footer Style
   height: 70vh; /* Adjust height as needed */
 }
 
-
 /* button layanan */
 
-
-.button-layanan {
+.cta {
   position: relative;
-  width: 280px;
-  height: 80px;
-  transition: width 2s;
-  border: solid 3px #5153E9;
-  cursor: pointer;
+  margin: auto;
+  padding: 19px 22px;
+  transition: all 0.2s ease;
 }
-.button-layanan:before {
+.cta:before {
+  content: "";
   position: absolute;
-  left: 36px;
-  top: 28px;
-  height: 80px;
-  content: "Get started";
-  font-size: 24px;
-  z-index: 1;
-  transition: color 0.2s;
-  transition-delay: color 0.2s;
-  transition-timing-function: 0.29, 0.09, 0.22, 1;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: rgba(255, 171, 157, 0.5);
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
 }
-
-.button-layanan-overlay {
-  position: absolute;
-  right: 0px;
-  width: 280px;
-  height: 80px;
-  background: #5153E9;
-  transition: width 0.2s;
-  transition-timing-function: 0.29, 0.09, 0.22, 1;
+.cta span {
+  position: relative;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
-
-.button-layanan-overlay-arrow {
-  position: absolute;
-  right: 36px;
-  top: 28px;
-  height: 80px;
-  content: "→";
-  font-size: 24px;
-  transition: right 0.2s;
-  color: white;
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #111;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+.cta:hover:before {
+  width: 100%;
+  background: #ffab9d;
+}
+.cta:hover svg {
+  transform: translateX(0);
+}
+.cta:active {
+  transform: scale(0.96);
 }

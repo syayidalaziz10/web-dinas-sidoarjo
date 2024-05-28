@@ -161,11 +161,13 @@
                     <h1 style="font-size: 1.5rem;" class="u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">Layanan <span style="font-weight: 700;">Masyarakat</span>
                     </h1>
                     <p class="u-text u-text-body-color u-text-default u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" data-toggle="modal" data-target="#myModal2" style="font-size : 1rem;">Berikut merupakan layanan - layanan dari Dinas Komunikasi dan Informatika Kab. Sidoarjo untuk masyarakat umum.</p>
-                    <div id="hover" class="button-layanan">
-                      <div class="button-layanan-overlay">
-                        <div class="button-layanan-overlay-arrow">&#8594</div>
-                      </div>
-                    </div>  
+                    <a href="#" class="cta">
+                      <span>Click me</span>
+                      <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                      </svg>
+                    </a>
                   </div>
                 </div>
                 <div class="u-align-center u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1042" data-image-height="1042" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
@@ -404,19 +406,6 @@
         $("#ann").remove();
       }
     })
-
-
-    // BUTTON LAYANAN
-
-    $('.button').hover(function(){
-      $('.button').css('color', '#5153E9');
-      $('.button-overlay').css('width', '80px');
-      $('.button-overlay-arrow').css('right', '26px');
-    },function(){
-      $('.button').css('color', 'white');
-      $('.button-overlay').css('width', '280px');
-      $('.button-overlay-arrow').css('right', '36px');
-    });
 
 
   </script>
