@@ -101,6 +101,21 @@ $apiurl = $getApi->fetch_assoc();
    <script src="../js/custom.js"></script>
 
    <script>
+
+
+      // global function
+      function formatDateToIndonesian(dateString) {
+         const date = new Date(dateString);
+         const months = [
+            "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+            "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+         ];
+         const day = date.getDate();
+         const month = months[date.getMonth()];
+         const year = date.getFullYear();
+         return `${day} ${month} ${year}`;
+      }
+
       let apiurl = <?= json_encode($apiurl['sos_url']) ?>;
       let currentPage = <?= $page ?>;
       let itemsPerPage = 6;
@@ -145,7 +160,7 @@ $apiurl = $getApi->fetch_assoc();
                            <div class="news-contents my-4">
                               <a href="${peng.url}"><h3>${peng.judul}</h3></a>
                               <span>
-                                 ${new Date(peng.tanggal).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                                 ${formatDateToIndonesian(peng.tanggal)} - ${formatDateToIndonesian(peng.tgl_akhir) || ''}
                               </span>
                            </div>
                            <p class="mb-0">
