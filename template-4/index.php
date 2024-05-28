@@ -170,21 +170,6 @@
                 </div>
               </div>
             </div>
-            <div class="u-size-30">
-              <div class="u-layout-row">
-                <div class="u-container-style u-image u-layout-cell u-size-30 u-image-2" data-image-width="1042" data-image-height="1042" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
-                  <div class="u-container-layout u-valign-middle u-container-layout-3"></div>
-                </div>
-                <div class="u-container-style u-layout-cell u-shape-rectangle u-size-30 u-layout-cell-4">
-                  <div class="u-container-layout u-container-layout-4">
-                    <h1 style="font-size: 1.5rem;" class="u-align-left u-text u-text-4" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">Layanan <span style="font-weight: 700;">Pemerintahan</span>
-                    </h1>
-                    <p class="u-align-left u-text u-text-5" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250" style="font-size : 1rem; color: black;"> Berikut merupakan layanan - layanan dari Dinas Komunikasi dan Informatika Kab. Sidoarjo untuk sesama instansi pemerintahan.</p><span class="u-file-icon u-icon u-icon-circle u-palette-1-base u-text-white u-icon-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="750" data-toggle="modal" data-target="#myModal1"><img src="../images/2910791-89a00c96.png" alt=""></span>
-                    <div data-toggle="modal" data-target="#myModal1" class="u-active-palette-1-base u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xl u-border-none u-btn u-btn-round u-button-style u-hover-black u-palette-1-base u-radius u-text-active-white u-text-body-alt-color u-text-hover-white u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="1000">lihat</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
