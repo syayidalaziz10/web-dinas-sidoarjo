@@ -144,7 +144,6 @@ $apiurl = $getApi->fetch_assoc();
                            <img src="${peng.gambar}" alt="${peng.judul}" class="img-fluid">
                            <div class="news-contents my-4">
                               <a href="${peng.url}"><h3>${peng.judul}</h3></a>
-                              <p>${peng.deskripsi || ''}</p>
                               <span>
                                  ${new Date(peng.tanggal).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                               </span>
