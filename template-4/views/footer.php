@@ -20,12 +20,6 @@ $siteUrl = ($current_page === '') ? '' : '../';
                   <p><?= $profileData[0]['prof_addr']?></p>
                </div>
                <div class="d-flex contact align-items-center justify-content-start gap-3">
-                  <p><i class="fa-solid fa-map-pin"></i></p>
-                  <a href="<?= $profileData[0]['prof_maps']?>" target="_blank">
-                     <p>Lihat google maps</p>
-                  </a>
-               </div>
-               <div class="d-flex contact align-items-center justify-content-start gap-3">
                   <p><i class="fa-solid fa-phone"></i></p>
                   <p><?= $profileData[0]['prof_telp']?></p>
                </div>
@@ -39,7 +33,9 @@ $siteUrl = ($current_page === '') ? '' : '../';
                </div>
                <div class="d-flex contact align-items-center justify-content-start gap-3">
                   <p><i class="fa-solid fa-star"></i></p>
-                  <p><?= $profileData[0]['prof_skm']?></p>
+                  <a href="<?= $profileData[0]['prof_skm']?>">
+                     <p>Survey Kepuasan <?= $profileData[0]['prof_lnm']?></p>
+                  </a>
                </div>
             </div> 
          </div>
