@@ -210,12 +210,9 @@
     font-weight, text-decoration, letter-spacing, transform, background-image,
     background-size, background-position;
 }
-.u-section-2 {
-  background-image: url("../../../images/background.jpg");
-}
 
 .u-section-2 .u-sheet-1 {
-  min-height: 995px;
+  min-height: fit-content;
 }
 
 .u-section-2 .u-text-1 {
