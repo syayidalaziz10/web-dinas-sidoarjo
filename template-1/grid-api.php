@@ -103,7 +103,6 @@ $apiurl = $getApi->fetch_assoc();
    <script>
 
 
-      // global function
       function formatDateToIndonesian(dateString) {
          if (!dateString) return ''; // Return empty string if date string is not provided
 
@@ -127,23 +126,31 @@ $apiurl = $getApi->fetch_assoc();
       // Fetch data from API
       fetch(apiurl)
          .then(response => {
-               if (!response.ok) {
+            if (!response.ok) {
                   throw new Error('Failed to fetch data from API');
-               }
-               return response.json();
+            }
+            return response.json();
          })
          .then(data => {
-               console.log('Data fetched from API:', data);
-               if (data && Array.isArray(data.data)) {
+            console.log('Data fetched from API:', data);
+            if (data && Array.isArray(data.data)) {
                   apiData = data.data;
+                  // Filter out items where tgl_akhir is in the past
+                  const today = new Date();
+                  apiData = apiData.filter(peng => {
+                     if (peng.tgl_akhir) {
+                        return new Date(peng.tgl_akhir) >= today;
+                     }
+                     return true;
+                  });
                   renderPage(currentPage);
                   renderPagination();
-               } else {
+            } else {
                   console.error('Data format is not as expected:', data);
-               }
+            }
          })
          .catch(error => {
-               console.error('Error fetching data from API:', error);
+            console.error('Error fetching data from API:', error);
          });
 
       // Render the specified page
@@ -156,28 +163,28 @@ $apiurl = $getApi->fetch_assoc();
          apiDataContainer.innerHTML = '';
 
          paginatedItems.forEach(peng => {
-               let html = `
+            let html = `
                   <div class="col-lg-4 mb-4">
                      <div class="news-item bg-white">
-                           <img src="${peng.gambar}" alt="${peng.judul}" class="img-fluid">
-                           <div class="news-contents my-4">
+                        <img src="${peng.gambar}" alt="${peng.judul}" class="img-fluid">
+                        <div class="news-contents my-4">
                               <a href="${peng.url}"><h3>${peng.judul}</h3></a>
                               <span>
                                  ${formatDateToIndonesian(peng.tanggal)}${peng.tgl_akhir ? ' s.d ' + formatDateToIndonesian(peng.tgl_akhir) : ''}
                               </span>
-                           </div>
-                           <p class="mb-0">
+                        </div>
+                        <p class="mb-0">
                               <a href="${peng.url}" class="read-more-arrow">
                                  <svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
                                     <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
                                  </svg>
                               </a>
-                           </p>
+                        </p>
                      </div>
                   </div>
-               `;
-               apiDataContainer.innerHTML += html;
+            `;
+            apiDataContainer.innerHTML += html;
          });
       }
 
@@ -188,57 +195,58 @@ $apiurl = $getApi->fetch_assoc();
          paginationContainer.innerHTML = '';
 
          let createPageItem = (page, label = page) => {
-               let li = document.createElement('li');
-               li.className = `page-item${page === currentPage ? ' active' : ''}`;
-               li.innerHTML = `<a class="page-link" href="get-${<?= $_apiId ?>}/halaman-${page}">${label}</a>`;
-               li.onclick = (event) => {
+            let li = document.createElement('li');
+            li.className = `page-item${page === currentPage ? ' active' : ''}`;
+            li.innerHTML = `<a class="page-link" href="get-${<?= $_apiId ?>}/halaman-${page}">${label}</a>`;
+            li.onclick = (event) => {
                   event.preventDefault();
                   currentPage = page;
                   renderPage(currentPage);
                   renderPagination();
-               };
-               return li;
+            };
+            return li;
          };
 
          // First and Previous buttons
          if (currentPage > 1) {
-               paginationContainer.appendChild(createPageItem(1, 'First'));
-               paginationContainer.appendChild(createPageItem(currentPage - 1, '&laquo;'));
+            paginationContainer.appendChild(createPageItem(1, 'First'));
+            paginationContainer.appendChild(createPageItem(currentPage - 1, '&laquo;'));
          } else {
-               let liFirst = document.createElement('li');
-               liFirst.className = 'page-item disabled';
-               liFirst.innerHTML = '<a class="page-link" href="#">First</a>';
-               paginationContainer.appendChild(liFirst);
+            let liFirst = document.createElement('li');
+            liFirst.className = 'page-item disabled';
+            liFirst.innerHTML = '<a class="page-link" href="#">First</a>';
+            paginationContainer.appendChild(liFirst);
 
-               let liPrev = document.createElement('li');
-               liPrev.className = 'page-item disabled';
-               liPrev.innerHTML = '<a class="page-link" href="#"><span aria-hidden="true">&laquo;</span></a>';
-               paginationContainer.appendChild(liPrev);
+            let liPrev = document.createElement('li');
+            liPrev.className = 'page-item disabled';
+            liPrev.innerHTML = '<a class="page-link" href="#"><span aria-hidden="true">&laquo;</span></a>';
+            paginationContainer.appendChild(liPrev);
          }
 
          // Page number buttons
          let startPage = Math.max(1, currentPage - 2);
          let endPage = Math.min(totalPages, currentPage + 2);
          for (let i = startPage; i <= endPage; i++) {
-               paginationContainer.appendChild(createPageItem(i));
+            paginationContainer.appendChild(createPageItem(i));
          }
 
          // Next and Last buttons
          if (currentPage < totalPages) {
-               paginationContainer.appendChild(createPageItem(currentPage + 1, '&raquo;'));
-               paginationContainer.appendChild(createPageItem(totalPages, 'Last'));
+            paginationContainer.appendChild(createPageItem(currentPage + 1, '&raquo;'));
+            paginationContainer.appendChild(createPageItem(totalPages, 'Last'));
          } else {
-               let liNext = document.createElement('li');
-               liNext.className = 'page-item disabled';
-               liNext.innerHTML = '<a class="page-link" href="#"><span aria-hidden="true">&raquo;</span></a>';
-               paginationContainer.appendChild(liNext);
+            let liNext = document.createElement('li');
+            liNext.className = 'page-item disabled';
+            liNext.innerHTML = '<a class="page-link" href="#"><span aria-hidden="true">&raquo;</span></a>';
+            paginationContainer.appendChild(liNext);
 
-               let liLast = document.createElement('li');
-               liLast.className = 'page-item disabled';
-               liLast.innerHTML = '<a class="page-link" href="#">Last</a>';
-               paginationContainer.appendChild(liLast);
+            let liLast = document.createElement('li');
+            liLast.className = 'page-item disabled';
+            liLast.innerHTML = '<a class="page-link" href="#">Last</a>';
+            paginationContainer.appendChild(liLast);
          }
       }
+
    </script>
 </body>
 </html>
