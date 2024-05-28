@@ -2113,6 +2113,30 @@ function downloadFile($file) {
 		echo "Invalid request.";
 	}
 }
+
+
+//================================================
+//SPECIAL CONDITION
+//================================================
+
+if(!empty($_REQUEST['kategori'])){
+	$rLink = '../';
+	$bgNav = 'bg-primary bg-gradient';
+} else if(count(explode("/",$_SERVER['REQUEST_URI']))>3){
+	$rLink = '../';
+	$bgNav = 'bg-primary bg-gradient';
+} else {
+	$rLink = '';
+	$bgNav = '';
+
+	$ip_address = getIp();
+	$os = get_operating_system();
+	$browser = get_the_browser();
+	$visit_date = date('Y-m-d H:i:s');
+	addVisitToDatabase($ip_address, $os, $browser, $visit_date);
+}
+
+
 //------------------------------------------------------------------------------
 
 // END FRONTEND FUNCTION 
