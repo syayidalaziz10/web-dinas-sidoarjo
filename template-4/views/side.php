@@ -27,7 +27,7 @@
                <img src="<?= $image?>" alt="" class="img-fluid rounded">
             </div>
             <div class="col-7">
-               <a href="../001/<?= $id?>"><p class="title-populer-post"><?= $title?></p></a>                                  
+               <a href="../001/<?= $id?>" class="text-decoration-none"><p class="title-populer-post fw-bold"><?= $title?></p></a>                                  
                <p class="text-left date-populer-post"><?=dateToDay($date)?></p>
             </div>
          </div>
@@ -63,7 +63,7 @@
                <img src="<?=$image?>" alt="" class="img-fluid rounded">
             </div>
             <div class="col-7">
-               <a href="../001/<?= $id?>"><p class="title-populer-post"><?= $title?></p></a>                                  
+               <a href="../001/<?= $id?>" class="text-decoration-none"><p class="title-populer-post fw-bold"><?= $title?></p></a>                                  
                <p class="text-left date-populer-post"><?=dateToDay($date)?></p>
             </div>
          </div>
@@ -94,7 +94,7 @@
             $total_data = $count_result['total_data'];
          
          ?>
-         <li><a href="../<?=$id?>/"><?= $ca_name?> <span><?= $total_data?></span></a></li>
+         <li><a href="../<?=$id?>/" class="text-decoration-none"><?= $ca_name?> <span><?= $total_data?></span></a></li>
 
          <?php } ?>
       </ul>

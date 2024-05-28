@@ -4298,8 +4298,6 @@ mark {
 .title-populer-post {
   width: 100%;
   color: #000;
-  font-weight: 600;
-  text-decoration: none;
   font-size: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -5031,7 +5029,7 @@ Footer Style
   height: 40px;
   border-radius: 50%;
   position: relative;
-  background-color: #407bff;
+  background-color: #478ac9;
   color: #fff;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -5111,6 +5109,12 @@ Footer Style
   display: block;
 }
 
+.video-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .video-wrap .play-wrap {
   position: absolute;
   top: 50%;
@@ -5139,4 +5143,11 @@ Footer Style
 .video-wrap:hover .play-wrap {
   width: 60px;
   height: 60px;
+}
+
+/* modal pdf */
+
+#pdfViewer {
+  width: 100%;
+  height: 70vh; /* Adjust height as needed */
 }

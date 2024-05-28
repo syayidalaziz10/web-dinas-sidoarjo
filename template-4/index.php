@@ -74,7 +74,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
   <link rel="stylesheet" type="text/css" href="assets/css/jquery.bxslider.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/embedYoutube.csss">
+  <link rel="stylesheet" type="text/css" href="assets/css/embedYoutube.css">
   <link rel="stylesheet" media="screen"  href="assets/css/beranda.css">
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">

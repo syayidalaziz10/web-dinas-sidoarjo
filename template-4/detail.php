@@ -175,7 +175,7 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
                         <td><?= $title?></td>
                         <td><?= $count?></td>
                         <td>
-                           <a  href="#" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdfsrc="../../images/files/<?= $title ?>" ><i class="fa-solid fa-eye"></i></a>
+                           <a href="#" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdfsrc="../../images/files/<?= $title ?>" ><i class="fa-solid fa-eye"></i></a>
                            <a href="../../images/files/force.php?file=<?= urlencode($title)?>"><i class="fa-solid fa-download"></i></a>
                         </td>
                         </tr>
@@ -204,6 +204,25 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
    </section>
 
 
+   <!-- Modal View PDF -->
+   <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+         <div class="modal-content">
+         <div class="modal-header border-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </button>
+         </div>
+         <div class="modal-body d-flex justify-content-center align-items-center">
+            <div id="pdfViewer"></div>
+         </div>
+         <div class="modal-footer border-0">
+            <!--<button type="button" class="close-button-modal" data-dismiss="modal">Close</button>-->
+         </div>
+         </div>
+      </div>
+   </div>
+
+
 
    <?php 
 
@@ -224,16 +243,28 @@ if ((!empty($result['post_img'])) && file_exists($dir_image)){
 <script src="../assets/js/custom.js"></script>
 <script src="../assets/js/header.js"></script>
 <script src="../assets/js/jquery.accordion.js"></script>
+<script src="../assets/js/pdfobject.min.js"></script>
 
 <script type="text/javascript">
    
-$(document).ready(function(){
-   var widthdoc  = $( document ).width();
-   console.log(widthdoc);
-   if(widthdoc > 480){
-      $("#ann").remove();
-   }
-})
+   $(document).ready(function(){
+      var widthdoc  = $( document ).width();
+      console.log(widthdoc);
+      if(widthdoc > 480){
+         $("#ann").remove();
+      }
+   })
+
+   $(document).ready(function(){
+      // Update the PDFObject when the modal is shown
+      $('#pdfModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var pdfSrc = button.data('pdfsrc'); // Extract info from data-* attributes
+        PDFObject.embed(pdfSrc, "#pdfViewer", { pdfOpenParams: { toolbar: 0 } }); // Embed the PDF using PDFObject with toolbar hidden
+      });
+   });
+
+</script>
 
 
 </body>
