@@ -116,7 +116,7 @@ $apiurl = $getApi->fetch_assoc();
          const day = date.getDate();
          const month = months[date.getMonth()];
          const year = date.getFullYear();
-         return `- ${day} ${month} ${year}`;
+         return `${day} ${month} ${year}`;
       }
 
       let apiurl = <?= json_encode($apiurl['sos_url']) ?>;
@@ -163,7 +163,7 @@ $apiurl = $getApi->fetch_assoc();
                            <div class="news-contents my-4">
                               <a href="${peng.url}"><h3>${peng.judul}</h3></a>
                               <span>
-                                 ${formatDateToIndonesian(peng.tanggal)} ${formatDateToIndonesian(peng.tgl_akhir)}
+                                 ${formatDateToIndonesian(peng.tanggal)}${peng.tgl_akhir ? ' s.d ' + formatDateToIndonesian(peng.tgl_akhir) : ''}
                               </span>
                            </div>
                            <p class="mb-0">
