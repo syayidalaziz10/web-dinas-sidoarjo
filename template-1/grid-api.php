@@ -30,8 +30,12 @@ $apiurl = $getApi->fetch_assoc();
    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
    <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
    <link rel="stylesheet" href="../fonts/icomoon/style.css">
    <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+   <link rel="stylesheet" href="../css/aos.css">
    <link rel="stylesheet" href="../css/style.css">
 
    <title><?= $prof[0]['prof_lnm'] ?></title>
@@ -87,6 +91,7 @@ $apiurl = $getApi->fetch_assoc();
    <script src="../js/jquery-3.4.1.min.js"></script>
    <script src="../js/popper.min.js"></script>
    <script src="../js/bootstrap.min.js"></script>
+   <script src="../js/aos.js"></script>
    <script src="../js/custom.js"></script>
 
    <script>
