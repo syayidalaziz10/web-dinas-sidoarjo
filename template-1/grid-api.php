@@ -6,7 +6,7 @@ require('../conf/phpFunction.php');
 $_apiId = $_GET['api'];
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-$getApi = $mysqli->query("SELECT sos_url FROM pub_socials WHERE sos_id = $_apiId");
+$getApi = $mysqli->query("SELECT sos_nm, sos_url  FROM pub_socials WHERE sos_id = $_apiId");
 $apiurl = $getApi->fetch_assoc();
 
 ?>
@@ -30,12 +30,8 @@ $apiurl = $getApi->fetch_assoc();
    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
    <link rel="stylesheet" href="../css/bootstrap.min.css">
-   <link rel="stylesheet" href="../css/owl.carousel.min.css">
-   <link rel="stylesheet" href="../css/owl.theme.default.min.css">
-   <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
    <link rel="stylesheet" href="../fonts/icomoon/style.css">
    <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
-   <link rel="stylesheet" href="../css/aos.css">
    <link rel="stylesheet" href="../css/style.css">
 
    <title><?= $prof[0]['prof_lnm'] ?></title>
@@ -56,7 +52,7 @@ $apiurl = $getApi->fetch_assoc();
             <div class="col-12">
                <div class="row justify-content-center">
                   <div class="col-12 text-center">
-                     <h1 class="heading" data-aos="fade-up" data-aos-delay="0">Berita Sidoarjo</h1>
+                     <h1 class="heading" data-aos="fade-up" data-aos-delay="0"><?= $apiurl['sos_nm'] ?></h1>
                      <!-- <p style="font-style: italic;" class="my-5"></p> -->
                   </div>
                </div>
@@ -89,15 +85,8 @@ $apiurl = $getApi->fetch_assoc();
    </div>
 
    <script src="../js/jquery-3.4.1.min.js"></script>
-   <script src="../js/jquery-migrate-3.0.1.min.js"></script>
    <script src="../js/popper.min.js"></script>
    <script src="../js/bootstrap.min.js"></script>
-   <script src="../js/owl.carousel.min.js"></script>
-   <script src="../js/jquery.easing.1.3.js"></script>
-   <script src="../js/jquery.animateNumber.min.js"></script>
-   <script src="../js/jquery.waypoints.min.js"></script>
-   <script src="../js/jquery.fancybox.min.js"></script>
-   <script src="../js/aos.js"></script>
    <script src="../js/custom.js"></script>
 
    <script>
@@ -166,18 +155,18 @@ $apiurl = $getApi->fetch_assoc();
                      <div class="news-item bg-white">
                         <img src="${peng.gambar}" alt="${peng.judul}" class="img-fluid">
                         <div class="news-contents my-4">
-                              <a href="${peng.url}"><h3>${peng.judul}</h3></a>
-                              <span>
-                                 ${formatDateToIndonesian(peng.tanggal)}${peng.tgl_akhir ? ' s.d ' + formatDateToIndonesian(peng.tgl_akhir) : ''}
-                              </span>
+                           <a href="${peng.url}" target="_blank"><h3>${peng.judul}</h3></a>
+                           <span>
+                              ${formatDateToIndonesian(peng.tanggal)}${peng.tgl_akhir ? ' s.d ' + formatDateToIndonesian(peng.tgl_akhir) : ''}
+                           </span>
                         </div>
                         <p class="mb-0">
-                              <a href="${peng.url}" class="read-more-arrow">
-                                 <svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
-                                    <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
-                                 </svg>
-                              </a>
+                           <a href="${peng.url}" target="_blank" class="read-more-arrow">
+                              <svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+                                 <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
+                              </svg>
+                           </a>
                         </p>
                      </div>
                   </div>
