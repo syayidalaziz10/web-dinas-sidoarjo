@@ -155,6 +155,7 @@ $apiurl = $getApi->fetch_assoc();
          apiDataContainer.innerHTML = '';
 
          paginatedItems.forEach(peng => {
+            let tanggal = peng.tgl_mulai || peng.tanggal;
             let html = `
                   <div class="col-lg-4 mb-4">
                      <div class="news-item bg-white">
@@ -162,7 +163,7 @@ $apiurl = $getApi->fetch_assoc();
                         <div class="news-contents my-4">
                            <a href="${peng.url}" target="_blank"><h3>${peng.judul}</h3></a>
                            <span>
-                              ${formatDateToIndonesian(peng.tanggal)}${peng.tgl_akhir ? ' s.d ' + formatDateToIndonesian(peng.tgl_akhir) : ''}
+                              ${formatDateToIndonesian(tanggal)}${peng.tgl_akhir ? ' s.d ' + formatDateToIndonesian(peng.tgl_akhir) : ''}
                            </span>
                         </div>
                         <p class="mb-0">
