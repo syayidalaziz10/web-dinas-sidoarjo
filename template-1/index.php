@@ -1,52 +1,53 @@
-<?php 
+<?php
 
-  require('../conf/config.php');
-  require('../conf/phpFunction.php');
+require('../conf/config.php');
+require('../conf/phpFunction.php');
 
-if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
-	$_urlTemp = explode('/', $_SERVER['REQUEST_URI']);
-	if(loadRecText('prof_sty', 'pub_profile', '_active=1') != $_urlTemp[1]){
-		echo '<meta content="0; url=http://'.$_SERVER['SERVER_NAME'].'/'.loadRecText('prof_sty', 'pub_profile', '_active=1').'" http-equiv="refresh">';	
-	}
+if (!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))) {
+  $_urlTemp = explode('/', $_SERVER['REQUEST_URI']);
+  if (loadRecText('prof_sty', 'pub_profile', '_active=1') != $_urlTemp[1]) {
+    echo '<meta content="0; url=http://' . $_SERVER['SERVER_NAME'] . '/' . loadRecText('prof_sty', 'pub_profile', '_active=1') . '" http-equiv="refresh">';
+  }
 }
-  $profile =  $mysqli->query('SELECT * from pub_profile WHERE _active=1 ORDER BY _cre DESC');
-  $prof = $profile->fetch_all(MYSQLI_ASSOC);
+$profile =  $mysqli->query('SELECT * from pub_profile WHERE _active=1 ORDER BY _cre DESC');
+$prof = $profile->fetch_all(MYSQLI_ASSOC);
 
-  $video =  $mysqli->query('SELECT sos_url from pub_socials WHERE _active=1 AND cat=003 ORDER BY _cre_date DESC LIMIT 1');
-  $get_url = $video->fetch_all(MYSQLI_ASSOC);
-  $url = $get_url[0]['sos_url'];
-  $queryID = parse_url($url, PHP_URL_QUERY);
-  parse_str($queryID, $params);
-  $videoId = $params['v'];
-  
-  $pengumuman =  $mysqli->query('SELECT COUNT(*) as pengumuman FROM pub_post WHERE ca_id="003" AND _active="1" AND post_datex >= CURDATE()');
-  $count = mysqli_fetch_assoc($pengumuman);
-  
-  $event =  $mysqli->query('SELECT COUNT(*) as event FROM pub_post WHERE ca_id="002" AND _active="1" AND post_datex >= CURDATE()');
-  $countEvent = mysqli_fetch_assoc($event);
+$video =  $mysqli->query('SELECT sos_url from pub_socials WHERE _active=1 AND cat=003 ORDER BY _cre_date DESC LIMIT 1');
+$get_url = $video->fetch_all(MYSQLI_ASSOC);
+$url = $get_url[0]['sos_url'];
+$queryID = parse_url($url, PHP_URL_QUERY);
+parse_str($queryID, $params);
+$videoId = $params['v'];
+
+$pengumuman =  $mysqli->query('SELECT COUNT(*) as pengumuman FROM pub_post WHERE ca_id="003" AND _active="1" AND post_datex >= CURDATE()');
+$count = mysqli_fetch_assoc($pengumuman);
+
+$event =  $mysqli->query('SELECT COUNT(*) as event FROM pub_post WHERE ca_id="002" AND _active="1" AND post_datex >= CURDATE()');
+$countEvent = mysqli_fetch_assoc($event);
 
 
 
-  
-  if ($count['pengumuman'] > 0)
-  
-  {
-    echo "<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>";
-    echo 
-    "<script type='text/javascript'>
-      $(document).ready(function () {
-          $('#announcementModal').modal('show');
-      });
-    </script>";
-  }
 
-    
-  if ((!empty($row['post_img'])) && file_exists($dir_image)) {
-    $src = $_dirProf.$prof[0]['prof_lg'];
-  } else {
-    $src = $_dirProf.'default.png';
-  }
-  
+if ($count['pengumuman'] > 0) {
+  echo "<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>";
+  echo
+  "<script type='text/javascript'>
+        $(document).ready(function () {
+            $('#announcementModal').modal('show');
+        });
+      </script>";
+}
+
+
+$dir_image = $_dirProf . $prof[0]['prof_lg'];
+
+
+if ((!empty($row['post_img'])) && file_exists($dir_image)) {
+  $src = $dir_image;
+} else {
+  $src = $_dirProf . 'default.png';
+}
+
 
 
 ?>
@@ -59,7 +60,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="<?= $src?>">
+  <link rel="shortcut icon" href="<?= $src ?>">
 
   <meta name="description" content="" />
   <meta name="keywords" content="" />
@@ -77,22 +78,22 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
   <link rel="stylesheet" href="css/embedYoutube.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <title><?= $prof[0]['prof_lnm']?></title>
+  <title><?= $prof[0]['prof_lnm'] ?></title>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
 
-  
-  <?php 
-    require_once('views/navbar.php');
-    require_once('views/social.php');
-    require_once('views/visitor.php');
+
+  <?php
+  require_once('views/navbar.php');
+  require_once('views/social.php');
+  require_once('views/visitor.php');
   ?>
 
   <!-- START HOME SECTION -->
   <div class="main-banner">
     <div class="owl-carousel banner-slide">
-      <?=requestRec('ban_title, ban_img', 'pub_banner', 'ban_stat=001 AND _active=1', '_cre_date DESC',5, 1)?>
+      <?= requestRec('ban_title, ban_img', 'pub_banner', 'ban_stat=001 AND _active=1', '_cre_date DESC', 5, 1) ?>
     </div>
   </div>
   <!-- END HOME SECTION -->
@@ -103,11 +104,11 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
       <div class="row mb-5">
         <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="0">
           <h2 class="heading">Profil Pimpinan</h2>
-          <p>Kepala <?= $_profile[0]['prof_lnm']?> Kabupaten Sidoarjo</p>
+          <p>Kepala <?= $_profile[0]['prof_lnm'] ?> Kabupaten Sidoarjo</p>
         </div>
       </div>
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <?=requestRec('emp_nm, emp_desk, emp_lhkpn, jab_id, emp_img', 'pub_employees', 'jab_id=001 AND _active=1', '','1', 2)?>
+        <?= requestRec('emp_nm, emp_desk, emp_lhkpn, jab_id, emp_img', 'pub_employees', 'jab_id=001 AND _active=1', '', '1', 2) ?>
       </div>
     </div>
   </div>
@@ -119,12 +120,12 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
       <div class="row mb-5">
         <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="0">
           <h2 class="heading">Layanan</h2>
-          <p><?= $prof[0]['prof_snm']?> Kabupaten Sidoarjo siap memberikan pelayanan terbaik bagi Anda</p>
+          <p><?= $prof[0]['prof_snm'] ?> Kabupaten Sidoarjo siap memberikan pelayanan terbaik bagi Anda</p>
         </div>
       </div>
       <div class="row d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-7 col-10 owl-carousel services-slider">
-          <?=requestRec('post_id, post_judul, post_desk, post_img', 'pub_post', 'ca_id=005 AND _active=1', 'post_judul ASC','', 3)?>
+          <?= requestRec('post_id, post_judul, post_desk, post_img', 'pub_post', 'ca_id=005 AND _active=1', 'post_judul ASC', '', 3) ?>
         </div>
       </div>
       <div class="row mt-5">
@@ -148,18 +149,18 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
           </div>
         </div>
         <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-            <div class="embed__container">
-              <div id="player" data-video-id="<?= $videoId?>"></div>
+          <div class="embed__container">
+            <div id="player" data-video-id="<?= $videoId ?>"></div>
+          </div>
+          <div class="carousel__wrap mt-3">
+            <div class="owl-carousel media-carousel owl-theme">
+              <?= requestRec('sos_id, sos_url', 'pub_socials', '_active=1 AND cat=003', '_cre_date DESC', 10, 6) ?>
             </div>
-            <div class="carousel__wrap mt-3">
-                <div class="owl-carousel media-carousel owl-theme">
-                  <?=requestRec('sos_id, sos_url', 'pub_socials', '_active=1 AND cat=003', '_cre_date DESC',10, 6)?>
-                </div>
-              </div>
-            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <!-- END MEDIA SECTION -->
 
@@ -174,7 +175,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
       </div>
       <div class="row d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-8 col-10 px-lg-5 px-3 owl-carousel news-slider">
-          <?=requestRec('post_id, post_judul, post_desk, post_publish, post_see, post_img', 'pub_post', 'ca_id=001 AND _active=1', 'post_publish DESC',10, 4)?>
+          <?= requestRec('post_id, post_judul, post_desk, post_publish, post_see, post_img', 'pub_post', 'ca_id=001 AND _active=1', 'post_publish DESC', 10, 4) ?>
         </div>
       </div>
       <div class="row mt-5">
@@ -182,7 +183,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
           <a href="001/" class="btn btn-outline-primary">Baca berita lainnya</a>
         </div>
       </div>
-      
+
     </div>
   </div>
   <!-- END NEWS SECTION -->
@@ -193,12 +194,12 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
       <div class="row mb-5">
         <div class="col-12 text-center" data-aos="fade-up" data-aos-delay="0">
           <h2 class="heading">Galeri Terbaru</h2>
-          <p>Dokumentasi kegiatan <?=$_profile[0]['prof_lnm']?> </p>
+          <p>Dokumentasi kegiatan <?= $_profile[0]['prof_lnm'] ?> </p>
         </div>
       </div> <!-- /.row -->
       <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
         <div class="row gutter-4">
-          <?=requestRec('ban_title, ban_img', 'pub_banner', 'ban_stat=002 AND _active=1', '_cre_date DESC',6, 7)?>
+          <?= requestRec('ban_title, ban_img', 'pub_banner', 'ban_stat=002 AND _active=1', '_cre_date DESC', 6, 7) ?>
         </div>
         <div class="col-12 mt-5 d-flex justify-content-center align-items-center">
           <a href="galeri" class="btn btn-outline-primary">Lihat galeri lainnya</a>
@@ -212,31 +213,31 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
   <?php
   if ($countEvent['event'] > 0) {
   ?>
-  <div class="base-section bg-section-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 mb-5 text-center">
-          <h2 class="heading">Agenda Kegiatan</h2>
-          <p>Jadwal Kegiatan <?= $prof[0]['prof_snm']?> Kabupaten Sidoarjo</p>
+    <div class="base-section bg-section-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mb-5 text-center">
+            <h2 class="heading">Agenda Kegiatan</h2>
+            <p>Jadwal Kegiatan <?= $prof[0]['prof_snm'] ?> Kabupaten Sidoarjo</p>
+          </div>
         </div>
-      </div>
-      <?php
-      if ($countEvent['event'] > 3) {
-      ?>
+        <?php
+        if ($countEvent['event'] > 3) {
+        ?>
           <div class="row owl-carousel event-slider">
-              <?= requestRec('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1 AND post_datex >= CURDATE()', 'post_publish DESC', '', 9) ?>
+            <?= requestRec('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1 AND post_datex >= CURDATE()', 'post_publish DESC', '', 9) ?>
           </div>
-      <?php
-      } else {
-      ?>
+        <?php
+        } else {
+        ?>
           <div class="row">
-              <?= requestRec('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1 AND post_datex >= CURDATE()', 'post_publish DESC', '', 9) ?>
+            <?= requestRec('post_id, post_judul, post_desk, post_publish, post_datex, post_img', 'pub_post', 'ca_id=002 AND _active=1 AND post_datex >= CURDATE()', 'post_publish DESC', '', 9) ?>
           </div>
-      <?php
-      }
-      ?>
+        <?php
+        }
+        ?>
+      </div>
     </div>
-  </div>
   <?php
   }
   ?>
@@ -245,7 +246,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
   <!-- START CONTACT SECTION -->
   <div class="base-section mb-lg-0" id="contact-section">
     <div class="container">
-      <div class="row mb-5"  data-aos="fade-up" data-aos-delay="0">
+      <div class="row mb-5" data-aos="fade-up" data-aos-delay="0">
         <div class="col-12 text-center">
           <h2 class="heading">Kritik dan Saran</h2>
           <p>Kirimkan kritik dan saran melalui form ini</p>
@@ -269,34 +270,34 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
             <button type="submit" name="submit" class="btn btn-primary mb-lg-0 mb-5" id="submit-message">Kirim pesan</button>
           </form>
         </div>
-        <div class="col-lg-7 col-12 justify-content-center align-items-center d-flex"  data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-7 col-12 justify-content-center align-items-center d-flex" data-aos="fade-up" data-aos-delay="100">
           <div class="contact-info mt-5 mt-lg-0">
             <div class="contact-info-item">
               <div class="contact-info-body">
-                  <strong><?=$prof[0]['prof_addr']?></strong>
-                  <ul class="list-unstyled ul-links my-3">
-                    <li><a href="tel:// <?=$prof[0]['prof_telp']?>" class="d-flex"><span class="mt-1 icon-phone mr-2"></span><span>Telpon : <?=$prof[0]['prof_telp']?></span></a></li>
-                    <li><a href="#" class="d-flex"><span class="mt-1 icon-phone mr-2"></span><span>Fax : <?=$prof[0]['prof_fax']?></a></li>
-                    <li><a href="mailto:info@mydomain.com" class="d-flex"><span class="mt-1 icon-envelope mr-2"></span><span>Email : <?=$prof[0]['prof_mail']?></span></a></li>
-                    <li><a href="<?=$prof[0]['prof_skm']?>" target="_blank" class="d-flex"><span class="mt-1 icon-smile-o mr-2"></span><span>E-SKM : Survey Kepuasan <?=$prof[0]['prof_snm']?>  </span></a></li>
-                  </ul>
+                <strong><?= $prof[0]['prof_addr'] ?></strong>
+                <ul class="list-unstyled ul-links my-3">
+                  <li><a href="tel:// <?= $prof[0]['prof_telp'] ?>" class="d-flex"><span class="mt-1 icon-phone mr-2"></span><span>Telpon : <?= $prof[0]['prof_telp'] ?></span></a></li>
+                  <li><a href="#" class="d-flex"><span class="mt-1 icon-phone mr-2"></span><span>Fax : <?= $prof[0]['prof_fax'] ?></a></li>
+                  <li><a href="mailto:info@mydomain.com" class="d-flex"><span class="mt-1 icon-envelope mr-2"></span><span>Email : <?= $prof[0]['prof_mail'] ?></span></a></li>
+                  <li><a href="<?= $prof[0]['prof_skm'] ?>" target="_blank" class="d-flex"><span class="mt-1 icon-smile-o mr-2"></span><span>E-SKM : Survey Kepuasan <?= $prof[0]['prof_snm'] ?> </span></a></li>
+                </ul>
               </div>
               <div class="contact-info-footer">
-                <a href="<?=$prof[0]['prof_maps']?>" class="text-center" target="_blank">Lihat di Google Maps</a>
+                <a href="<?= $prof[0]['prof_maps'] ?>" class="text-center" target="_blank">Lihat di Google Maps</a>
               </div>
             </div>
             <img src="images/WorldMap.svg" class="img-fluid" alt="Peta Indonesia">
           </div>
-        </div> 
+        </div>
       </div>
     </div>
-  </div> 
+  </div>
   <!-- END CONTACT SECTION -->
 
   <!-- START LINK SECTION -->
   <div class="base-section" id="link-section">
     <div class="container">
-      <div class="row mb-5"  data-aos="fade-up" data-aos-delay="0">
+      <div class="row mb-5" data-aos="fade-up" data-aos-delay="0">
         <div class="col-12 text-center">
           <h2 class="heading">Link Terkait</h2>
           <p>Tautan terkait layanan pemerintahan lainnya</p>
@@ -305,15 +306,15 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
       <div class="row justify-content-center align-items-center">
         <div class="col-lg-12" data-aos="fade" data-aos-delay="200">
           <div class="link-slider owl-carousel d-flex justify-content-center align-items-center">
-            <?=requestRec('sos_nm, sos_url, sos_ic', 'pub_socials', '_active=1 AND cat=2', 'sos_nm DESC','', 11)?>
+            <?= requestRec('sos_nm, sos_url, sos_ic', 'pub_socials', '_active=1 AND cat=2', 'sos_nm DESC', '', 11) ?>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   </div>
   <!-- END LINK SECTION -->
 
-  <?php require_once('views/footer.php')?>
+  <?php require_once('views/footer.php') ?>
 
 
   <!-- START ANNOUNCEMENT MODAL -->
@@ -327,7 +328,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
         </div>
         <div class="modal-body">
           <div class="announcement-slide owl-carousel owl-theme">
-            <?=requestRec('post_id, post_judul, post_desk', 'pub_post', 'ca_id=003 AND _active=1 AND post_datex >= CURDATE()', '','', 8)?>
+            <?= requestRec('post_id, post_judul, post_desk', 'pub_post', 'ca_id=003 AND _active=1 AND post_datex >= CURDATE()', '', '', 8) ?>
           </div>
           <div class="modal-footer border-0">
             <a href="003/" type="button" class="btn btn-outline-primary">Pengumuman Lainnya</a>
@@ -353,7 +354,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
           </p>
           <form class="form-otp" method="POST">
             <div class="otp-field mb-4">
-              <input type="number" class="otp-input" name="key1" required/>
+              <input type="number" class="otp-input" name="key1" required />
               <input type="number" class="otp-input" name="key2" disabled required />
               <input type="number" class="otp-input" name="key3" disabled required />
               <input type="number" class="otp-input" name="key4" disabled required />
@@ -376,7 +377,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
           <img src="images/4.png" alt="" style="width: 100%; border-radius: 8px;" class="mb-4">
           <h4 class="fw-bolder">Verifikasi berhasil!</h4>
           <p class="fw-bolder mb-0">Yuk isi survei kepuasan masyarakat pada tautan ini
-            <a href="<?=$prof[0]['prof_skm']?>">Survei kepuasan masyarakat Dinas Komunikasi dan Informatika</a>
+            <a href="<?= $prof[0]['prof_skm'] ?>">Survei kepuasan masyarakat Dinas Komunikasi dan Informatika</a>
           </p>
         </div>
         <div class="modal-footer border-0">
@@ -386,9 +387,9 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
     </div>
   </div>
   <!-- END SKM MODAL -->
-  
-  
-  
+
+
+
   <!-- START ERROR FORM MODAL-->
   <div class="modal fade" id="errorForm" tabindex="-1" aria-labelledby="errorForm" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -396,7 +397,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
         <div class="modal-body p-5">
           <img src="images/form-validation.png" alt="" style="width: 100%; border-radius: 8px;" class="mb-4">
           <p class="fw-bolder mb-0">
-              Form tidak boleh kosong dan harus diisi dengan data yang benar!
+            Form tidak boleh kosong dan harus diisi dengan data yang benar!
           </p>
         </div>
         <div class="modal-footer border-0">
@@ -415,7 +416,7 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
       <span class="sr-only">Loading...</span>
     </div>
   </div>
- 
+
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -429,72 +430,69 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
   <script src="js/aos.js"></script>
   <script src="js/embedYoutube.js"></script>
   <script src="js/custom.js"></script>
-  
+
 
   <script>
-  
-
-    
     // START FORM HEADLE OTP //
     const inputs = document.querySelectorAll(".otp-input")
 
     inputs.forEach((input, index1) => {
       input.addEventListener("keyup", (e) => {
         const currentInput = input,
-        nextInput = input.nextElementSibling,
-        prevInput = input.previousElementSibling;
+          nextInput = input.nextElementSibling,
+          prevInput = input.previousElementSibling;
 
         if (currentInput.value.length > 1) {
-        currentInput.value = "";
-        return;
+          currentInput.value = "";
+          return;
         }
 
         if (nextInput && nextInput.hasAttribute("disabled") && currentInput.value !== "") {
-        nextInput.removeAttribute("disabled");
-        nextInput.focus();
+          nextInput.removeAttribute("disabled");
+          nextInput.focus();
         }
 
         if (e.key === "Backspace") {
-        inputs.forEach((input, index2) => {
+          inputs.forEach((input, index2) => {
             if (index1 <= index2 && prevInput) {
-            input.setAttribute("disabled", true);
-            input.value = "";
-            prevInput.focus();
+              input.setAttribute("disabled", true);
+              input.value = "";
+              prevInput.focus();
             }
-        });
+          });
         }
       });
     });
 
     window.addEventListener("load", () => inputs[0].focus());
-    
 
-    $(document).ready(function(){
-      $("#submit-message").click(function(e){
+
+    $(document).ready(function() {
+      $("#submit-message").click(function(e) {
         e.preventDefault();
 
         var nama = $('#nama').val();
         var email = $('#mail').val();
         var pesan = $('#message').val();
-        
-        if(nama.trim() == '' || email.trim() == '' || pesan.trim() == '') {
-            $('#errorForm').modal('show');
-            return;
+
+        if (nama.trim() == '' || email.trim() == '' || pesan.trim() == '') {
+          $('#errorForm').modal('show');
+          return;
         }
-        
-        
+
+
         var formData = $('.form-message').serialize();
 
         $.ajax({
           type: 'POST',
           url: 'form/sendMessage.php',
           data: formData,
-          success: function(response){
+          success: function(response) {
             console.log('Message sent successfully:', response);
             $('#otpModal').modal('show');
             $('.form-message')[0].reset();
 
-            $("#submit-otp").click(function(e){
+            $("#submit-otp").click(function(e) {
               e.preventDefault();
               var code = $('.form-otp').serialize();
 
@@ -522,12 +520,8 @@ if(!empty(loadRecText('prof_sty', 'pub_profile', '_active=1'))){
     });
 
     // END FORM HEADLE OTP //
-    
-    
-
-
   </script>
-  
+
 </body>
 
 </html>

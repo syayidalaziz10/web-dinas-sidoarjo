@@ -3,5 +3,3 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/sites/public_html
     - /bin/cp -R * $DEPLOYPATH
-    - /usr/bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 {} \;
-    - /usr/bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} \;
